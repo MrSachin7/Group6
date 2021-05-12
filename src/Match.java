@@ -18,6 +18,21 @@ public abstract class Match
     this.formation = formation;
   }
 
+  public Match(String opponentTeam, Date matchDate, Time startTime,
+      boolean isHomeMatch)
+  {
+    this.opponentTeam = opponentTeam;
+    this.matchDate = matchDate;
+    this.startTime = startTime;
+    this.isHomeMatch = isHomeMatch;
+    this.formation = null;
+  }
+
+  public void setFormation(Formation formation)
+  {
+    this.formation = formation;
+  }
+
   public Date getMatchDate()
   {
     return matchDate;

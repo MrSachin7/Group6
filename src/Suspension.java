@@ -3,6 +3,7 @@ public class Suspension
   private int numberOfGamesSuspended;
   private int numberOfYellowCards;
   private int numberOfRedCards;
+
   public Suspension(int numberOfGamesSuspended, int numberOfYellowCards,int numberOfRedCards)
   {
     this.numberOfRedCards=numberOfRedCards;
