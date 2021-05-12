@@ -5,6 +5,16 @@ public class CupMatch extends Match
   {
     super(opponentTeam, matchDate, startTime, isHomeMatch, formation);
   }
+  public CupMatch(String opponentTeam, Date matchDate, Time startTime,
+      boolean isHomeMatch)
+  {
+    super(opponentTeam, matchDate, startTime, isHomeMatch);
+  }
+
+  public void setFormation(Formation formation)
+  {
+    super.setFormation(formation);
+  }
   public String matchType()
   {
     return "Cup Match";
