@@ -17,7 +17,6 @@ public class Player
     this.nationality = nationality;
     injury = null;
     suspension = null;
-    shirtNumber=-1;
   }
 
   public void setName(String name)
