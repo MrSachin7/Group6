@@ -6,7 +6,7 @@ public class PlayerList
 
   public PlayerList()
   {
-    playerList = new ArrayList<>();
+    playerList = new ArrayList<Player>();
   }
 
   public void addPlayer(Player player)
@@ -55,9 +55,8 @@ public class PlayerList
     {
       if (playerList.get(i).getName().equals(name))
       {
-        temp = playerList.get(i);
+        temp= playerList.get(i);
       }
-
     }
     return temp;
   }
