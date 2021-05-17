@@ -2,7 +2,6 @@ public class Injury
 {
   private Date injuryDate;
   private Date expectedReturnDate;
-
   public Injury(Date injuryDate, Date expectedReturnDate)
   {
     if (expectedReturnDate.isBefore(injuryDate))
@@ -26,6 +25,7 @@ public class Injury
     this.injuryDate = injuryDate;
     expectedReturnDate = null;
   }
+
 
   public void setInjuryDate(Date injuryDate)
   {

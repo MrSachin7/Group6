@@ -98,7 +98,8 @@ public class Player
 
   public boolean isAvailable(Player player)
   {
-    if (player.getInjury().equals(null) || player.getSuspension().getNumberOfGamesSuspended()>=1)
+    if (player.getInjury() == null
+        || player.getSuspension().getNumberOfGamesSuspended()>=1)
     {
       return false;
     }
