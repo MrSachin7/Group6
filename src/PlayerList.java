@@ -48,48 +48,41 @@ public class PlayerList
       }
     }
   }
-  public String searchPlayer(String name)
+  public Player searchPlayer(String name)
   {
-    String temp = "";
+    Player temp = null;
     for (int i = 0; i < playerList.size(); i++)
     {
       if (playerList.get(i).getName().equals(name))
       {
-        temp = playerList.get(i).toString();
+        temp = playerList.get(i);
       }
-      else
-        temp = "No player Found";
+
     }
     return temp;
   }
 
-  public String searchPlayer(Player player)
+  public Player searchPlayer(Player player)
   {
-    String temp = "";
+   Player temp =null;
     for (int i = 0; i < playerList.size(); i++)
     {
       if (playerList.get(i).equals(player))
       {
-        temp = playerList.get(i).toString();
+        temp = playerList.get(i;
       }
-      else
-        temp = "No player Found";
     }
     return temp;
   }
 
-  public String searchPlayer(int shirtNumber)
+  public Player searchPlayer(int shirtNumber)
   {
-    String temp = "";
+    Player temp = null;
     for (int i = 0; i < playerList.size(); i++)
     {
       if (playerList.get(i).getShirtNumber() == shirtNumber)
       {
-        temp = playerList.get(i).toString();
-      }
-      else
-      {
-        temp ="No Player Found";
+        temp = playerList.get(i);
       }
     }
     return temp;
