@@ -25,21 +25,21 @@ public class PlayerList
   public void setShirtNumber(Player player, int shirtNumber)
   {
     boolean isShirtNumberOccupied = false;
-    for (int i=0; i<playerList.size();i++)
+    for (int i = 0; i < playerList.size(); i++)
     {
-      if (playerList.get(i).getShirtNumber()==shirtNumber)
+      if (playerList.get(i).getShirtNumber() == shirtNumber)
       {
-        isShirtNumberOccupied=true;
+        isShirtNumberOccupied = true;
         break;
       }
     }
-    if (isShirtNumberOccupied==true)
+    if (isShirtNumberOccupied == true)
     {
       throw new IllegalShirtNumberException();
     }
     else
     {
-      for (int i =0; i<playerList.size(); i++)
+      for (int i = 0; i < playerList.size(); i++)
       {
         if (playerList.get(i).equals(player))
         {
@@ -48,12 +48,45 @@ public class PlayerList
       }
     }
   }
+
+  public String searchPlayer(Player player)
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      if (playerList.get(i).equals(player))
+      {
+        temp = playerList.get(i).toString();
+      }
+      else
+        temp = "No player Found";
+    }
+    return temp;
+  }
+
+  public String searchPlayer(int shirtNumber)
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      if (playerList.get(i).getShirtNumber() == shirtNumber)
+      {
+        temp = playerList.get(i).toString();
+      }
+      else
+      {
+        temp ="No Player Found";
+      }
+    }
+    return temp;
+  }
+
   public String toString()
   {
     String temp = "Players :+\n";
-    for (int i=0;i<playerList.size();i++)
+    for (int i = 0; i < playerList.size(); i++)
     {
-      temp+=playerList.get(i)+"\n";
+      temp += playerList.get(i) + "\n";
     }
     return temp;
   }
