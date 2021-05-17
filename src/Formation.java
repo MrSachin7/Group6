@@ -13,14 +13,14 @@ public class Formation
 
   public void addStartingPlayer(Player player)
   {
-    if (startingPlayers.size() < 11)
+    if ((startingPlayers.size() < 11) && player.getInjury().equals(null) )
     {
       startingPlayers.add(player);
     }
     else
     {
       throw new IllegalFormationException(
-          " because starting players cannot be more than 11");
+          " because starting players cannot be more than 11 or the player is injured");
     }
   }
 
