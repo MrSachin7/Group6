@@ -7,6 +7,7 @@ public class Player
   private String position;
   private String nationality;
   private int shirtNumber;
+  private boolean isAvailable;
 
   public Player(String name, Date birthDate, String position,
       String nationality)
@@ -87,6 +88,22 @@ public class Player
   public Suspension getSuspension()
   {
     return suspension.copy();
+  }
+
+
+  public void removeInjury()
+  {
+    injury=null;
+  }
+
+  public boolean isAvailable(Player player)
+  {
+    if (player.getInjury().equals(null) || player.getSuspension().getNumberOfGamesSuspended()>=1)
+    {
+      return false;
+    }
+    else
+      return true;
   }
 
   public boolean equals(Object obj)
