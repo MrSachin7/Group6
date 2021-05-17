@@ -48,6 +48,20 @@ public class PlayerList
       }
     }
   }
+  public String searchPlayer(String name)
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      if (playerList.get(i).getName().equals(name))
+      {
+        temp = playerList.get(i).toString();
+      }
+      else
+        temp = "No player Found";
+    }
+    return temp;
+  }
 
   public String searchPlayer(Player player)
   {
