@@ -69,7 +69,7 @@ public class PlayerList
     {
       if (playerList.get(i).equals(player))
       {
-        temp = playerList.get(i;
+        temp = playerList.get(i);
       }
     }
     return temp;
