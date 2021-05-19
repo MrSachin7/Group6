@@ -21,7 +21,6 @@ public class PlayerList
       playerList.add(players[i]);
     }
   }
-
   public void setShirtNumber(Player player, int shirtNumber)
   {
     boolean isShirtNumberOccupied = false;
@@ -85,6 +84,11 @@ public class PlayerList
       }
     }
     return temp;
+  }
+
+  public ArrayList<Player> getPlayerList()
+  {
+    return playerList;
   }
 
   public String toString()
