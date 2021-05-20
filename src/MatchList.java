@@ -8,5 +8,9 @@ public class MatchList
   {
     matchList = new ArrayList<>();
   }
+  public void addMatch(Match match)
+  {
+    matchList.add(match);
+  }
 
 }

@@ -48,16 +48,28 @@ public class PlayerModelManager
       System.out.println("IO Error writing to file");
     }
   }
+
   public void addPlayer(Player player)
   {
-    PlayerList allPlayers= getAllPlayers();
+    PlayerList allPlayers = getAllPlayers();
     allPlayers.addPlayer(player);
     savePlayers(allPlayers);
   }
-  public void setShirtNumber(String firstName, String lastName,int shirtNumber)
+
+  public void changeShirtNumber(String firstName, String lastName, int shirtNumber)
   {
+    PlayerList allPlayers = getAllPlayers();
+    allPlayers.searchPlayerByName(firstName, lastName)
+        .setShirtNumber(shirtNumber);
 
+    savePlayers(allPlayers);
   }
+  public void changePosition(String firstName, String lastName,String position)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    allPlayers.searchPlayerByName(firstName,lastName).setPosition(position);
 
+    savePlayers(allPlayers);
+  }
 
 }
