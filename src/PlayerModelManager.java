@@ -56,7 +56,15 @@ public class PlayerModelManager
     savePlayers(allPlayers);
   }
 
-  public void changeShirtNumber(String firstName, String lastName, int shirtNumber)
+  public void removePlayer(Player player)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    allPlayers.removePlayer(player);
+    savePlayers(allPlayers);
+  }
+
+  public void changeShirtNumber(String firstName, String lastName,
+      int shirtNumber)
   {
     PlayerList allPlayers = getAllPlayers();
     allPlayers.searchPlayerByName(firstName, lastName)
@@ -64,10 +72,11 @@ public class PlayerModelManager
 
     savePlayers(allPlayers);
   }
-  public void changePosition(String firstName, String lastName,String position)
+
+  public void changePosition(String firstName, String lastName, String position)
   {
     PlayerList allPlayers = getAllPlayers();
-    allPlayers.searchPlayerByName(firstName,lastName).setPosition(position);
+    allPlayers.searchPlayerByName(firstName, lastName).setPosition(position);
 
     savePlayers(allPlayers);
   }

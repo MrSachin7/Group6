@@ -1,5 +1,5 @@
 public class Test
- {
+{
 
   public static void main(String[] args)
   {
@@ -7,8 +7,10 @@ public class Test
 
     Date date1 = new Date(25, 9, 2002);
     CupMatch match1 = new CupMatch("Levamte", date1, time, true);
-    MatchList matchList = new MatchList();
-    matchList.addMatch(match1);
-    System.out.println(matchList.get(0).matchType());
+    Player sachin = new Player("SAchin ", "dad", date1, "ads", "da");
+    PlayerList playerList = new PlayerList();
+    playerList.addPlayer(sachin);
+    playerList.removePlayer(sachin);
+    System.out.println(playerList);
   }
 }

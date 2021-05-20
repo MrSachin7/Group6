@@ -58,4 +58,12 @@ public class MatchModelManager
 
     saveMatches(allMatches);
   }
+  public void removeMatch(Match match)
+  {
+    MatchList allMatches = getAllMatches();
+    allMatches.removeMatch(match);
+
+    saveMatches(allMatches);
+  }
 }
+
