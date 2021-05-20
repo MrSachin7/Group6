@@ -1,6 +1,7 @@
 public class Player
 {
-  private String name;
+  private String firstName;
+  private String lastName;
   private Date birthDate;
   private Injury injury;
   private Suspension suspension;
@@ -9,10 +10,12 @@ public class Player
   private int shirtNumber;
   private boolean isAvailable;
 
-  public Player(String name, Date birthDate, String position,
+  public Player(String firstName,String lastName, Date birthDate, String position,
       String nationality)
   {
-    this.name = name;
+
+    this.firstName = firstName;
+    this.lastName=lastName;
     this.birthDate = birthDate.copy();
     this.position = position;
     this.nationality = nationality;
@@ -20,9 +23,14 @@ public class Player
     suspension = null;
   }
 
-  public void setName(String name)
+  public void setFirstName(String firstName)
   {
-    this.name = name;
+    this.firstName = firstName;
+  }
+
+  public void setLastName(String lastName)
+  {
+    this.lastName = lastName;
   }
 
   public void setBirthDate(Date birthDate)
@@ -55,9 +63,14 @@ public class Player
     this.suspension = suspension.copy();
   }
 
-  public String getName()
+  public String getFirstName()
   {
-    return name;
+    return firstName;
+  }
+
+  public String getLastName()
+  {
+    return lastName;
   }
 
   public int getShirtNumber()
@@ -116,19 +129,19 @@ public class Player
     else
     {
       Player temp = (Player) obj;
-      return temp.nationality.equals(nationality) && temp.name.equals(name)
+      return temp.nationality.equals(nationality) && temp.firstName.equals(firstName) && temp.lastName.equals(lastName)
           && temp.birthDate.equals(birthDate) && temp.position.equals(position);
     }
   }
 
   public Player copy()
   {
-    return new Player(name, birthDate, position, nationality);
+    return new Player(firstName,lastName, birthDate, position, nationality);
   }
 
   public String toString()
   {
-    return "Name :" + name + "                     Date of Birth : " + birthDate + "\n Nationality :"
+    return "Name :" + firstName+" "+lastName + "                     Date of Birth : " + birthDate + "\n Nationality :"
         + nationality + "                           Position :" + position;
   }
 }
