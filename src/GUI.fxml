@@ -28,11 +28,12 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <Label layoutX="21.0" layoutY="16.0" text="Names" />
-                                          <TextArea layoutX="14.0" layoutY="42.0" prefHeight="278.0" prefWidth="190.0" promptText="Players names" />
+                                          <TextArea fx:id="allPlayersName" layoutX="14.0" layoutY="42.0" prefHeight="278.0" prefWidth="190.0" promptText="Players names" />
                                           <Label layoutX="377.0" layoutY="16.0" text="Position" />
-                                          <TextArea layoutX="354.0" layoutY="42.0" prefHeight="278.0" prefWidth="110.0" promptText="position" />
-                                          <TextArea layoutX="235.0" layoutY="42.0" prefHeight="279.0" prefWidth="78.0" promptText="Shirt Number" />
+                                          <TextArea fx:id="allPlayersPosition" layoutX="354.0" layoutY="42.0" prefHeight="278.0" prefWidth="110.0" promptText="position" />
+                                          <TextArea fx:id="allPlayersShirtNumber" layoutX="235.0" layoutY="42.0" prefHeight="279.0" prefWidth="78.0" promptText="Shirt Number" />
                                           <Label layoutX="219.0" layoutY="16.0" text="Shirt Number" />
+                                          <Button fx:id="updatePlayers" layoutX="483.0" layoutY="125.0" mnemonicParsing="false" text="Update" />
                                        </children></AnchorPane>
                               </content>
                             </Tab>
@@ -40,11 +41,11 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <ChoiceBox layoutX="115.0" layoutY="36.0" prefWidth="150.0" />
+                                          <ChoiceBox fx:id="choiceBoxShirtNo" layoutX="115.0" layoutY="36.0" prefWidth="150.0" />
                                           <Label layoutX="55.0" layoutY="40.0" text="Player" />
                                           <Label layoutX="37.0" layoutY="104.0" text="ShirtNumber" />
-                                          <Button layoutX="291.0" layoutY="195.0" mnemonicParsing="false" text="Change ShirtNumber" />
-                                          <Spinner layoutX="115.0" layoutY="100.0" />
+                                          <Button fx:id="changeShirtNumber" layoutX="291.0" layoutY="195.0" mnemonicParsing="false" text="Change ShirtNumber" />
+                                          <Spinner fx:id="spinnerShirtNo" layoutX="115.0" layoutY="100.0" />
                                        </children></AnchorPane>
                               </content>
                             </Tab>
@@ -53,10 +54,10 @@
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <Label layoutX="76.0" layoutY="56.0" text="Player" />
-                                          <ChoiceBox layoutX="159.0" layoutY="52.0" prefWidth="150.0" />
-                                          <Button layoutX="355.0" layoutY="209.0" mnemonicParsing="false" text="Change Position" />
+                                          <ChoiceBox fx:id="choiceBoxPosition" layoutX="159.0" layoutY="52.0" prefWidth="150.0" />
+                                          <Button fx:id="savePosition" layoutX="355.0" layoutY="209.0" mnemonicParsing="false" text="Change Position" />
                                           <Label layoutX="80.0" layoutY="107.0" text="Position" />
-                                          <TextField layoutX="160.0" layoutY="103.0" promptText="new position" />
+                                          <TextField fx:id="textFieldPosition" layoutX="160.0" layoutY="103.0" promptText="new position" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
@@ -68,12 +69,12 @@
                                           <Label layoutX="28.0" layoutY="142.0" text="Birthday:" />
                                           <Label layoutX="29.0" layoutY="197.0" text="Position:" />
                                           <Label layoutX="25.0" layoutY="240.0" text="Shirt number:" />
-                                          <TextField layoutX="120.0" layoutY="26.0" prefHeight="26.0" prefWidth="180.0" promptText="First and Last name" />
-                                          <TextField layoutX="120.0" layoutY="184.0" prefHeight="26.0" prefWidth="180.0" promptText="Position" />
-                                          <Button layoutX="482.0" layoutY="284.0" mnemonicParsing="false" text="Create Player" />
-                                          <DatePicker layoutX="120.0" layoutY="138.0" prefHeight="26.0" prefWidth="180.0" />
-                                          <Spinner layoutX="120.0" layoutY="236.0" prefHeight="26.0" prefWidth="180.0" />
-                                          <TextField layoutX="120.0" layoutY="91.0" prefHeight="26.0" prefWidth="174.0" />
+                                          <TextField fx:id="createPlayerFirstName" layoutX="120.0" layoutY="26.0" prefHeight="26.0" prefWidth="180.0" promptText="First Name" />
+                                          <TextField fx:id="createPlayerPosition" layoutX="120.0" layoutY="192.0" prefHeight="26.0" prefWidth="180.0" promptText="Position" />
+                                          <Button fx:id="createPlayer" layoutX="482.0" layoutY="284.0" mnemonicParsing="false" text="Create Player" />
+                                          <DatePicker fx:id="createPlayerDate" layoutX="120.0" layoutY="138.0" prefHeight="26.0" prefWidth="180.0" />
+                                          <Spinner fx:id="createPlayerShirtNumber" layoutX="120.0" layoutY="236.0" prefHeight="26.0" prefWidth="180.0" />
+                                          <TextField fx:id="createPlayerLastName" layoutX="120.0" layoutY="91.0" prefHeight="26.0" prefWidth="174.0" promptText="Last Name" />
                                           <Label layoutX="25.0" layoutY="96.0" text="LastName" />
                                        </children></AnchorPane>
                                 </content>
@@ -94,20 +95,20 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextArea layoutY="1.0" prefHeight="361.0" prefWidth="622.0" />
-                                          <Button layoutX="277.0" layoutY="290.0" mnemonicParsing="false" text="Update" />
+                                          <TextArea fx:id="upcomingMatchesOpponents" layoutX="32.0" layoutY="72.0" prefHeight="280.0" prefWidth="126.0" />
+                                          <TextArea fx:id="upcomingMatchesDates" layoutX="197.0" layoutY="72.0" prefHeight="260.0" prefWidth="114.0" />
+                                          <TextArea fx:id="upcomingMatchesTimes" layoutX="361.0" layoutY="72.0" prefHeight="258.0" prefWidth="119.0" />
+                                          <Label layoutX="35.0" layoutY="48.0" text="Opponents" />
+                                          <Label layoutX="206.0" layoutY="48.0" text="Date" />
+                                          <Label layoutX="372.0" layoutY="48.0" text="Time" />
+                                          <Button fx:id="upcomingMatchesUpdate" layoutX="518.0" layoutY="170.0" mnemonicParsing="false" text="Update" />
                                        </children>
                                     </AnchorPane>
                               </content>
                             </Tab>
                               <Tab text="Previous matches">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <TextArea layoutX="3.0" layoutY="1.0" prefHeight="367.0" prefWidth="610.0" />
-                                          <Button layoutX="270.0" layoutY="291.0" mnemonicParsing="false" text="Update" />
-                                       </children>
-                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                 </content>
                               </Tab>
                             <Tab text="Create match">
@@ -170,7 +171,7 @@
                                                             <TextField layoutX="21.0" layoutY="109.0" />
                                                             <TextField layoutX="21.0" layoutY="134.0" />
                                                             <TextArea layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" />
-                                                            <TextArea layoutX="433.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="List of players" />
+                                                            <TextArea layoutX="433.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Expected Return Date" />
                                                             <TextArea layoutX="267.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Injured Date" />
                                                             <Label layoutX="267.0" layoutY="25.0" text="Injured Date" />
                                                          </children></AnchorPane>

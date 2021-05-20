@@ -7,6 +7,7 @@ public class Controller
   @FXML private Button savePlayer;
   @FXML private Button savePosition;
   @FXML private Button createPlayer;
+  @FXML private Button changeShirtNumber;
   @FXML private Button createMatch;
   @FXML private Button upcomingMatchesUpdate;
   @FXML private Button previousMatchesUpdate;
@@ -26,7 +27,9 @@ public class Controller
   @FXML private TextField createPlayerPosition;
   @FXML private Spinner createPlayerShirtNumber;
   @FXML private DatePicker createPlayerDate;
-  @FXML private TextArea upcomingMatchesTextArea;
+  @FXML private TextArea upcomingMatchesOpponents;
+  @FXML private TextArea upcomingMatchesDates;
+  @FXML private TextArea upcomingMatchesTimes;
   @FXML private TextArea previousMatchesTextArea;
   @FXML private DatePicker createMatchDate;
   @FXML private TextField createMatchOpponent;
@@ -37,5 +40,13 @@ public class Controller
   @FXML private RadioButton createMatchFriendly;
   @FXML private Spinner createMatchHour;
   @FXML private Spinner createMatchMinute;
+  @FXML private TextArea allInjuryName;
+  @FXML private TextArea allInjuryInjuredDate;
+  @FXML private TextArea allInjuryExpectedReturnDate;
+  @FXML private DatePicker addInjuryInjuryDate;
+  @FXML private DatePicker addInjuryExpectedReturnDate;
+  @FXML private ChoiceBox addInjuryChoosePlayer;
+  @FXML private ChoiceBox removeInjuryChoosePlayer;
+
 
 }
