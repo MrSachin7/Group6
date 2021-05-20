@@ -12,7 +12,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="426.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <TabPane layoutX="-1.0" prefHeight="386.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
@@ -30,12 +29,22 @@
                             </Tab>
                             <Tab text="Change shirt number">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ChoiceBox layoutX="115.0" layoutY="36.0" prefWidth="150.0" />
+                                          <TextField layoutX="116.0" layoutY="100.0" />
+                                          <Label layoutX="55.0" layoutY="40.0" text="Player" />
+                                          <Label layoutX="37.0" layoutY="104.0" text="ShirtNumber" />
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
                               <Tab text="Change position">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="56.0" text="Label" />
+                                          <ChoiceBox layoutX="159.0" layoutY="52.0" prefWidth="150.0" />
+                                       </children></AnchorPane>
                                 </content>
                               </Tab>
                               <Tab text="Create Player">
@@ -201,6 +210,5 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>
