@@ -24,7 +24,13 @@
                           <tabs>
                             <Tab text="All players">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="21.0" layoutY="25.0" text="Names" />
+                                          <TextArea layoutX="14.0" layoutY="42.0" prefHeight="277.0" prefWidth="242.0" promptText="Players names" />
+                                          <Label layoutX="351.0" layoutY="25.0" text="Position" />
+                                          <TextArea layoutX="324.0" layoutY="42.0" prefHeight="278.0" prefWidth="137.0" promptText="position" />
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
                             <Tab text="Change shirt number">
@@ -32,9 +38,10 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <ChoiceBox layoutX="115.0" layoutY="36.0" prefWidth="150.0" />
-                                          <TextField layoutX="116.0" layoutY="100.0" />
+                                          <TextField layoutX="116.0" layoutY="100.0" promptText="new number" />
                                           <Label layoutX="55.0" layoutY="40.0" text="Player" />
                                           <Label layoutX="37.0" layoutY="104.0" text="ShirtNumber" />
+                                          <Button layoutX="291.0" layoutY="195.0" mnemonicParsing="false" text="Save" />
                                        </children></AnchorPane>
                               </content>
                             </Tab>
@@ -42,14 +49,28 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="76.0" layoutY="56.0" text="Label" />
+                                          <Label layoutX="76.0" layoutY="56.0" text="Player" />
                                           <ChoiceBox layoutX="159.0" layoutY="52.0" prefWidth="150.0" />
+                                          <Button layoutX="355.0" layoutY="209.0" mnemonicParsing="false" text="Save" />
+                                          <Label layoutX="80.0" layoutY="107.0" text="Position" />
+                                          <TextField layoutX="160.0" layoutY="103.0" promptText="new position" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
                               <Tab text="Create Player">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="25.0" layoutY="31.0" text="Name:" />
+                                          <Label layoutX="25.0" layoutY="90.0" text="Birthday:" />
+                                          <Label layoutX="25.0" layoutY="148.0" text="Position:" />
+                                          <Label layoutX="25.0" layoutY="207.0" text="Shirt number:" />
+                                          <TextField layoutX="129.0" layoutY="27.0" promptText="First and Last name" />
+                                          <TextField layoutX="129.0" layoutY="95.0" promptText="dd/mm/yy" />
+                                          <TextField layoutX="129.0" layoutY="144.0" promptText="forward" />
+                                          <TextField layoutX="129.0" layoutY="212.0" promptText="number" />
+                                          <Button layoutX="482.0" layoutY="284.0" mnemonicParsing="false" text="Save" />
+                                       </children></AnchorPane>
                                 </content>
                               </Tab>
                           </tabs>
@@ -89,6 +110,15 @@
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <TextArea layoutY="8.0" prefHeight="350.0" prefWidth="622.0" />
+                                          <Label layoutX="25.0" layoutY="23.0" text="Date:" />
+                                          <Label layoutX="25.0" layoutY="73.0" text="Time:" />
+                                          <Label layoutX="25.0" layoutY="129.0" text="Opponent:" />
+                                          <Label layoutX="25.0" layoutY="183.0" text="Venue:" />
+                                          <TextField layoutX="129.0" layoutY="19.0" />
+                                          <TextField layoutX="129.0" layoutY="69.0" />
+                                          <TextField layoutX="129.0" layoutY="125.0" />
+                                          <TextField layoutX="129.0" layoutY="179.0" />
+                                          <Button layoutX="549.0" layoutY="277.0" mnemonicParsing="false" text="Edit" />
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -98,6 +128,17 @@
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <TextArea prefHeight="362.0" prefWidth="622.0" />
+                                          <Label layoutX="22.0" layoutY="24.0" text="Date:" />
+                                          <Label layoutX="22.0" layoutY="83.0" text="Time:" />
+                                          <Label layoutX="22.0" layoutY="144.0" text="Opponent" />
+                                          <Label layoutX="22.0" layoutY="212.0" text="Venue:" />
+                                          <Label layoutX="22.0" layoutY="280.0" text="Result" />
+                                          <TextField layoutX="126.0" layoutY="20.0" />
+                                          <TextField layoutX="126.0" layoutY="79.0" />
+                                          <TextField layoutX="126.0" layoutY="140.0" />
+                                          <TextField layoutX="126.0" layoutY="208.0" />
+                                          <TextField layoutX="126.0" layoutY="276.0" promptText="Update after the game" />
+                                          <Button layoutX="539.0" layoutY="276.0" mnemonicParsing="false" text="Update" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -122,7 +163,16 @@
                                             <tabs>
                                               <Tab text="All injuries">
                                                 <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="25.0" text="Names:" />
+                                                            <Label layoutX="364.0" layoutY="25.0" text="Return date:" />
+                                                            <TextField layoutX="21.0" layoutY="84.0" />
+                                                            <TextField layoutX="21.0" layoutY="109.0" />
+                                                            <TextField layoutX="21.0" layoutY="134.0" />
+                                                            <TextArea layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" />
+                                                            <TextArea layoutX="364.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" />
+                                                         </children></AnchorPane>
                                                 </content>
                                               </Tab>
                                               <Tab text="Add Injury">
@@ -133,8 +183,8 @@
                                                             <Label layoutX="14.0" layoutY="14.0" text="Injury Date" />
                                                             <Label layoutX="14.0" layoutY="53.0" text="Excepted Return Date" />
                                                             <DatePicker layoutX="178.0" layoutY="49.0" />
-                                                            <Button layoutX="240.0" layoutY="189.0" mnemonicParsing="false" text="Add" />
-                                                            <ChoiceBox layoutX="414.0" layoutY="36.0" prefWidth="150.0" />
+                                                            <Button layoutX="558.0" layoutY="192.0" mnemonicParsing="false" text="Add" />
+                                                            <ChoiceBox layoutX="414.0" layoutY="49.0" prefWidth="150.0" />
                                                             <Label layoutX="429.0" layoutY="14.0" text="Choose player:" />
                                                          </children>
                                                       </AnchorPane>
@@ -168,6 +218,10 @@
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
                                                             <TextArea prefHeight="334.0" prefWidth="630.0" />
+                                                            <TextArea layoutX="21.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" />
+                                                            <TextArea layoutX="400.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" />
+                                                            <Label layoutX="21.0" layoutY="42.0" text="Names" />
+                                                            <Label layoutX="400.0" layoutY="42.0" text="Return date" />
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
@@ -176,7 +230,7 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <ChoiceBox layoutX="158.0" layoutY="28.0" prefWidth="150.0" />
+                                                            <ChoiceBox layoutX="159.0" layoutY="28.0" prefWidth="150.0" />
                                                             <Label layoutX="26.0" layoutY="32.0" text="Choose Player" />
                                                             <Button layoutX="233.0" layoutY="143.0" mnemonicParsing="false" text="Button" />
                                                             <Label layoutX="26.0" layoutY="73.0" text="Number of Games" />
