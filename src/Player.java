@@ -128,7 +128,7 @@ public class Player
 
   public String toString()
   {
-    return "Name :" + name + "Date of Birth : " + birthDate + "\n Nationality :"
-        + nationality + "\n Position" + position;
+    return "Name :" + name + "                     Date of Birth : " + birthDate + "\n Nationality :"
+        + nationality + "                           Position :" + position;
   }
 }

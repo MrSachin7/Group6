@@ -6,7 +6,7 @@ public class PlayerList
 
   public PlayerList()
   {
-    playerList = new ArrayList<>();
+    playerList = new ArrayList<Player>();
   }
 
   public void addPlayer(Player player)
@@ -21,25 +21,24 @@ public class PlayerList
       playerList.add(players[i]);
     }
   }
-
   public void setShirtNumber(Player player, int shirtNumber)
   {
     boolean isShirtNumberOccupied = false;
-    for (int i=0; i<playerList.size();i++)
+    for (int i = 0; i < playerList.size(); i++)
     {
-      if (playerList.get(i).getShirtNumber()==shirtNumber)
+      if (playerList.get(i).getShirtNumber() == shirtNumber)
       {
-        isShirtNumberOccupied=true;
+        isShirtNumberOccupied = true;
         break;
       }
     }
-    if (isShirtNumberOccupied==true)
+    if (isShirtNumberOccupied == true)
     {
       throw new IllegalShirtNumberException();
     }
     else
     {
-      for (int i =0; i<playerList.size(); i++)
+      for (int i = 0; i < playerList.size(); i++)
       {
         if (playerList.get(i).equals(player))
         {
@@ -48,12 +47,56 @@ public class PlayerList
       }
     }
   }
+  public Player searchPlayer(String name)
+  {
+    Player temp = null;
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      if (playerList.get(i).getName().equals(name))
+      {
+        temp= playerList.get(i);
+      }
+    }
+    return temp;
+  }
+
+  public Player searchPlayer(Player player)
+  {
+   Player temp =null;
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      if (playerList.get(i).equals(player))
+      {
+        temp = playerList.get(i);
+      }
+    }
+    return temp;
+  }
+
+  public Player searchPlayer(int shirtNumber)
+  {
+    Player temp = null;
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      if (playerList.get(i).getShirtNumber() == shirtNumber)
+      {
+        temp = playerList.get(i);
+      }
+    }
+    return temp;
+  }
+
+  public ArrayList<Player> getPlayerList()
+  {
+    return playerList;
+  }
+
   public String toString()
   {
     String temp = "Players :+\n";
-    for (int i=0;i<playerList.size();i++)
+    for (int i = 0; i < playerList.size(); i++)
     {
-      temp+=playerList.get(i)+"\n";
+      temp += playerList.get(i) + "\n";
     }
     return temp;
   }
