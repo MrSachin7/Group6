@@ -12,7 +12,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="426.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <TabPane layoutX="-1.0" prefHeight="386.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
@@ -25,17 +24,36 @@
                           <tabs>
                             <Tab text="All players">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button layoutX="82.0" layoutY="163.0" mnemonicParsing="false" text="Button" />
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
                             <Tab text="Change shirt number">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ChoiceBox layoutX="111.0" layoutY="10.0" prefHeight="25.0" prefWidth="147.0" />
+                                          <Label layoutX="14.0" layoutY="14.0" text="Player" />
+                                          <Button layoutX="310.0" layoutY="211.0" mnemonicParsing="false" onAction="#changeShirtNumber" text="Edit" />
+                                          <ChoiceBox layoutX="109.0" layoutY="77.0" prefWidth="150.0" />
+                                          <Label layoutX="16.0" layoutY="81.0" text="New number" />
+                                          <Button layoutX="375.0" layoutY="211.0" mnemonicParsing="false" onAction="#changeShirtNumber" text="Save" />
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
                               <Tab text="Change position">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" text="Player" />
+                                          <ChoiceBox layoutX="115.0" layoutY="10.0" prefWidth="150.0" />
+                                          <Label layoutX="14.0" layoutY="87.0" text="New position" />
+                                          <ChoiceBox layoutX="115.0" layoutY="83.0" prefWidth="150.0" />
+                                          <Button layoutX="265.0" layoutY="221.0" mnemonicParsing="false" text="Edit" />
+                                          <Button layoutX="349.0" layoutY="221.0" mnemonicParsing="false" text="Save" />
+                                       </children></AnchorPane>
                                 </content>
                               </Tab>
                               <Tab text="Create Player">
@@ -64,8 +82,8 @@
                                           <Label layoutX="2.0" layoutY="91.0" text="Opponent Team" />
                                           <RadioButton layoutX="6.0" layoutY="165.0" mnemonicParsing="false" text="Home" />
                                           <RadioButton layoutX="93.0" layoutY="165.0" mnemonicParsing="false" text="Away" />
-                                          <TextField layoutX="118.0" layoutY="87.0" />
-                                          <DatePicker layoutX="101.0" layoutY="14.0" />
+                                          <TextField layoutX="118.0" layoutY="87.0" promptText="team" />
+                                          <DatePicker layoutX="101.0" layoutY="14.0" promptText="choose a date" />
                                           <Spinner layoutX="118.0" layoutY="47.0" prefHeight="26.0" prefWidth="70.0" />
                                           <Spinner layoutX="257.0" layoutY="47.0" prefHeight="26.0" prefWidth="67.0" />
                                           <Label layoutX="74.0" layoutY="51.0" text="Hour:" />
@@ -120,10 +138,10 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <DatePicker layoutX="177.0" layoutY="10.0" />
+                                                            <DatePicker layoutX="177.0" layoutY="10.0" promptText="select a date" />
                                                             <Label layoutX="14.0" layoutY="14.0" text="Injury Date" />
                                                             <Label layoutX="14.0" layoutY="53.0" text="Excepted Return Date" />
-                                                            <DatePicker layoutX="178.0" layoutY="49.0" />
+                                                            <DatePicker layoutX="178.0" layoutY="49.0" promptText="select a date" />
                                                             <Button layoutX="240.0" layoutY="189.0" mnemonicParsing="false" text="Add" />
                                                             <ChoiceBox layoutX="414.0" layoutY="36.0" prefWidth="150.0" />
                                                             <Label layoutX="429.0" layoutY="14.0" text="Choose player:" />
@@ -201,6 +219,5 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>
