@@ -12,5 +12,9 @@ public class MatchList
   {
     matchList.add(match);
   }
+  public Match get(int index)
+  {
+    return matchList.get(index);
+  }
 
 }

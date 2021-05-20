@@ -9,5 +9,6 @@ public class Test
     CupMatch match1 = new CupMatch("Levamte", date1, time, true);
     MatchList matchList = new MatchList();
     matchList.addMatch(match1);
+    System.out.println(matchList.get(0).matchType());
   }
 }

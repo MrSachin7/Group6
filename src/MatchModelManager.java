@@ -1,21 +1,24 @@
+import com.sun.glass.ui.Pixels;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MatchModelManager
 {
   private String fileName;
+
   public MatchModelManager(String fileName)
   {
-    this.fileName=fileName;
+    this.fileName = fileName;
   }
 
   public MatchList getAllMatches()
   {
-    MatchList allStudents = new MatchList();
+    MatchList allMatches = new MatchList();
 
     try
     {
-      allStudents = (MatchList) MyFileHandler.readFromBinaryFile(fileName);
+      allMatches = (MatchList) MyFileHandler.readFromBinaryFile(fileName);
     }
     catch (FileNotFoundException e)
     {
@@ -29,7 +32,30 @@ public class MatchModelManager
     {
       System.out.println("Class Not Found");
     }
-    return allStudents;
+    return allMatches;
   }
 
+  public void saveMatches(MatchList matches)
+  {
+    try
+    {
+      MyFileHandler.writeToBinaryFile(fileName, matches);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
+  }
+
+  public void addMatch(Match match)
+  {
+    MatchList allMatches = getAllMatches();
+    allMatches.addMatch(match);
+
+    saveMatches(allMatches);
+  }
 }
