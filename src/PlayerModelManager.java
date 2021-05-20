@@ -81,4 +81,20 @@ public class PlayerModelManager
     savePlayers(allPlayers);
   }
 
+  public void addInjury(String firstName, String lastName, Injury injury)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    allPlayers.searchPlayerByName(firstName,lastName).setInjury(injury);
+
+    savePlayers(allPlayers);
+  }
+
+  public void removeInjury(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    allPlayers.searchPlayerByName(firstName,lastName).removeInjury();
+
+    savePlayers(allPlayers);
+  }
+
 }
