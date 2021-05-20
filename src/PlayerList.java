@@ -47,12 +47,12 @@ public class PlayerList
       }
     }
   }
-  public Player searchPlayer(String name)
+  public Player searchPlayerByName(String firstName, String lastName)
   {
     Player temp = null;
     for (int i = 0; i < playerList.size(); i++)
     {
-      if (playerList.get(i).getName().equals(name))
+      if ((playerList.get(i).getFirstName().equals(firstName))&& playerList.get(i).getLastName().equals(lastName))
       {
         temp= playerList.get(i);
       }

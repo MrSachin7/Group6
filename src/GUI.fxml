@@ -44,12 +44,18 @@
                                        <children>
                                           <Label layoutX="76.0" layoutY="56.0" text="Label" />
                                           <ChoiceBox layoutX="159.0" layoutY="52.0" prefWidth="150.0" />
+                                          <TextField layoutX="160.0" layoutY="119.0" />
+                                          <Label layoutX="76.0" layoutY="123.0" text="Label" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
                               <Tab text="Create Player">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="66.0" layoutY="48.0" text="Name" />
+                                          <TextField layoutX="125.0" layoutY="44.0" />
+                                       </children></AnchorPane>
                                 </content>
                               </Tab>
                           </tabs>
