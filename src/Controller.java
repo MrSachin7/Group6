@@ -4,4 +4,8 @@ public void changeShirtNumber()
 {
 
 }
+public void changePosition()
+{
+
+}
 }
