@@ -12,12 +12,14 @@ public class Test
     Player sachin = new Player("Sachin ", "Baral", date1, "ads", "da");
     PlayerList players = new PlayerList();
     players.addPlayer(sachin);
+    players.setShirtNumber(sachin,7);
     ModelManager modelManager = new ModelManager("Matches.bin","Players.bin");
     MyFileHandler.writeToBinaryFile("Players.bin",players);
 
    MatchList matches= new MatchList();
    matches.addMatch(match1);
-   MyFileHandler.writeToBinaryFile("Matches.bin",matches);
+modelManager.changePosition("Sachin","Baral","Forward");
+    System.out.println(sachin.getPosition());
 
   }
 }

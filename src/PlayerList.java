@@ -48,48 +48,54 @@ public class PlayerList implements Serializable
       }
     }
   }
+
+
   public  void add(Player player)
   {
     playerList.add(player);
   }
-  public Player searchPlayerByName(String firstName, String lastName)
+  public void set(Player player,int index)
   {
-    Player temp = null;
-    for (int i = 0; i < playerList.size(); i++)
-    {
-      if ((playerList.get(i).getFirstName().equals(firstName))&& playerList.get(i).getLastName().equals(lastName))
-      {
-        temp= playerList.get(i);
-      }
-    }
-    return temp;
+    playerList.set(index,player);
+  }
+  public Player get(int index)
+  {
+   if (index<playerList.size())
+   {
+     return playerList.get(index);
+   }
+   else
+   {
+     return null;
+   }
   }
 
-  public Player searchPlayer(Player player)
+  public Player get(String firstName, String lastName)
   {
-   Player temp =null;
-    for (int i = 0; i < playerList.size(); i++)
+    for (int i=0; i<playerList.size();i++)
     {
-      if (playerList.get(i).equals(player))
+      Player temp =playerList.get(i);
+      if (temp.getFirstName().equals(firstName) && temp.getLastName().equals(lastName))
       {
-        temp = playerList.get(i);
+        return temp;
       }
     }
-    return temp;
+    return null;
+  }
+  public int getIndex(String firstName, String lastName)
+  {
+    for(int i = 0; i<playerList.size(); i++)
+    {
+     Player temp = playerList.get(i);
+
+      if(temp.getFirstName().equals(firstName) && temp.getLastName().equals(lastName))
+      {
+        return i;
+      }
+    }
+    return -1;
   }
 
-  public Player searchPlayer(int shirtNumber)
-  {
-    Player temp = null;
-    for (int i = 0; i < playerList.size(); i++)
-    {
-      if (playerList.get(i).getShirtNumber() == shirtNumber)
-      {
-        temp = playerList.get(i);
-      }
-    }
-    return temp;
-  }
 
   public void removePlayer(Player player)
   {
@@ -142,8 +148,5 @@ public class PlayerList implements Serializable
     return playerList.size();
   }
 
- public Player get(int index)
- {
-   return playerList.get(index);
- }
+
 }
