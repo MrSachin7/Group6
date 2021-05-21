@@ -129,7 +129,7 @@ public class PlayerList implements Serializable
     String temp = "";
     for (int i = 0; i < playerList.size(); i++)
     {
-      temp += playerList.get(i).getShirtNumber();
+      temp += playerList.get(i).getShirtNumber()+"\n";
     }
     return temp;
   }
@@ -138,7 +138,7 @@ public class PlayerList implements Serializable
     String temp = "";
     for (int i = 0; i < playerList.size(); i++)
     {
-      temp += playerList.get(i).getPosition();
+      temp += playerList.get(i).getPosition()+"\n";
     }
     return temp;
   }

@@ -3,6 +3,8 @@ import javafx.scene.control.*;
 
 import javafx.event.ActionEvent;
 
+import java.time.LocalDate;
+
 public class Controller
 {
   @FXML private Button updatePlayers;
@@ -55,16 +57,18 @@ public class Controller
   @FXML private TextField changeShirtNumberLastName;
   @FXML private TextField changePositionFirstName;
   @FXML private TextField changePositionLastName;
+  @FXML private DatePicker createPlayerDatePicker;
   private ModelManager modelManager;
 
 public void initialize()
 {
   modelManager = new ModelManager("Matches.bin", "Players.bin");
   spinnerShirtNo.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,99));
+  createPlayerShirtNumber.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,99));
 
 }
 
-  public void updatePlayersArea()
+  private void updatePlayersArea()
   {
 
     PlayerList players = modelManager.getAllPlayers();
@@ -96,43 +100,51 @@ public void initialize()
     }
   }
 
-  public void changeShirtNumber()
+  private void changeShirtNo()
   {
     String firstName = changeShirtNumberFirstName.getText();
     String lastName = changeShirtNumberLastName.getText();
-    int shirtNumber = (Integer) spinnerShirtNo.getValue();
+    int shirtNumber = (int) spinnerShirtNo.getValue();
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
     updatePlayersArea();
 
   }
 
-  public void changePosition()
+  private void changePosition()
   {
     String firstName = changePositionFirstName.getText();
     String lastName = changePositionLastName.getText();
     String position = textFieldPosition.getText();
     modelManager.changePosition(firstName, lastName, position);
-    updatePlayersArea();
     changePositionFirstName.setText("");
     changePositionLastName.setText("");
 
   }
 
-  public void createPlayer()
+  private void createPlayer()
   {
     String firstName = createPlayerFirstName.getText();
     String lastName = createPlayerLastName.getText();
     String position = createPlayerPosition.getText();
-    // cannot figure out how to get date ;
+    LocalDate temp = createPlayerDatePicker.getValue();
+    int day = temp.getDayOfMonth();
+    int month = temp.getMonthValue();
+    int year = temp.getYear();
+    Date newDate = new Date(day,month,year);
+    modelManager.addPlayer(new Player(firstName,lastName,newDate,position));
+    createPlayerFirstName.setText("");
+    createPlayerLastName.setText("");
+    createPlayerPosition.setText("");
   }
 
-  public void updateMatchesArea()
+  private void updateMatchesArea()
   {
     MatchList matches = modelManager.getAllMatches();
     upcomingMatchesOpponents.setText(matches.getAllOpponents());
     upcomingMatchesTimes.setText(matches.getAllTimes());
     upcomingMatchesDates.setText(matches.getAllDates());
   }
+
 
   public void handler(ActionEvent e)
   {
@@ -142,7 +154,7 @@ public void initialize()
     }
     if (e.getSource()==changeShirtNumber)
     {
-      changeShirtNumber();
+      changeShirtNo();
 
     }
     if (e.getSource()==savePosition)
@@ -153,6 +165,10 @@ public void initialize()
     if (e.getSource()==upcomingMatchesUpdate)
     {
       updateMatchesArea();
+    }
+    if (e.getSource()==createPlayer)
+    {
+      createPlayer();
     }
   }
 }

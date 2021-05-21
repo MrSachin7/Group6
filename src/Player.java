@@ -8,19 +8,18 @@ public class Player implements Serializable
   private Injury injury;
   private Suspension suspension;
   private String position;
-  private String nationality;
+
   private int shirtNumber;
   private boolean isAvailable;
 
-  public Player(String firstName, String lastName, Date birthDate, String position,
-      String nationality)
+  public Player(String firstName, String lastName, Date birthDate, String position)
   {
 
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthDate = birthDate;
     this.position = position;
-    this.nationality = nationality;
+
     injury = null;
     suspension = null;
   }
@@ -50,10 +49,7 @@ public class Player implements Serializable
     this.position = position;
   }
 
-  public void setNationality(String nationality)
-  {
-    this.nationality = nationality;
-  }
+
 
   public void setInjury(Injury injury)
   {
@@ -94,12 +90,6 @@ public class Player implements Serializable
   {
     return position;
   }
-
-  public String getNationality()
-  {
-    return nationality;
-  }
-
   public Suspension getSuspension()
   {
     return suspension;
@@ -130,14 +120,14 @@ public class Player implements Serializable
     else
     {
       Player temp = (Player) obj;
-      return temp.nationality.equals(nationality) && temp.firstName.equals(firstName) && temp.lastName.equals(lastName)
+      return  temp.firstName.equals(firstName) && temp.lastName.equals(lastName)
           && temp.birthDate.equals(birthDate) && temp.position.equals(position);
     }
   }
 
   public Player copy()
   {
-    return new Player(firstName, lastName, birthDate, position, nationality);
+    return new Player(firstName, lastName, birthDate, position);
   }
 
   public String toString()

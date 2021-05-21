@@ -1,8 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.Serializable;
 
-public class ModelManager implements Serializable
+
+public class ModelManager
 {
   private String matchFileName;
   private String playerFileName;
@@ -73,7 +73,6 @@ public class ModelManager implements Serializable
     try
     {
       allPlayers = (PlayerList) MyFileHandler.readFromBinaryFile(playerFileName);
-
     }
     catch (FileNotFoundException e)
     {
@@ -124,10 +123,16 @@ public class ModelManager implements Serializable
       int shirtNumber)
   {
     PlayerList allPlayers = getAllPlayers();
-    allPlayers.searchPlayerByName(firstName, lastName)
-        .setShirtNumber(shirtNumber);
-
+    for (int i=0; i< allPlayers.size();i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      {
+        player.setShirtNumber(shirtNumber);
+      }
+    }
     savePlayers(allPlayers);
+
   }
 
   public void changePosition(String firstName, String lastName, String position)
@@ -147,16 +152,28 @@ public class ModelManager implements Serializable
   public void addInjury(String firstName, String lastName, Injury injury)
   {
     PlayerList allPlayers = getAllPlayers();
-    allPlayers.searchPlayerByName(firstName,lastName).setInjury(injury);
-
+    for (int i=0; i< allPlayers.size();i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      {
+        player.setInjury(injury);
+      }
+    }
     savePlayers(allPlayers);
   }
 
   public void removeInjury(String firstName, String lastName)
   {
     PlayerList allPlayers = getAllPlayers();
-    allPlayers.searchPlayerByName(firstName,lastName).removeInjury();
-
+    for (int i=0; i< allPlayers.size();i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      {
+        player.setInjury(null);
+      }
+    }
     savePlayers(allPlayers);
   }
 
