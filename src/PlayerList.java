@@ -113,4 +113,32 @@ public class PlayerList
     }
     return temp;
   }
+  public String getShirtNumbers()
+  {
+    String temp = "Players :\n";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i).getShirtNumber();
+    }
+    return temp;
+  }
+  public String getShirtPositions()
+  {
+    String temp = "Players :\n";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i).getPosition();
+    }
+    return temp;
+  }
+
+  public int size()
+  {
+    return playerList.size();
+  }
+
+ public Player get(int index)
+ {
+   return playerList.get(index);
+ }
 }

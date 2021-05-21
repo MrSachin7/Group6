@@ -12,12 +12,12 @@ public class Player implements Serializable
   private int shirtNumber;
   private boolean isAvailable;
 
-  public Player(String firstName,String lastName, Date birthDate, String position,
+  public Player(String firstName, String lastName, Date birthDate, String position,
       String nationality)
   {
 
     this.firstName = firstName;
-    this.lastName=lastName;
+    this.lastName = lastName;
     this.birthDate = birthDate.copy();
     this.position = position;
     this.nationality = nationality;
@@ -105,16 +105,15 @@ public class Player implements Serializable
     return suspension.copy();
   }
 
-
   public void removeInjury()
   {
-    injury=null;
+    injury = null;
   }
 
   public boolean isAvailable(Player player)
   {
     if (player.getInjury() == null
-        || player.getSuspension().getNumberOfGamesSuspended()>=1)
+        || player.getSuspension().getNumberOfGamesSuspended() >= 1)
     {
       return false;
     }
@@ -138,12 +137,11 @@ public class Player implements Serializable
 
   public Player copy()
   {
-    return new Player(firstName,lastName, birthDate, position, nationality);
+    return new Player(firstName, lastName, birthDate, position, nationality);
   }
 
   public String toString()
   {
-    return "Name :" + firstName+" "+lastName + "                     Date of Birth : " + birthDate + "\n Nationality :"
-        + nationality + "                           Position :" + position;
+    return "Name :" + firstName + " " + lastName;
   }
 }
