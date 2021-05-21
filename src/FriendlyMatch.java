@@ -1,4 +1,6 @@
-public class FriendlyMatch extends Match
+import java.io.Serializable;
+
+public class FriendlyMatch extends Match implements Serializable
 {
   public FriendlyMatch(String opponentTeam, Date matchDate, Time startTime,
       boolean isHomeMatch, Formation formation)

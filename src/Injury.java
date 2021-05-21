@@ -1,4 +1,6 @@
-public class Injury
+import java.io.Serializable;
+
+public class Injury implements Serializable
 {
   private Date injuryDate;
   private Date expectedReturnDate;

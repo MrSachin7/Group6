@@ -1,4 +1,6 @@
-public class Suspension
+import java.io.Serializable;
+
+public class Suspension implements Serializable
 {
   private int numberOfGamesSuspended;
   private int numberOfYellowCards;

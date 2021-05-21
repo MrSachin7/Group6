@@ -1,4 +1,6 @@
-public class LeagueMatch extends Match
+import java.io.Serializable;
+
+public class LeagueMatch extends Match implements Serializable
 {
 
   public LeagueMatch(String opponentTeam, Date matchDate, Time startTime,

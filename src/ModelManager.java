@@ -1,7 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class ModelManager
+public class ModelManager implements Serializable
 {
   private String matchFileName;
   private String playerFileName;

@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Formation
+public class Formation implements Serializable
 {
   private ArrayList<Player> startingPlayers;
   private ArrayList<Player> substitutePlayers;

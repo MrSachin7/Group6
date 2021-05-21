@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.text.Normalizer;
 //try
-public abstract class Match
+public abstract class Match implements Serializable
 {
   private String opponentTeam;
   private Date matchDate;

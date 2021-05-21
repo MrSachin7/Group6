@@ -1,4 +1,7 @@
-public class InvalidShirtNumberException extends RuntimeException
+import java.io.Serializable;
+
+public class InvalidShirtNumberException extends RuntimeException implements
+    Serializable
 {
   public InvalidShirtNumberException()
   {

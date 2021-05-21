@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.GregorianCalendar;
 
-public class Date
+public class Date implements Serializable
 {
 
     private int day;

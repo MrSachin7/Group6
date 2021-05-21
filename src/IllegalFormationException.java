@@ -1,4 +1,7 @@
-public class IllegalFormationException extends RuntimeException
+import java.io.Serializable;
+
+public class IllegalFormationException extends RuntimeException implements
+    Serializable
 {
   public IllegalFormationException()
   {

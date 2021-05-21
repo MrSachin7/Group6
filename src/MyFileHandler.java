@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MyFileHandler
+public class MyFileHandler implements Serializable
 {
   // Writes the given string to a file with the given file name
   public static void writeToTextFile(String fileName, String str) throws FileNotFoundException

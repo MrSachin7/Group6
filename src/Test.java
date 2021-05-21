@@ -1,7 +1,9 @@
+import java.io.IOException;
+
 public class Test
 {
 
-  public static void main(String[] args)
+  public static void main(String[] args) throws IOException
   {
     Time time = new Time(4, 5, 2);
 
@@ -10,7 +12,10 @@ public class Test
     Player sachin = new Player("SAchin ", "dad", date1, "ads", "da");
     PlayerList playerList = new PlayerList();
     playerList.addPlayer(sachin);
-    playerList.removePlayer(sachin);
-    System.out.println(playerList);
+    ModelManager modelManager = new ModelManager("aabc","aabc.bin");
+    MyFileHandler.writeToBinaryFile("aabc.bin",playerList);
+    PlayerList players = modelManager.getAllPlayers();
+    System.out.println(players);
+
   }
 }

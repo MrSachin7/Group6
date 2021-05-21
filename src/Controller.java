@@ -1,7 +1,7 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 
 public class Controller
 {
@@ -53,12 +53,16 @@ public class Controller
   @FXML private TextField changeShirtNumberLastName;
 
   private ModelManager modelManager;
-  SpinnerValueFactory<Integer> chooseShirtNumber = new SpinnerValueFactory.IntegerSpinnerValueFactory(
-      0, 100, 7);
+
+public ModelManager getModelManager()
+{
+  modelManager = new ModelManager("aabc","aabc.bin");
+  return modelManager;
+}
 
   public void updatePlayersArea()
   {
-    PlayerList players = modelManager.getAllPlayers();
+    PlayerList players = getModelManager().getAllPlayers();
     allPlayersName.setText(players.toString());
     allPlayersShirtNumber.setText(players.getShirtNumbers());
     allPlayersPosition.setText(players.getShirtNumbers());

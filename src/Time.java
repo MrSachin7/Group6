@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class Time
+public class Time implements Serializable
 {
   private int hour;
   private int minute;

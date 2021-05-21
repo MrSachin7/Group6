@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PlayerList
+public class PlayerList implements Serializable
 {
   private ArrayList<Player> playerList;
 
@@ -46,6 +47,10 @@ public class PlayerList
         }
       }
     }
+  }
+  public  void add(Player player)
+  {
+    playerList.add(player);
   }
   public Player searchPlayerByName(String firstName, String lastName)
   {

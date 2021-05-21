@@ -1,7 +1,8 @@
 import java.awt.event.MouseAdapter;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MatchList
+public class MatchList implements Serializable
 {
   private ArrayList<Match> matchList;
 

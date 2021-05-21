@@ -1,4 +1,7 @@
-public class IllegalDateException extends RuntimeException
+import java.io.Serializable;
+
+public class IllegalDateException extends RuntimeException implements
+    Serializable
 {
   public IllegalDateException()
   {

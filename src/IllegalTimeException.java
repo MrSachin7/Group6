@@ -1,4 +1,7 @@
-public class IllegalTimeException extends RuntimeException
+import java.io.Serializable;
+
+public class IllegalTimeException extends RuntimeException implements
+    Serializable
 {
   public IllegalTimeException()
   {

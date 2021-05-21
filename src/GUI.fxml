@@ -42,11 +42,15 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="55.0" layoutY="40.0" text="Player" />
-                                          <Label layoutX="37.0" layoutY="104.0" text="ShirtNumber" />
+                                          <Label layoutX="387.0" layoutY="76.0" text="Player" />
+                                          <Label layoutX="31.0" layoutY="143.0" text="ShirtNumber" />
                                           <Button fx:id="changeShirtNumber" layoutX="291.0" layoutY="195.0" mnemonicParsing="false" text="Change ShirtNumber" />
-                                          <Spinner fx:id="spinnerShirtNo" layoutX="115.0" layoutY="100.0" />
-                                          <ComboBox fx:id="comboBoxShirtNo" layoutX="115.0" layoutY="36.0" prefWidth="150.0" />
+                                          <Spinner fx:id="spinnerShirtNo" layoutX="111.0" layoutY="139.0" />
+                                          <ComboBox fx:id="comboBoxShirtNo" layoutX="378.0" layoutY="113.0" prefHeight="0.0" prefWidth="150.0" />
+                                          <TextField fx:id="changeShirtNumberFirstName" layoutX="99.0" layoutY="32.0" />
+                                          <Label layoutX="31.0" layoutY="36.0" text="First Name" />
+                                          <Label layoutX="32.0" layoutY="85.0" text="Last Name" />
+                                          <TextField fx:id="changeShirtNumberLastName" layoutX="100.0" layoutY="81.0" />
                                        </children></AnchorPane>
                               </content>
                             </Tab>
