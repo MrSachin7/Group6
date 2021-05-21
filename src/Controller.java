@@ -57,35 +57,20 @@ public class Controller
   @FXML private TextField changePositionLastName;
   private ModelManager modelManager;
 
-  public void makingThingsWork()
-  {
-    spinnerShirtNo.setValueFactory(new SpinnerValueFactory()
-    {
-      @Override public void decrement(int i)
-      {
-        i = i - 1;
-      }
+public void initialize()
+{
+  modelManager = new ModelManager("Matches.bin", "Players.bin");
+  spinnerShirtNo.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,99));
 
-      @Override public void increment(int i)
-      {
-        i = i + 1;
-      }
-    });
-  }
-
-  public ModelManager getModelManager()
-  {
-    modelManager = new ModelManager("aabc", "aabc.bin");
-    return modelManager;
-  }
+}
 
   public void updatePlayersArea()
   {
-    makingThingsWork();
-    PlayerList players = getModelManager().getAllPlayers();
+
+    PlayerList players = modelManager.getAllPlayers();
     allPlayersName.setText(players.toString());
     allPlayersShirtNumber.setText(players.getShirtNumbers());
-    allPlayersPosition.setText(players.getShirtNumbers());
+    allPlayersPosition.setText(players.getAllPositions());
 
   }
 
@@ -117,7 +102,8 @@ public class Controller
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (Integer) spinnerShirtNo.getValue();
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
-    updateAllPlayersBox();
+    updatePlayersArea();
+
   }
 
   public void changePosition()
@@ -126,12 +112,26 @@ public class Controller
     String lastName = changePositionLastName.getText();
     String position = textFieldPosition.getText();
     modelManager.changePosition(firstName, lastName, position);
+    updatePlayersArea();
+    changePositionFirstName.setText("");
+    changePositionLastName.setText("");
+
   }
+
   public void createPlayer()
   {
-    String firstName =createPlayerFirstName.getText();
+    String firstName = createPlayerFirstName.getText();
     String lastName = createPlayerLastName.getText();
- // cannot figure out how to get date ;
+    String position = createPlayerPosition.getText();
+    // cannot figure out how to get date ;
+  }
+
+  public void updateMatchesArea()
+  {
+    MatchList matches = modelManager.getAllMatches();
+    upcomingMatchesOpponents.setText(matches.getAllOpponents());
+    upcomingMatchesTimes.setText(matches.getAllTimes());
+    upcomingMatchesDates.setText(matches.getAllDates());
   }
 
   public void handler(ActionEvent e)
@@ -139,7 +139,20 @@ public class Controller
     if (e.getSource() == updatePlayers)
     {
       updatePlayersArea();
+    }
+    if (e.getSource()==changeShirtNumber)
+    {
+      changeShirtNumber();
 
+    }
+    if (e.getSource()==savePosition)
+    {
+      changePosition();
+      updatePlayersArea();
+    }
+    if (e.getSource()==upcomingMatchesUpdate)
+    {
+      updateMatchesArea();
     }
   }
 }

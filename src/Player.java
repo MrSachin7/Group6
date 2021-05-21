@@ -18,7 +18,7 @@ public class Player implements Serializable
 
     this.firstName = firstName;
     this.lastName = lastName;
-    this.birthDate = birthDate.copy();
+    this.birthDate = birthDate;
     this.position = position;
     this.nationality = nationality;
     injury = null;
@@ -37,7 +37,7 @@ public class Player implements Serializable
 
   public void setBirthDate(Date birthDate)
   {
-    this.birthDate = birthDate.copy();
+    this.birthDate = birthDate;
   }
 
   public void setShirtNumber(int shirtNumber)
@@ -62,7 +62,7 @@ public class Player implements Serializable
 
   public void setSuspension(Suspension suspension)
   {
-    this.suspension = suspension.copy();
+    this.suspension = suspension;
   }
 
   public String getFirstName()
@@ -82,12 +82,12 @@ public class Player implements Serializable
 
   public Date getBirthDate()
   {
-    return birthDate.copy();
+    return birthDate;
   }
 
   public Injury getInjury()
   {
-    return injury.copy();
+    return injury;
   }
 
   public String getPosition()
@@ -102,7 +102,7 @@ public class Player implements Serializable
 
   public Suspension getSuspension()
   {
-    return suspension.copy();
+    return suspension;
   }
 
   public void removeInjury()

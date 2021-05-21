@@ -44,7 +44,7 @@
                                        <children>
                                           <Label layoutX="387.0" layoutY="76.0" text="Player" />
                                           <Label layoutX="31.0" layoutY="143.0" text="ShirtNumber" />
-                                          <Button fx:id="changeShirtNumber" layoutX="291.0" layoutY="195.0" mnemonicParsing="false" onAction="#handler" text="Change ShirtNumber" />
+                                          <Button fx:id="changeShirtNumber" layoutX="291.0" layoutY="201.0" mnemonicParsing="false" onAction="#handler" text="Change ShirtNumber" />
                                           <Spinner fx:id="spinnerShirtNo" layoutX="111.0" layoutY="139.0" />
                                           <ComboBox fx:id="comboBoxShirtNo" layoutX="378.0" layoutY="113.0" prefHeight="0.0" prefWidth="150.0" />
                                           <TextField fx:id="changeShirtNumberFirstName" layoutX="99.0" layoutY="32.0" onAction="#handler" />
@@ -115,7 +115,7 @@
                                           <Label layoutX="35.0" layoutY="48.0" text="Opponents" />
                                           <Label layoutX="206.0" layoutY="48.0" text="Date" />
                                           <Label layoutX="372.0" layoutY="48.0" text="Time" />
-                                          <Button fx:id="upcomingMatchesUpdate" layoutX="518.0" layoutY="170.0" mnemonicParsing="false" text="Update" />
+                                          <Button fx:id="upcomingMatchesUpdate" layoutX="518.0" layoutY="170.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                        </children>
                                     </AnchorPane>
                               </content>

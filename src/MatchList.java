@@ -30,4 +30,36 @@ public class MatchList implements Serializable
      matchList= temp;
     }
   }
+  public String getAllOpponents()
+  {
+    String temp ="";
+    for (int i=0; i<matchList.size(); i++)
+    {
+      temp+=matchList.get(i).getOpponentTeam()+"\n";
+    }
+    return temp;
+  }
+  public String getAllTimes()
+  {
+    {
+      String temp ="";
+      for (int i=0; i<matchList.size(); i++)
+      {
+        temp+=matchList.get(i).getStartTime()+"\n";
+      }
+      return temp;
+    }
+  }
+  public String getAllDates()
+  {
+    {
+      String temp ="";
+      for (int i=0; i<matchList.size(); i++)
+      {
+        temp+=matchList.get(i).getMatchDate()+"\n";
+      }
+      return temp;
+    }
+  }
+
 }

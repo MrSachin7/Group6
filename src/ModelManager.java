@@ -133,8 +133,14 @@ public class ModelManager implements Serializable
   public void changePosition(String firstName, String lastName, String position)
   {
     PlayerList allPlayers = getAllPlayers();
-    allPlayers.searchPlayerByName(firstName, lastName).setPosition(position);
-
+   for (int i=0; i< allPlayers.size();i++)
+   {
+     Player player = allPlayers.get(i);
+     if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+     {
+       player.setPosition(position);
+     }
+   }
     savePlayers(allPlayers);
   }
 

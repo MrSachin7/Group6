@@ -8,14 +8,16 @@ public class Test
     Time time = new Time(4, 5, 2);
 
     Date date1 = new Date(25, 9, 2002);
-    CupMatch match1 = new CupMatch("Levamte", date1, time, true);
-    Player sachin = new Player("SAchin ", "dad", date1, "ads", "da");
-    PlayerList playerList = new PlayerList();
-    playerList.addPlayer(sachin);
-    ModelManager modelManager = new ModelManager("aabc","aabc.bin");
-    MyFileHandler.writeToBinaryFile("aabc.bin",playerList);
-    PlayerList players = modelManager.getAllPlayers();
-    System.out.println(players);
+    CupMatch match1 = new CupMatch("Levante", date1, time, true);
+    Player sachin = new Player("Sachin ", "Baral", date1, "ads", "da");
+    PlayerList players = new PlayerList();
+    players.addPlayer(sachin);
+    ModelManager modelManager = new ModelManager("Matches.bin","Players.bin");
+    MyFileHandler.writeToBinaryFile("Players.bin",players);
+
+   MatchList matches= new MatchList();
+   matches.addMatch(match1);
+   MyFileHandler.writeToBinaryFile("Matches.bin",matches);
 
   }
 }

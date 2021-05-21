@@ -127,9 +127,9 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
-  public String getShirtPositions()
+  public String getAllPositions()
   {
-    String temp = "Players :\n";
+    String temp = "";
     for (int i = 0; i < playerList.size(); i++)
     {
       temp += playerList.get(i).getPosition();
