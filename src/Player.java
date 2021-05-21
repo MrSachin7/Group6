@@ -142,6 +142,6 @@ public class Player implements Serializable
 
   public String toString()
   {
-    return "Name :" + firstName + " " + lastName;
+    return firstName + " " + lastName;
   }
 }

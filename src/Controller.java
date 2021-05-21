@@ -28,7 +28,9 @@ public class Controller
   @FXML private TextField createPlayerLastName;
   @FXML private TextField createPlayerPosition;
   @FXML private Spinner createPlayerShirtNumber;
-  @FXML private DatePicker createPlayerDate;
+  @FXML private TextField createPlayerDay;
+  @FXML private TextField createPlayerMonth;
+  @FXML private TextField createPlayerYear;
   @FXML private TextArea upcomingMatchesOpponents;
   @FXML private TextArea upcomingMatchesDates;
   @FXML private TextArea upcomingMatchesTimes;
@@ -51,17 +53,35 @@ public class Controller
   @FXML private ComboBox<Player> removeInjuryChoosePlayer;
   @FXML private TextField changeShirtNumberFirstName;
   @FXML private TextField changeShirtNumberLastName;
-
+  @FXML private TextField changePositionFirstName;
+  @FXML private TextField changePositionLastName;
   private ModelManager modelManager;
 
-public ModelManager getModelManager()
-{
-  modelManager = new ModelManager("aabc","aabc.bin");
-  return modelManager;
-}
+  public void makingThingsWork()
+  {
+    spinnerShirtNo.setValueFactory(new SpinnerValueFactory()
+    {
+      @Override public void decrement(int i)
+      {
+        i = i - 1;
+      }
+
+      @Override public void increment(int i)
+      {
+        i = i + 1;
+      }
+    });
+  }
+
+  public ModelManager getModelManager()
+  {
+    modelManager = new ModelManager("aabc", "aabc.bin");
+    return modelManager;
+  }
 
   public void updatePlayersArea()
   {
+    makingThingsWork();
     PlayerList players = getModelManager().getAllPlayers();
     allPlayersName.setText(players.toString());
     allPlayersShirtNumber.setText(players.getShirtNumbers());
@@ -97,6 +117,21 @@ public ModelManager getModelManager()
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (Integer) spinnerShirtNo.getValue();
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
+    updateAllPlayersBox();
+  }
+
+  public void changePosition()
+  {
+    String firstName = changePositionFirstName.getText();
+    String lastName = changePositionLastName.getText();
+    String position = textFieldPosition.getText();
+    modelManager.changePosition(firstName, lastName, position);
+  }
+  public void createPlayer()
+  {
+    String firstName =createPlayerFirstName.getText();
+    String lastName = createPlayerLastName.getText();
+ // cannot figure out how to get date ;
   }
 
   public void handler(ActionEvent e)

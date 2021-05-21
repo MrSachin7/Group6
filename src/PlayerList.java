@@ -111,7 +111,7 @@ public class PlayerList implements Serializable
 
   public String toString()
   {
-    String temp = "Players :\n";
+    String temp = "";
     for (int i = 0; i < playerList.size(); i++)
     {
       temp += playerList.get(i) + "\n";
@@ -120,7 +120,7 @@ public class PlayerList implements Serializable
   }
   public String getShirtNumbers()
   {
-    String temp = "Players :\n";
+    String temp = "";
     for (int i = 0; i < playerList.size(); i++)
     {
       temp += playerList.get(i).getShirtNumber();
