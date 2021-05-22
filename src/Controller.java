@@ -367,12 +367,6 @@ public class Controller
     allSubstitutes();
     updateAllPlayersBox();
   }
-
-
-
-
-
-
   public void handler(ActionEvent e)
   {
     if (e.getSource() == updatePlayers)

@@ -10,6 +10,11 @@ public class MatchList implements Serializable
   {
     matchList = new ArrayList<>();
   }
+  public int size()
+  {
+    return matchList.size();
+  }
+
   public void addMatch(Match match)
   {
     matchList.add(match);

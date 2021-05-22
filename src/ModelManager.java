@@ -383,5 +383,37 @@ public class ModelManager
     }
     savePlayers(allPlayers);
   }
+  public MatchList getALlPreviousMatches()
+  {
+    MatchList allMatches = getAllMatches();
+    MatchList allPreviousMatches=new MatchList();
+    Date today = Date.today();
+    for (int i=0; i<allMatches.size(); i++ )
+    {
+      Match match = allMatches.get(i);
+      if (match.getMatchDate().isBefore(today))
+      {
+        allPreviousMatches.addMatch(match);
+      }
+    }
+    return allPreviousMatches;
+  }
+  public MatchList getALlUpcomingMatches()
+  {
+    MatchList allMatches = getAllMatches();
+    MatchList allUpcomingMatches=new MatchList();
+    Date today = Date.today();
+    for (int i=0; i<allMatches.size(); i++ )
+    {
+      Match match = allMatches.get(i);
+      if (!(match.getMatchDate().isBefore(today)))
+      {
+        allUpcomingMatches.addMatch(match);
+      }
+    }
+    return allUpcomingMatches;
+  }
+
+
 }
 
