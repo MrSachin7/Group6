@@ -199,6 +199,23 @@ createMatchOpponent.setText("");
     allInjuryExpectedReturnDate.setText(allInjuries.getExpectedReturnDate());
   }
   private void addInjury()
+  {
+    String firstName = addInjuryFirstName.getText();
+    String lastName= addInjuryLastName.getText();
+
+    LocalDate temp1 = addInjuryInjuryDate.getValue();
+    int d1 = temp1.getDayOfMonth();
+    int m1 = temp1.getMonthValue();
+    int y1 = temp1.getYear();
+    Date injuredDate = new Date(d1, m1, y1);
+
+    LocalDate temp2 = addInjuryExpectedReturnDate.getValue();
+    int d2 = temp2.getDayOfMonth();
+    int m2 = temp2.getMonthValue();
+    int y2 = temp2.getYear();
+    Date expectedReturnDate = new Date(d2, m2,y2);
+
+  }
 
   public void handler(ActionEvent e)
   {
