@@ -60,8 +60,8 @@ public class Controller
   @FXML private TextField changePositionLastName;
   @FXML private DatePicker createPlayerDatePicker;
   @FXML private Button addSuspension;
-  @FXML private TextField suspendedPlayerNames;
-  @FXML private TextField suspendedPlayerNoOfGames;
+  @FXML private TextArea suspendedPlayerNames;
+  @FXML private TextArea suspendedPlayerNoOfGames;
   @FXML private Button suspendedUpdate;
   @FXML private TextField addSuspendedFirstName;
   @FXML private TextField addSuspendedLastName;
