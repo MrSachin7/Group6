@@ -72,7 +72,6 @@ public class Controller
   @FXML private ComboBox<Player> removeSuspensionComboBox;
   @FXML private Button removeSuspension;
 
-
   private ModelManager modelManager;
 
   public void initialize()
@@ -86,6 +85,8 @@ public class Controller
         new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 23));
     createMatchMinute.setValueFactory(
         new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59));
+    addSuspendedNumberOfGamesSuspended.setValueFactory(
+        new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
   }
 
   private void updatePlayersArea()
@@ -119,7 +120,6 @@ public class Controller
       comboBoxShirtNo.getSelectionModel().select(currentIndex);
     }
   }
-
 
   private void changeShirtNo()
   {
@@ -183,6 +183,10 @@ public class Controller
     {
       isHomeMatch = true;
     }
+    if (createMatchAway.isSelected())
+    {
+      isHomeMatch = false;
+    }
     if (createMatchLeague.isSelected())
     {
       modelManager.addLeagueMatch(
@@ -190,17 +194,18 @@ public class Controller
     }
     if (createMatchCup.isSelected())
     {
-      modelManager.addCupMatch(
-          new CupMatch(opponent, newDate, newTime, isHomeMatch));
+      modelManager
+          .addCupMatch(new CupMatch(opponent, newDate, newTime, isHomeMatch));
     }
     if (createMatchFriendly.isSelected())
     {
       modelManager.addFriendlyMatch(
           new FriendlyMatch(opponent, newDate, newTime, isHomeMatch));
     }
-createMatchOpponent.setText("");
+    createMatchOpponent.setText("");
 
   }
+
   private void allInjuries()
   {
     PlayerList allInjuries = modelManager.getAllInjuredPlayers();
@@ -208,10 +213,11 @@ createMatchOpponent.setText("");
     allInjuryInjuredDate.setText(allInjuries.getInjuredDate());
     allInjuryExpectedReturnDate.setText(allInjuries.getExpectedReturnDate());
   }
+
   private void addInjury()
   {
     String firstName = addInjuryFirstName.getText();
-    String lastName= addInjuryLastName.getText();
+    String lastName = addInjuryLastName.getText();
 
     LocalDate temp1 = addInjuryInjuryDate.getValue();
     int d1 = temp1.getDayOfMonth();
@@ -223,20 +229,21 @@ createMatchOpponent.setText("");
     int d2 = temp2.getDayOfMonth();
     int m2 = temp2.getMonthValue();
     int y2 = temp2.getYear();
-    Date expectedReturnDate = new Date(d2, m2,y2);
+    Date expectedReturnDate = new Date(d2, m2, y2);
 
-    Injury injury = new Injury(injuredDate,expectedReturnDate);
-    modelManager.addInjury(firstName,lastName,injury);
+    Injury injury = new Injury(injuredDate, expectedReturnDate);
+    modelManager.addInjury(firstName, lastName, injury);
     addInjuryFirstName.setText("");
     addInjuryLastName.setText("");
     allInjuries();
   }
+
   private void removeInjury()
   {
     String firstName = removeInjuryFirstName.getText();
-    String lastName= removeInjuryLastName.getText();
+    String lastName = removeInjuryLastName.getText();
 
-    modelManager.removeInjury(firstName,lastName);
+    modelManager.removeInjury(firstName, lastName);
     removeInjuryLastName.setText("");
     removeInjuryFirstName.setText("");
     allInjuries();
@@ -265,19 +272,19 @@ createMatchOpponent.setText("");
     {
       createPlayer();
     }
-    if (e.getSource()==createMatch)
+    if (e.getSource() == createMatch)
     {
       createMatch();
     }
-    if (e.getSource()==allInjuryUpdate)
+    if (e.getSource() == allInjuryUpdate)
     {
       allInjuries();
     }
-    if (e.getSource()==addInjury)
+    if (e.getSource() == addInjury)
     {
       addInjury();
     }
-    if (e.getSource()==removeInjury)
+    if (e.getSource() == removeInjury)
     {
       removeInjury();
     }
