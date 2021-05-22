@@ -87,6 +87,7 @@ public class Controller
         new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59));
     addSuspendedNumberOfGamesSuspended.setValueFactory(
         new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
+    updatePlayersArea();
   }
 
   private void updatePlayersArea()
@@ -128,7 +129,8 @@ public class Controller
     int shirtNumber = (int) spinnerShirtNo.getValue();
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
     updatePlayersArea();
-
+    changePositionLastName.setText("");
+    changePositionFirstName.setText("");
   }
 
   private void changePosition()
@@ -139,6 +141,7 @@ public class Controller
     modelManager.changePosition(firstName, lastName, position);
     changePositionFirstName.setText("");
     changePositionLastName.setText("");
+    updatePlayersArea();
 
   }
 
@@ -152,10 +155,13 @@ public class Controller
     int month = temp.getMonthValue();
     int year = temp.getYear();
     Date newDate = new Date(day, month, year);
+    int shirtNumber = (int) createPlayerShirtNumber.getValue();
     modelManager.addPlayer(new Player(firstName, lastName, newDate, position));
+    modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
     createPlayerFirstName.setText("");
     createPlayerLastName.setText("");
     createPlayerPosition.setText("");
+    updatePlayersArea();
   }
 
   private void updateMatchesArea()
@@ -203,7 +209,7 @@ public class Controller
           new FriendlyMatch(opponent, newDate, newTime, isHomeMatch));
     }
     createMatchOpponent.setText("");
-
+    updateMatchesArea();
   }
 
   private void allInjuries()
@@ -238,6 +244,15 @@ public class Controller
     allInjuries();
   }
 
+  private void allSuspension()
+  {
+    PlayerList allSuspendedPlayers = modelManager.getAllSuspendedPlayers();
+    suspendedPlayerNames.setText(allSuspendedPlayers.toString());
+
+
+  }
+
+
   private void removeInjury()
   {
     String firstName = removeInjuryFirstName.getText();
@@ -247,6 +262,18 @@ public class Controller
     removeInjuryLastName.setText("");
     removeInjuryFirstName.setText("");
     allInjuries();
+  }
+
+  private void addSuspension()
+  {
+    String firstName = addSuspendedFirstName.getText();
+    String lastName =addSuspendedLastName.getText();
+    int noOfGamesSuspended= (int)addSuspendedNumberOfGamesSuspended.getValue();
+    Suspension suspension = new Suspension(noOfGamesSuspended);
+    modelManager.addSuspension(firstName,lastName,suspension);
+    addSuspendedFirstName.setText("");
+    addSuspendedLastName.setText("");
+
   }
 
   public void handler(ActionEvent e)

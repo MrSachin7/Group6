@@ -135,6 +135,23 @@ public class ModelManager
     }
     return injuredPlayers;
   }
+  public PlayerList getAllSuspendedPlayers()
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList suspendedPlayers = new PlayerList();
+
+    for (int i=0; i<allPlayers.size();i++)
+    {
+      if (!(allPlayers.get(i).getSuspension()==null))
+      {
+        suspendedPlayers.addPlayer(allPlayers.get(i));
+      }
+    }
+    return suspendedPlayers;
+  }
+
+
+
 
 public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
 {
@@ -240,6 +257,36 @@ public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
     }
     savePlayers(allPlayers);
   }
+  public void addSuspension(String firstName ,String lastName,Suspension suspension)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.setSuspension(suspension);
+      }
+    }
+    savePlayers(allPlayers);
+  }
+  public void removeSuspension(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.removeSuspension();
+      }
+    }
+    savePlayers(allPlayers);
+  }
+
+
 
 }
 

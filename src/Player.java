@@ -99,6 +99,10 @@ public class Player implements Serializable
   {
     injury = null;
   }
+  public void removeSuspension()
+  {
+    suspension=null;
+  }
 
   public boolean isAvailable(Player player)
   {

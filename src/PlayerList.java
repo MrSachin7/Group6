@@ -22,6 +22,10 @@ public class PlayerList implements Serializable
       playerList.add(players[i]);
     }
   }
+  public int size()
+  {
+    return playerList.size();
+  }
   public void setShirtNumber(Player player, int shirtNumber)
   {
     boolean isShirtNumberOccupied = false;
@@ -177,11 +181,16 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
-
-  public int size()
+  public String getNoOfGamesSuspended()
   {
-    return playerList.size();
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i).getSuspension().getNumberOfGamesSuspended()+"\n";
+    }
+    return temp;
   }
 
 
-}
+  }
+
