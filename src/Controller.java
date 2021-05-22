@@ -156,7 +156,7 @@ public class Controller
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
     changeShirtNumberFirstName.setText("");
     changeShirtNumberLastName.setText("");
-    updatePlayersArea();
+    updatePlayersArea(); updateAllPlayersBox();
   }
 
   private void changePosition()
@@ -168,7 +168,7 @@ public class Controller
     changePositionFirstName.setText("");
     changePositionLastName.setText("");
     updatePlayersArea();
-
+    updateAllPlayersBox();
   }
 
   private void createPlayer()
@@ -187,7 +187,7 @@ public class Controller
     createPlayerFirstName.setText("");
     createPlayerLastName.setText("");
     createPlayerPosition.setText("");
-    updatePlayersArea();
+    updatePlayersArea(); updateAllPlayersBox();
   }
 
   private void updateMatchesArea()
@@ -195,7 +195,7 @@ public class Controller
     MatchList matches = modelManager.getAllMatches();
     upcomingMatchesOpponents.setText(matches.getAllOpponents());
     upcomingMatchesTimes.setText(matches.getAllTimes());
-    upcomingMatchesDates.setText(matches.getAllDates());
+    upcomingMatchesDates.setText(matches.getAllDates()); updateAllPlayersBox();
   }
 
   private void createMatch()
@@ -235,7 +235,7 @@ public class Controller
           new FriendlyMatch(opponent, newDate, newTime, isHomeMatch));
     }
     createMatchOpponent.setText("");
-    updateMatchesArea();
+    updateMatchesArea(); updateAllPlayersBox();
   }
 
   private void allInjuries()
@@ -243,7 +243,7 @@ public class Controller
     PlayerList allInjuries = modelManager.getAllInjuredPlayers();
     allInjuryName.setText(allInjuries.toString());
     allInjuryInjuredDate.setText(allInjuries.getInjuredDate());
-    allInjuryExpectedReturnDate.setText(allInjuries.getExpectedReturnDate());
+    allInjuryExpectedReturnDate.setText(allInjuries.getExpectedReturnDate()); updateAllPlayersBox();
   }
 
   private void addInjury()
@@ -267,7 +267,7 @@ public class Controller
     modelManager.addInjury(firstName, lastName, injury);
     addInjuryFirstName.setText("");
     addInjuryLastName.setText("");
-    allInjuries();
+    allInjuries(); updateAllPlayersBox();
   }
 
   private void allSuspension()
@@ -276,7 +276,7 @@ public class Controller
     suspendedPlayerNames.setText(allSuspendedPlayers.toString());
     suspendedPlayerNoOfGames
         .setText(allSuspendedPlayers.getNoOfGamesSuspended());
-
+    updateAllPlayersBox();
   }
 
   private void removeInjury()
@@ -287,7 +287,7 @@ public class Controller
     modelManager.removeInjury(firstName, lastName);
     removeInjuryLastName.setText("");
     removeInjuryFirstName.setText("");
-    allInjuries();
+    allInjuries(); updateAllPlayersBox();
   }
 
   private void addSuspension()
@@ -301,7 +301,7 @@ public class Controller
     addSuspendedFirstName.setText("");
     addSuspendedLastName.setText("");
     allSuspension();
-
+    updateAllPlayersBox();
   }
 
   private void removeSuspension()
@@ -311,7 +311,7 @@ public class Controller
     modelManager.removeSuspension(firstName, lastName);
     removeSuspensionFirstName.setText("");
     removeSuspensionLastName.setText("");
-    allSuspension();
+    allSuspension(); updateAllPlayersBox();
   }
 
   private void allStarters()
@@ -319,7 +319,7 @@ public class Controller
     PlayerList allStarters = modelManager.getAllStartingPlayers();
     allStartersPlayers.setText(allStarters.toString());
     allStartersShirtNumber.setText(allStarters.getShirtNumbers());
-    allStartersPosition.setText(allStarters.getAllPositions());
+    allStartersPosition.setText(allStarters.getAllPositions()); updateAllPlayersBox();
   }
   private void addStarter()
   {
@@ -328,7 +328,7 @@ public class Controller
     modelManager.addStartingPlayers(firstName,lastName);
     addStarterFirstName.setText("");
     addStarterLastName.setText("");
-    allStarters();
+    allStarters(); updateAllPlayersBox();
   }
   private void removeStarter()
   {
@@ -337,7 +337,7 @@ public class Controller
     modelManager.removeStartingPlayers(firstName,lastName);
     removeStarterFirstName.setText("");
     removeStarterLastName.setText("");
-    allStarters();
+    allStarters(); updateAllPlayersBox();
   }
   private void allSubstitutes()
   {
@@ -345,6 +345,7 @@ public class Controller
     allSubstitutePlayers.setText(allSubstitutes.toString());
     allSubstituteShirtNumber.setText(allSubstitutes.getShirtNumbers());
     allSubstitutePosition.setText(allSubstitutes.getAllPositions());
+    updateAllPlayersBox();
   }
   private void addSubstitute()
   {
@@ -354,6 +355,7 @@ public class Controller
     addSubstituteFirstName.setText("");
     addStarterLastName.setText("");
     allSubstitutes();
+    updateAllPlayersBox();
   }
   private void removeSubstitute()
   {
@@ -363,6 +365,7 @@ public class Controller
     removeSubstituteFirstName.setText("");
     removeStarterLastName.setText("");
     allSubstitutes();
+    updateAllPlayersBox();
   }
 
 
