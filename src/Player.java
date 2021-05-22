@@ -53,7 +53,7 @@ public class Player implements Serializable
 
   public void setInjury(Injury injury)
   {
-    this.injury = injury.copy();
+    this.injury = injury;
   }
 
   public void setSuspension(Suspension suspension)

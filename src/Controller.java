@@ -88,6 +88,7 @@ public class Controller
     addSuspendedNumberOfGamesSuspended.setValueFactory(
         new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
     updatePlayersArea();
+    updateAllPlayersBox();
   }
 
   private void updatePlayersArea()
@@ -128,9 +129,9 @@ public class Controller
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (int) spinnerShirtNo.getValue();
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
+    changeShirtNumberFirstName.setText("");
+    changeShirtNumberLastName.setText("");
     updatePlayersArea();
-    changePositionLastName.setText("");
-    changePositionFirstName.setText("");
   }
 
   private void changePosition()
@@ -248,10 +249,10 @@ public class Controller
   {
     PlayerList allSuspendedPlayers = modelManager.getAllSuspendedPlayers();
     suspendedPlayerNames.setText(allSuspendedPlayers.toString());
-
+    suspendedPlayerNoOfGames
+        .setText(allSuspendedPlayers.getNoOfGamesSuspended());
 
   }
-
 
   private void removeInjury()
   {
@@ -267,13 +268,25 @@ public class Controller
   private void addSuspension()
   {
     String firstName = addSuspendedFirstName.getText();
-    String lastName =addSuspendedLastName.getText();
-    int noOfGamesSuspended= (int)addSuspendedNumberOfGamesSuspended.getValue();
+    String lastName = addSuspendedLastName.getText();
+    int noOfGamesSuspended = (int) addSuspendedNumberOfGamesSuspended
+        .getValue();
     Suspension suspension = new Suspension(noOfGamesSuspended);
-    modelManager.addSuspension(firstName,lastName,suspension);
+    modelManager.addSuspension(firstName, lastName, suspension);
     addSuspendedFirstName.setText("");
     addSuspendedLastName.setText("");
+    allSuspension();
 
+  }
+
+  private void removeSuspension()
+  {
+    String firstName = removeSuspensionFirstName.getText();
+    String lastName = removeSuspensionLastName.getText();
+    modelManager.removeSuspension(firstName, lastName);
+    removeSuspensionFirstName.setText("");
+    removeSuspensionLastName.setText("");
+    allSuspension();
   }
 
   public void handler(ActionEvent e)
@@ -314,6 +327,30 @@ public class Controller
     if (e.getSource() == removeInjury)
     {
       removeInjury();
+    }
+    if (e.getSource() == suspendedUpdate)
+    {
+      allSuspension();
+    }
+    if (e.getSource() == addSuspension)
+    {
+      addSuspension();
+    }
+    if (e.getSource() == removeSuspension)
+    {
+      removeSuspension();
+    }
+    if (e.getSource() == comboBoxShirtNo)
+    {
+      Player temp = comboBoxShirtNo.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        changeShirtNumberFirstName.setText(temp.getFirstName());
+        changeShirtNumberLastName.setText(temp.getLastName());
+        changeShirtNumberFirstName.setEditable(false);
+        changeShirtNumberLastName.setEditable(false);
+      }
     }
   }
 }
