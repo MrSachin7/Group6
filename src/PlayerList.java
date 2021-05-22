@@ -190,6 +190,15 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  public String getBirthDate()
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i).getBirthDate()+"\n";
+    }
+    return temp;
+  }
 
 
   }

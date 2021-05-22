@@ -66,5 +66,16 @@ public class MatchList implements Serializable
       return temp;
     }
   }
+  public String getAllMatchesTypes()
+  {
+    {
+      String temp ="";
+      for (int i=0; i<matchList.size(); i++)
+      {
+        temp+=matchList.get(i).matchType()+"\n";
+      }
+      return temp;
+    }
+  }
 
 }

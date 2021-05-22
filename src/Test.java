@@ -8,5 +8,7 @@ public class Test
     ModelManager modelManager = new ModelManager("Matches.bin","Players.bin");
     PlayerList playerList= new PlayerList();
     MyFileHandler.writeToBinaryFile("Players.bin",playerList);
+    MatchList matchList = new MatchList();
+    MyFileHandler.writeToBinaryFile("Matches.bin",matchList);
   }
 }

@@ -120,6 +120,21 @@ public class ModelManager
       System.out.println("IO Error writing to file");
     }
   }
+  public void removePlayer(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+      allPlayers.removePlayer(player);
+      }
+    }
+    savePlayers(allPlayers);
+
+  }
 
   public PlayerList getAllInjuredPlayers()
   {
@@ -189,12 +204,6 @@ public class ModelManager
     savePlayers(allPlayers);
   }
 
-  public void removePlayer(Player player)
-  {
-    PlayerList allPlayers = getAllPlayers();
-    allPlayers.removePlayer(player);
-    savePlayers(allPlayers);
-  }
 
   public void changeShirtNumber(String firstName, String lastName,
       int shirtNumber)
