@@ -702,6 +702,127 @@ public class Controller
         changeShirtNumberLastName.setEditable(false);
       }
     }
+    if (e.getSource() == comboBoxPosition)
+    {
+      Player temp = comboBoxPosition.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        changePositionFirstName.setText(temp.getFirstName());
+        changePositionLastName.setText(temp.getLastName());
+        changePositionFirstName.setEditable(false);
+        changePositionLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == deletePlayerChoosePlayer)
+    {
+      Player temp = deletePlayerChoosePlayer.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        deletePlayerFirstName.setText(temp.getFirstName());
+        deletePlayerLastName.setText(temp.getLastName());
+        deletePlayerFirstName.setEditable(false);
+        changePositionLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == addInjuryChoosePlayer)
+    {
+      Player temp = addInjuryChoosePlayer.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        addInjuryFirstName.setText(temp.getFirstName());
+        addInjuryLastName.setText(temp.getLastName());
+        addInjuryFirstName.setEditable(false);
+        addInjuryLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == removeInjuryChoosePlayer)
+    {
+      Player temp = removeInjuryChoosePlayer.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        removeInjuryFirstName.setText(temp.getFirstName());
+       removeInjuryLastName.setText(temp.getLastName());
+        removeInjuryFirstName.setEditable(false);
+       removeInjuryLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == addSuspendedComboBox)
+    {
+      Player temp = addSuspendedComboBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        addSuspendedFirstName.setText(temp.getFirstName());
+        addSuspendedLastName.setText(temp.getLastName());
+        addSuspendedFirstName.setEditable(false);
+        addSuspendedLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == removeSuspensionComboBox)
+    {
+      Player temp = removeSuspensionComboBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        removeSuspensionFirstName.setText(temp.getFirstName());
+        removeSuspensionLastName.setText(temp.getLastName());
+        removeSuspensionFirstName.setEditable(false);
+        removeSuspensionLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == addStarterComboBox)
+    {
+      Player temp = addStarterComboBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        addStarterFirstName.setText(temp.getFirstName());
+        addStarterLastName.setText(temp.getLastName());
+        addStarterFirstName.setEditable(false);
+        addStarterLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == removeStarterComboBox)
+    {
+      Player temp = removeStarterComboBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        removeStarterFirstName.setText(temp.getFirstName());
+        removeStarterLastName.setText(temp.getLastName());
+        removeStarterFirstName.setEditable(false);
+        removeStarterLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == addSubstituteComboBox)
+    {
+      Player temp = addSubstituteComboBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        addSubstituteFirstName.setText(temp.getFirstName());
+        addSubstituteLastName.setText(temp.getLastName());
+        addSubstituteFirstName.setEditable(false);
+        addSubstituteLastName.setEditable(false);
+      }
+    }
+    if (e.getSource() == removeSubstituteComboBox)
+    {
+      Player temp = removeSubstituteComboBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        removeSubstituteFirstName.setText(temp.getFirstName());
+        removeSubstituteLastName.setText(temp.getLastName());
+        removeSubstituteFirstName.setEditable(false);
+        removeSubstituteLastName.setEditable(false);
+      }
+    }
+
 
     if (e.getSource() == addStarter)
     {
