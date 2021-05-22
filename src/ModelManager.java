@@ -235,7 +235,7 @@ public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
       if (player.getFirstName().equals(firstName) && player.getLastName()
           .equals(lastName))
       {
-        player.setInjury(null);
+        player.removeInjury();
       }
     }
     savePlayers(allPlayers);

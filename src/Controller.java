@@ -17,8 +17,7 @@ public class Controller
   @FXML private Button previousMatchesUpdate;
   @FXML private Button addInjury;
   @FXML private Button removeInjury;
-  @FXML private Button addSuspension;
-  @FXML private Button removeSuspension;
+
   @FXML private TextArea allPlayersName;
   @FXML private TextArea allPlayersPosition;
   @FXML private TextArea allPlayersShirtNumber;
@@ -30,9 +29,6 @@ public class Controller
   @FXML private TextField createPlayerLastName;
   @FXML private TextField createPlayerPosition;
   @FXML private Spinner createPlayerShirtNumber;
-  @FXML private TextField createPlayerDay;
-  @FXML private TextField createPlayerMonth;
-  @FXML private TextField createPlayerYear;
   @FXML private TextArea upcomingMatchesOpponents;
   @FXML private TextArea upcomingMatchesDates;
   @FXML private TextArea upcomingMatchesTimes;
@@ -63,6 +59,20 @@ public class Controller
   @FXML private TextField changePositionFirstName;
   @FXML private TextField changePositionLastName;
   @FXML private DatePicker createPlayerDatePicker;
+  @FXML private Button addSuspension;
+  @FXML private TextField suspendedPlayerNames;
+  @FXML private TextField suspendedPlayerNoOfGames;
+  @FXML private Button suspendedUpdate;
+  @FXML private TextField addSuspendedFirstName;
+  @FXML private TextField addSuspendedLastName;
+  @FXML private Spinner addSuspendedNumberOfGamesSuspended;
+  @FXML private ComboBox<Player> addSuspendedComboBox;
+  @FXML private TextField removeSuspensionFirstName;
+  @FXML private TextField removeSuspensionLastName;
+  @FXML private ComboBox<Player> removeSuspensionComboBox;
+  @FXML private Button removeSuspension;
+
+
   private ModelManager modelManager;
 
   public void initialize()
@@ -215,6 +225,21 @@ createMatchOpponent.setText("");
     int y2 = temp2.getYear();
     Date expectedReturnDate = new Date(d2, m2,y2);
 
+    Injury injury = new Injury(injuredDate,expectedReturnDate);
+    modelManager.addInjury(firstName,lastName,injury);
+    addInjuryFirstName.setText("");
+    addInjuryLastName.setText("");
+    allInjuries();
+  }
+  private void removeInjury()
+  {
+    String firstName = removeInjuryFirstName.getText();
+    String lastName= removeInjuryLastName.getText();
+
+    modelManager.removeInjury(firstName,lastName);
+    removeInjuryLastName.setText("");
+    removeInjuryFirstName.setText("");
+    allInjuries();
   }
 
   public void handler(ActionEvent e)
@@ -247,6 +272,14 @@ createMatchOpponent.setText("");
     if (e.getSource()==allInjuryUpdate)
     {
       allInjuries();
+    }
+    if (e.getSource()==addInjury)
+    {
+      addInjury();
+    }
+    if (e.getSource()==removeInjury)
+    {
+      removeInjury();
     }
   }
 }
