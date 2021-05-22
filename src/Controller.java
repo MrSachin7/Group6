@@ -8,7 +8,6 @@ import java.time.LocalDate;
 public class Controller
 {
   @FXML private Button updatePlayers;
-  @FXML private Button savePlayer;
   @FXML private Button savePosition;
   @FXML private Button createPlayer;
   @FXML private Button changeShirtNumber;
@@ -17,7 +16,6 @@ public class Controller
   @FXML private Button previousMatchesUpdate;
   @FXML private Button addInjury;
   @FXML private Button removeInjury;
-
   @FXML private TextArea allPlayersName;
   @FXML private TextArea allPlayersPosition;
   @FXML private TextArea allPlayersShirtNumber;
@@ -71,6 +69,29 @@ public class Controller
   @FXML private TextField removeSuspensionLastName;
   @FXML private ComboBox<Player> removeSuspensionComboBox;
   @FXML private Button removeSuspension;
+  @FXML private TextArea allStartersPlayers;
+  @FXML private TextArea allStartersPosition;
+  @FXML private TextField addStarterFirstName;
+  @FXML private TextField addStarterLastName;
+  @FXML private ComboBox<Player> addStarterComboBox;
+  @FXML private Button addStarter;
+  @FXML private TextField removeStarterFirstName;
+  @FXML private TextField removeStarterLastName;
+  @FXML private ComboBox<Player> removeStarterComboBox;
+  @FXML private Button removeStarter;
+  @FXML private TextArea allSubstitutePlayers;
+  @FXML private TextArea allSubstitutePosition;
+  @FXML private TextField addSubstituteFirstName;
+  @FXML private TextField addSubstituteLastName;
+  @FXML private ComboBox<Player> addSubstituteComboBox;
+  @FXML private Button addSubstitute;
+  @FXML private TextField removeSubstituteFirstName;
+  @FXML private TextField removeSubstituteLastName;
+  @FXML private ComboBox<Player> removeSubstituteComboBox;
+  @FXML private Button removeSubstitute;
+  @FXML private TextArea allStartersShirtNumber;
+  @FXML private TextArea allSubstituteShirtNumber;
+
 
   private ModelManager modelManager;
 
@@ -89,6 +110,10 @@ public class Controller
         new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
     updatePlayersArea();
     updateAllPlayersBox();
+    allStarters();
+    allInjuries();
+    allSuspension();
+    allSubstitutes();
   }
 
   private void updatePlayersArea()
@@ -289,6 +314,62 @@ public class Controller
     allSuspension();
   }
 
+  private void allStarters()
+  {
+    PlayerList allStarters = modelManager.getAllStartingPlayers();
+    allStartersPlayers.setText(allStarters.toString());
+    allStartersShirtNumber.setText(allStarters.getShirtNumbers());
+    allStartersPosition.setText(allStarters.getAllPositions());
+  }
+  private void addStarter()
+  {
+    String firstName = addStarterFirstName.getText();
+    String lastName = addStarterLastName.getText();
+    modelManager.addStartingPlayers(firstName,lastName);
+    addStarterFirstName.setText("");
+    addStarterLastName.setText("");
+    allStarters();
+  }
+  private void removeStarter()
+  {
+    String firstName = removeStarterFirstName.getText();
+    String lastName = removeStarterLastName.getText();
+    modelManager.removeStartingPlayers(firstName,lastName);
+    removeStarterFirstName.setText("");
+    removeStarterLastName.setText("");
+    allStarters();
+  }
+  private void allSubstitutes()
+  {
+    PlayerList allSubstitutes = modelManager.getAllSubstitutePlayers();
+    allSubstitutePlayers.setText(allSubstitutes.toString());
+    allSubstituteShirtNumber.setText(allSubstitutes.getShirtNumbers());
+    allSubstitutePosition.setText(allSubstitutes.getAllPositions());
+  }
+  private void addSubstitute()
+  {
+    String firstName = addSubstituteFirstName.getText();
+    String lastName= addSubstituteLastName.getText();
+    modelManager.addSubstitutePlayers(firstName,lastName);
+    addSubstituteFirstName.setText("");
+    addStarterLastName.setText("");
+    allSubstitutes();
+  }
+  private void removeSubstitute()
+  {
+    String firstName = removeSubstituteFirstName.getText();
+    String lastName = removeSubstituteLastName.getText();
+    modelManager.removeSubstitutePlayers(firstName,lastName);
+    removeSubstituteFirstName.setText("");
+    removeStarterLastName.setText("");
+    allSubstitutes();
+  }
+
+
+
+
+
+
   public void handler(ActionEvent e)
   {
     if (e.getSource() == updatePlayers)
@@ -351,6 +432,22 @@ public class Controller
         changeShirtNumberFirstName.setEditable(false);
         changeShirtNumberLastName.setEditable(false);
       }
+    }
+    if (e.getSource()==addStarter)
+    {
+      addStarter();
+    }
+    if (e.getSource()==removeStarter)
+    {
+      removeStarter();
+    }
+    if (e.getSource()==addSubstitute)
+    {
+      addSubstitute();
+    }
+    if (e.getSource()==removeSubstitute)
+    {
+      removeSubstitute();
     }
   }
 }

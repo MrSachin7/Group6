@@ -126,23 +126,24 @@ public class ModelManager
     PlayerList allPlayers = getAllPlayers();
     PlayerList injuredPlayers = new PlayerList();
 
-    for (int i=0; i<allPlayers.size();i++)
+    for (int i = 0; i < allPlayers.size(); i++)
     {
-      if (!(allPlayers.get(i).getInjury()==null))
+      if (!(allPlayers.get(i).getInjury() == null))
       {
         injuredPlayers.addPlayer(allPlayers.get(i));
       }
     }
     return injuredPlayers;
   }
+
   public PlayerList getAllSuspendedPlayers()
   {
     PlayerList allPlayers = getAllPlayers();
     PlayerList suspendedPlayers = new PlayerList();
 
-    for (int i=0; i<allPlayers.size();i++)
+    for (int i = 0; i < allPlayers.size(); i++)
     {
-      if (!(allPlayers.get(i).getSuspension()==null))
+      if (!(allPlayers.get(i).getSuspension() == null))
       {
         suspendedPlayers.addPlayer(allPlayers.get(i));
       }
@@ -150,23 +151,22 @@ public class ModelManager
     return suspendedPlayers;
   }
 
-
-
-
-public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
-{
-  PlayerList allPlayers = getAllPlayers();
-  for (int i = 0; i < allPlayers.size(); i++)
+  public void addInjuryToPlayer(String firstName, String lastName,
+      Injury injury)
   {
-    Player player = allPlayers.get(i);
-    if (player.getFirstName().equals(firstName) && player.getLastName()
-        .equals(lastName))
+    PlayerList allPlayers = getAllPlayers();
+    for (int i = 0; i < allPlayers.size(); i++)
     {
-      player.setInjury(injury);
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.setInjury(injury);
+      }
     }
+    savePlayers(allPlayers);
   }
-  savePlayers(allPlayers);
-}
+
   public void removeInjuryFromPlayer(String firstName, String lastName)
   {
     PlayerList allPlayers = getAllPlayers();
@@ -257,7 +257,9 @@ public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
     }
     savePlayers(allPlayers);
   }
-  public void addSuspension(String firstName ,String lastName,Suspension suspension)
+
+  public void addSuspension(String firstName, String lastName,
+      Suspension suspension)
   {
     PlayerList allPlayers = getAllPlayers();
     for (int i = 0; i < allPlayers.size(); i++)
@@ -271,6 +273,7 @@ public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
     }
     savePlayers(allPlayers);
   }
+
   public void removeSuspension(String firstName, String lastName)
   {
     PlayerList allPlayers = getAllPlayers();
@@ -286,7 +289,99 @@ public void addInjuryToPlayer(String firstName, String lastName, Injury injury)
     savePlayers(allPlayers);
   }
 
+  public PlayerList getAllStartingPlayers()
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList startingPlayers = new PlayerList();
 
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      if ((allPlayers.get(i).getStartingOrNot().equals("Starting")))
+      {
+        startingPlayers.addPlayer(allPlayers.get(i));
+      }
+    }
+    return startingPlayers;
+  }
 
+  public void addStartingPlayers(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList allStartingPlayers = getAllStartingPlayers();
+    if (allStartingPlayers.size() < 11)
+    {
+      for (int i = 0; i < allPlayers.size(); i++)
+      {
+        Player player = allPlayers.get(i);
+        if (player.getFirstName().equals(firstName) && player.getLastName()
+            .equals(lastName))
+        {
+          player.setStartingOrNot("Starting");
+        }
+      }
+      savePlayers(allPlayers);
+    }
+  }
+
+  public void removeStartingPlayers(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList allStartingPlayers = getAllStartingPlayers();
+
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.setStartingOrNot(" ");
+      }
+    }
+    savePlayers(allPlayers);
+  }
+
+  public PlayerList getAllSubstitutePlayers()
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList startingPlayers = new PlayerList();
+
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      if ((allPlayers.get(i).getStartingOrNot().equals("Substitute")))
+      {
+        startingPlayers.addPlayer(allPlayers.get(i));
+      }
+    }
+    return startingPlayers;
+  }
+
+  public void addSubstitutePlayers(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.setStartingOrNot("Substitute");
+      }
+    }
+    savePlayers(allPlayers);
+  }
+  public void removeSubstitutePlayers(String firstName, String lastName)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.setStartingOrNot("");
+      }
+    }
+    savePlayers(allPlayers);
+  }
 }
 

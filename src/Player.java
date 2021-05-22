@@ -8,6 +8,7 @@ public class Player implements Serializable
   private Injury injury;
   private Suspension suspension;
   private String position;
+  private String startingOrNot;
 
   private int shirtNumber;
   private boolean isAvailable;
@@ -19,9 +20,19 @@ public class Player implements Serializable
     this.lastName = lastName;
     this.birthDate = birthDate;
     this.position = position;
-
     injury = null;
     suspension = null;
+    startingOrNot="Not set";
+  }
+
+  public String getStartingOrNot()
+  {
+    return startingOrNot;
+  }
+
+  public void setStartingOrNot(String startingOrNot)
+  {
+    this.startingOrNot = startingOrNot;
   }
 
   public void setFirstName(String firstName)
