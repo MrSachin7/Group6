@@ -127,27 +127,27 @@
                                           <Label layoutX="8.0" layoutY="15.0" prefHeight="22.0" prefWidth="51.0" text="Date" />
                                           <Label layoutX="423.0" layoutY="91.0" prefHeight="34.0" prefWidth="40.0" text="Time" />
                                           <Label layoutX="2.0" layoutY="91.0" text="Opponent Team" />
-                                          <RadioButton layoutX="6.0" layoutY="165.0" mnemonicParsing="false" text="Home">
+                                          <RadioButton fx:id="createMatchHome" layoutX="6.0" layoutY="165.0" mnemonicParsing="false" onAction="#handler" text="Home">
                                              <toggleGroup>
                                                 <ToggleGroup fx:id="MatchVenue" />
                                              </toggleGroup></RadioButton>
-                                          <RadioButton layoutX="93.0" layoutY="165.0" mnemonicParsing="false" text="Away" toggleGroup="$MatchVenue" />
-                                          <TextField layoutX="118.0" layoutY="87.0" />
-                                          <DatePicker layoutX="101.0" layoutY="14.0" />
-                                          <Spinner layoutX="361.0" layoutY="160.0" prefHeight="26.0" prefWidth="70.0" />
-                                          <Spinner layoutX="469.0" layoutY="160.0" prefHeight="26.0" prefWidth="67.0" />
+                                          <RadioButton fx:id="createMatchAway" layoutX="93.0" layoutY="165.0" mnemonicParsing="false" text="Away" toggleGroup="$MatchVenue" />
+                                          <TextField fx:id="createMatchOpponent" layoutX="118.0" layoutY="87.0" />
+                                          <DatePicker fx:id="createMatchDate" layoutX="101.0" layoutY="14.0" />
+                                          <Spinner fx:id="createMatchHour" layoutX="361.0" layoutY="160.0" prefHeight="26.0" prefWidth="70.0" />
+                                          <Spinner fx:id="createMatchMinute" layoutX="469.0" layoutY="160.0" prefHeight="26.0" prefWidth="67.0" />
                                           <Label layoutX="361.0" layoutY="122.0" text="Hour:" />
                                           <Label layoutX="469.0" layoutY="121.0" prefHeight="20.0" prefWidth="46.0" text="Minute" />
-                                          <Button layoutX="243.0" layoutY="298.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Create Match" />
                                           <Label layoutX="20.0" layoutY="133.0" text="MatchVenue" />
-                                          <RadioButton layoutX="17.0" layoutY="257.0" mnemonicParsing="false" text="League">
+                                          <RadioButton fx:id="createMatchLeague" layoutX="17.0" layoutY="257.0" mnemonicParsing="false" text="League">
                                              <toggleGroup>
                                                 <ToggleGroup fx:id="MatchType" />
                                              </toggleGroup>
                                           </RadioButton>
-                                          <RadioButton layoutX="100.0" layoutY="257.0" mnemonicParsing="false" text="Cup" toggleGroup="$MatchType" />
-                                          <RadioButton layoutX="169.0" layoutY="257.0" mnemonicParsing="false" text="Friendly" toggleGroup="$MatchType" />
+                                          <RadioButton fx:id="createMatchCup" layoutX="100.0" layoutY="257.0" mnemonicParsing="false" text="Cup" toggleGroup="$MatchType" />
+                                          <RadioButton fx:id="createMatchFriendly" layoutX="169.0" layoutY="257.0" mnemonicParsing="false" text="Friendly" toggleGroup="$MatchType" />
                                           <Label layoutX="108.0" layoutY="223.0" text="Match type" />
+                                          <Button fx:id="createMatch" layoutX="233.0" layoutY="291.0" mnemonicParsing="false" onAction="#handler" prefHeight="31.0" prefWidth="90.0" text="Create Match" />
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -179,24 +179,29 @@
                                                             <TextField layoutX="21.0" layoutY="84.0" />
                                                             <TextField layoutX="21.0" layoutY="109.0" />
                                                             <TextField layoutX="21.0" layoutY="134.0" />
-                                                            <TextArea layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" />
-                                                            <TextArea layoutX="433.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Expected Return Date" />
-                                                            <TextArea layoutX="267.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Injured Date" />
+                                                            <TextArea fx:id="allInjuryName" layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" />
+                                                            <TextArea fx:id="allInjuryExpectedReturnDate" layoutX="433.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Expected Return Date" />
+                                                            <TextArea fx:id="allInjuryInjuredDate" layoutX="267.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Injured Date" />
                                                             <Label layoutX="267.0" layoutY="25.0" text="Injured Date" />
+                                                            <Button fx:id="allInjuryUpdate" layoutX="285.0" layoutY="268.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                                          </children></AnchorPane>
                                                 </content>
                                               </Tab>
                                               <Tab text="Add Injury">
                                                 <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                  <AnchorPane fx:id="addInjuryLastName" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <DatePicker layoutX="177.0" layoutY="10.0" />
-                                                            <Label layoutX="14.0" layoutY="14.0" text="Injury Date" />
-                                                            <Label layoutX="14.0" layoutY="53.0" text="Excepted Return Date" />
-                                                            <DatePicker layoutX="178.0" layoutY="49.0" />
-                                                            <Button layoutX="558.0" layoutY="192.0" mnemonicParsing="false" text="Add" />
-                                                            <ChoiceBox layoutX="414.0" layoutY="49.0" prefWidth="150.0" />
+                                                            <DatePicker fx:id="addInjuryInjuryDate" layoutX="147.0" layoutY="179.0" />
+                                                            <Label layoutX="36.0" layoutY="183.0" text="Injury Date" />
+                                                            <Label layoutX="15.0" layoutY="245.0" text="Excepted Return Date" />
+                                                            <DatePicker fx:id="addInjuryExpectedReturnDate" layoutX="147.0" layoutY="241.0" />
+                                                            <Button fx:id="addInjury" layoutX="436.0" layoutY="220.0" mnemonicParsing="false" onAction="#handler" prefHeight="40.0" prefWidth="75.0" text="Add" />
+                                                            <ChoiceBox fx:id="addInjuryChoosePlayer" layoutX="414.0" layoutY="49.0" prefWidth="150.0" />
                                                             <Label layoutX="429.0" layoutY="14.0" text="Choose player:" />
+                                                            <TextField fx:id="addInjuryFirstName" layoutX="160.0" layoutY="45.0" />
+                                                            <TextField layoutX="160.0" layoutY="116.0" />
+                                                            <Label layoutX="44.0" layoutY="40.0" text="First Name" />
+                                                            <Label layoutX="45.0" layoutY="111.0" text="Last Name" />
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
@@ -205,9 +210,13 @@
                                                   <content>
                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <Label layoutX="25.0" layoutY="33.0" prefHeight="29.0" prefWidth="102.0" text="Choose Player:" />
-                                                            <ChoiceBox layoutX="134.0" layoutY="35.0" prefWidth="150.0" />
-                                                            <Button layoutX="233.0" layoutY="122.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="95.0" text="Remove Injury" />
+                                                            <Label layoutX="347.0" layoutY="39.0" prefHeight="29.0" prefWidth="102.0" text="Choose Player:" />
+                                                            <ChoiceBox fx:id="removeInjuryChoosePlayer" layoutX="347.0" layoutY="75.0" prefWidth="150.0" />
+                                                            <Button fx:id="removeInjury" layoutX="263.0" layoutY="243.0" mnemonicParsing="false" onAction="#handler" prefHeight="29.0" prefWidth="95.0" text="Remove Injury" />
+                                                            <TextField fx:id="removeInjuryFirstName" layoutX="113.0" layoutY="62.0" />
+                                                            <TextField fx:id="removeInjuryLastName" layoutX="113.0" layoutY="126.0" />
+                                                            <Label layoutX="46.0" layoutY="67.0" text="First Name" />
+                                                            <Label layoutX="47.0" layoutY="130.0" text="Last Name" />
                                                          </children>
                                                       </AnchorPane>
                                                   </content>

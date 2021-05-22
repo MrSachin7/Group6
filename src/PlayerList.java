@@ -142,6 +142,41 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  public String getAllInjuries()
+  {
+   PlayerList temp = new PlayerList();
+   for (int i=0; i< playerList.size(); i++)
+   {
+     if (!(playerList.get(i).getInjury()==null))
+     {
+       temp.add(playerList.get(i));
+     }
+   }
+   String temp1= "";
+   for (int i=0; i< temp.size(); i++)
+   {
+     temp1+=temp.get(i)+"\n";
+   }
+   return temp1;
+  }
+  public String getInjuredDate()
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i).getInjury().getInjuryDate()+"\n";
+    }
+    return temp;
+  }
+  public String getExpectedReturnDate()
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i).getInjury().getExpectedReturnDate()+"\n";
+    }
+    return temp;
+  }
 
   public int size()
   {

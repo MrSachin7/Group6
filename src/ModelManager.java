@@ -1,16 +1,17 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
 public class ModelManager
 {
   private String matchFileName;
   private String playerFileName;
-  public ModelManager(String matchFileName,String playerFileName)
+
+  public ModelManager(String matchFileName, String playerFileName)
   {
-    this.matchFileName=matchFileName;
-    this.playerFileName=playerFileName;
+    this.matchFileName = matchFileName;
+    this.playerFileName = playerFileName;
   }
+
   public MatchList getAllMatches()
   {
     MatchList allMatches = new MatchList();
@@ -50,13 +51,27 @@ public class ModelManager
     }
   }
 
-  public void addMatch(Match match)
+  public void addLeagueMatch(LeagueMatch match)
   {
     MatchList allMatches = getAllMatches();
     allMatches.addMatch(match);
-
     saveMatches(allMatches);
   }
+
+  public void addCupMatch(CupMatch match)
+  {
+    MatchList allMatches = getAllMatches();
+    allMatches.addMatch(match);
+    saveMatches(allMatches);
+  }
+
+  public void addFriendlyMatch(FriendlyMatch match)
+  {
+    MatchList allMatches = getAllMatches();
+    allMatches.addMatch(match);
+    saveMatches(allMatches);
+  }
+
   public void removeMatch(Match match)
   {
     MatchList allMatches = getAllMatches();
@@ -72,7 +87,8 @@ public class ModelManager
     PlayerList allPlayers = new PlayerList();
     try
     {
-      allPlayers = (PlayerList) MyFileHandler.readFromBinaryFile(playerFileName);
+      allPlayers = (PlayerList) MyFileHandler
+          .readFromBinaryFile(playerFileName);
     }
     catch (FileNotFoundException e)
     {
@@ -105,6 +121,21 @@ public class ModelManager
     }
   }
 
+  public PlayerList getAllInjuredPlayers()
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList injuredPlayers = new PlayerList();
+
+    for (int i=0; i<allPlayers.size();i++)
+    {
+      if (!(allPlayers.get(i).getInjury()==null))
+      {
+        injuredPlayers.addPlayer(allPlayers.get(i));
+      }
+    }
+    return injuredPlayers;
+  }
+
   public void addPlayer(Player player)
   {
     PlayerList allPlayers = getAllPlayers();
@@ -123,10 +154,11 @@ public class ModelManager
       int shirtNumber)
   {
     PlayerList allPlayers = getAllPlayers();
-    for (int i=0; i< allPlayers.size();i++)
+    for (int i = 0; i < allPlayers.size(); i++)
     {
       Player player = allPlayers.get(i);
-      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
       {
         player.setShirtNumber(shirtNumber);
       }
@@ -138,24 +170,26 @@ public class ModelManager
   public void changePosition(String firstName, String lastName, String position)
   {
     PlayerList allPlayers = getAllPlayers();
-   for (int i=0; i< allPlayers.size();i++)
-   {
-     Player player = allPlayers.get(i);
-     if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
-     {
-       player.setPosition(position);
-     }
-   }
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
+      {
+        player.setPosition(position);
+      }
+    }
     savePlayers(allPlayers);
   }
 
   public void addInjury(String firstName, String lastName, Injury injury)
   {
     PlayerList allPlayers = getAllPlayers();
-    for (int i=0; i< allPlayers.size();i++)
+    for (int i = 0; i < allPlayers.size(); i++)
     {
       Player player = allPlayers.get(i);
-      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
       {
         player.setInjury(injury);
       }
@@ -166,10 +200,11 @@ public class ModelManager
   public void removeInjury(String firstName, String lastName)
   {
     PlayerList allPlayers = getAllPlayers();
-    for (int i=0; i< allPlayers.size();i++)
+    for (int i = 0; i < allPlayers.size(); i++)
     {
       Player player = allPlayers.get(i);
-      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      if (player.getFirstName().equals(firstName) && player.getLastName()
+          .equals(lastName))
       {
         player.setInjury(null);
       }
