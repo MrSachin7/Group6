@@ -117,7 +117,7 @@ public class Controller
     addSuspendedNumberOfGamesSuspended.setValueFactory(
         new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10));
     updatePlayersArea();
-    updateAllPlayersBox();
+    updateEveryBox();
     allStarters();
     allInjuries();
     allSuspension();
@@ -156,7 +156,232 @@ public class Controller
       comboBoxShirtNo.getSelectionModel().select(currentIndex);
     }
   }
+  private void updateChangePositionBox()
+  {
+    int currentIndex = comboBoxPosition.getSelectionModel().getSelectedIndex();
 
+    comboBoxPosition.getItems().clear();
+
+    PlayerList players = modelManager.getAllPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      comboBoxPosition.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && comboBoxPosition.getItems().size() > 0)
+    {
+      comboBoxPosition.getSelectionModel().select(0);
+    }
+    else
+    {
+      comboBoxPosition.getSelectionModel().select(currentIndex);
+    }
+
+  }
+  private void updateDeletePlayerComboBox()
+  {
+    int currentIndex = deletePlayerChoosePlayer.getSelectionModel().getSelectedIndex();
+
+    deletePlayerChoosePlayer.getItems().clear();
+
+    PlayerList players = modelManager.getAllPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      deletePlayerChoosePlayer.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && deletePlayerChoosePlayer.getItems().size() > 0)
+    {
+      deletePlayerChoosePlayer.getSelectionModel().select(0);
+    }
+    else
+    {
+      deletePlayerChoosePlayer.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateAddSuspendedComboBox()
+  {
+    int currentIndex = addSuspendedComboBox.getSelectionModel().getSelectedIndex();
+
+    addSuspendedComboBox.getItems().clear();
+
+    PlayerList players = modelManager.getAllPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      addSuspendedComboBox.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && addSuspendedComboBox.getItems().size() > 0)
+    {
+      addSuspendedComboBox.getSelectionModel().select(0);
+    }
+    else
+    {
+      addSuspendedComboBox.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateAddInjuryComboBox()
+  {
+    int currentIndex = addInjuryChoosePlayer.getSelectionModel().getSelectedIndex();
+
+    addInjuryChoosePlayer.getItems().clear();
+
+    PlayerList players = modelManager.getAllPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      addInjuryChoosePlayer.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && addInjuryChoosePlayer.getItems().size() > 0)
+    {
+      addInjuryChoosePlayer.getSelectionModel().select(0);
+    }
+    else
+    {
+      addInjuryChoosePlayer.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateRemoveInjuryComboBox()
+  {
+    int currentIndex = removeInjuryChoosePlayer.getSelectionModel().getSelectedIndex();
+
+    removeInjuryChoosePlayer.getItems().clear();
+
+    PlayerList players = modelManager.getAllInjuredPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      removeInjuryChoosePlayer.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && removeInjuryChoosePlayer.getItems().size() > 0)
+    {
+      removeInjuryChoosePlayer.getSelectionModel().select(0);
+    }
+    else
+    {
+      removeInjuryChoosePlayer.getSelectionModel().select(currentIndex);
+    }
+  }
+
+  private void updateRemoveSuspendedComboBox()
+  {
+    int currentIndex = removeSuspensionComboBox.getSelectionModel().getSelectedIndex();
+
+    removeSuspensionComboBox.getItems().clear();
+
+    PlayerList players = modelManager.getAllSuspendedPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      removeSuspensionComboBox.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && removeSuspensionComboBox.getItems().size() > 0)
+    {
+      removeSuspensionComboBox.getSelectionModel().select(0);
+    }
+    else
+    {
+      removeSuspensionComboBox.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateAddStarterComboBox()
+  {
+    int currentIndex = addStarterComboBox.getSelectionModel().getSelectedIndex();
+
+    addStarterComboBox.getItems().clear();
+
+    PlayerList players = modelManager.getAllAvailablePlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      addStarterComboBox.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && addStarterComboBox.getItems().size() > 0)
+    {
+      addStarterComboBox.getSelectionModel().select(0);
+    }
+    else
+    {
+      addStarterComboBox.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateRemoveStarterComboBox()
+  {
+    int currentIndex = removeStarterComboBox.getSelectionModel().getSelectedIndex();
+
+    removeStarterComboBox.getItems().clear();
+
+    PlayerList players = modelManager.getAllStartingPlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      removeStarterComboBox.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && removeStarterComboBox.getItems().size() > 0)
+    {
+      removeStarterComboBox.getSelectionModel().select(0);
+    }
+    else
+    {
+      removeStarterComboBox.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateAddSubstituteComboBox()
+  {
+    int currentIndex = addSubstituteComboBox.getSelectionModel().getSelectedIndex();
+
+    addSubstituteComboBox.getItems().clear();
+
+    PlayerList players = modelManager.getAllAvailablePlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      addSubstituteComboBox.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && addSubstituteComboBox.getItems().size() > 0)
+    {
+      addSubstituteComboBox.getSelectionModel().select(0);
+    }
+    else
+    {
+      addSubstituteComboBox.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateRemoveSubstituteComboBox()
+  {
+    int currentIndex = removeSubstituteComboBox.getSelectionModel().getSelectedIndex();
+
+    removeSubstituteComboBox.getItems().clear();
+
+    PlayerList players = modelManager.getAllSubstitutePlayers();
+    for (int i = 0; i < players.size(); i++)
+    {
+      removeSubstituteComboBox.getItems().add(players.get(i));
+    }
+
+    if (currentIndex == -1 && removeSubstituteComboBox.getItems().size() > 0)
+    {
+      removeSubstituteComboBox.getSelectionModel().select(0);
+    }
+    else
+    {
+      removeSubstituteComboBox.getSelectionModel().select(currentIndex);
+    }
+  }
+  private void updateEveryBox()
+  {
+    updateAllPlayersBox();
+    updateChangePositionBox();
+    updateAddInjuryComboBox();
+    updateAddStarterComboBox();
+    updateAddSubstituteComboBox();
+    updateAddSuspendedComboBox();
+    updateRemoveInjuryComboBox();
+    updateRemoveStarterComboBox();
+    updateRemoveStarterComboBox();
+    updateRemoveSubstituteComboBox();
+    updateRemoveSuspendedComboBox();
+  }
   private void changeShirtNo()
   {
     String firstName = changeShirtNumberFirstName.getText();
@@ -477,6 +702,7 @@ public class Controller
         changeShirtNumberLastName.setEditable(false);
       }
     }
+
     if (e.getSource() == addStarter)
     {
       addStarter();

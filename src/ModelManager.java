@@ -150,6 +150,22 @@ public class ModelManager
     }
     return injuredPlayers;
   }
+  public PlayerList getAllAvailablePlayers()
+  {
+    PlayerList allPlayers = getAllPlayers();
+    PlayerList availablePlayers = new PlayerList();
+
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      if ((allPlayers.get(i).getInjury() == null) &&(allPlayers.get(i).getSuspension()==null))
+      {
+        availablePlayers.addPlayer(allPlayers.get(i));
+      }
+    }
+    return availablePlayers;
+  }
+
+
 
   public PlayerList getAllSuspendedPlayers()
   {
