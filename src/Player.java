@@ -11,7 +11,6 @@ public class Player implements Serializable
   private String startingOrNot;
 
   private int shirtNumber;
-  private boolean isAvailable;
 
   public Player(String firstName, String lastName, Date birthDate, String position)
   {

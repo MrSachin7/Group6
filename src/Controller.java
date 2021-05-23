@@ -119,6 +119,7 @@ public class Controller
     updatePlayersArea();
     updateEveryBox();
     allStarters();
+    allSubstitutes();
     allInjuries();
     allSuspension();
     allSubstitutes();
@@ -381,6 +382,7 @@ public class Controller
     updateRemoveStarterComboBox();
     updateRemoveSubstituteComboBox();
     updateRemoveSuspendedComboBox();
+    updateDeletePlayerComboBox();
   }
   private void changeShirtNo()
   {
@@ -600,7 +602,7 @@ updateEveryBox();
     addStarterFirstName.setText("");
     addStarterLastName.setText("");
     allStarters();
-    updateAllPlayersBox();
+  allSubstitutes();
     updateEveryBox();
   }
 
@@ -633,7 +635,7 @@ updateEveryBox();
     addSubstituteFirstName.setText("");
     addStarterLastName.setText("");
     allSubstitutes();
-    updateAllPlayersBox();
+   allStarters();
     updateEveryBox();
   }
 
@@ -849,6 +851,10 @@ updateEveryBox();
     if (e.getSource() == removeSubstitute)
     {
       removeSubstitute();
+    }
+    if (e.getSource()==deletePlayer)
+    {
+      deletePlayer();
     }
   }
 }

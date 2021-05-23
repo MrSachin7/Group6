@@ -26,33 +26,6 @@ public class PlayerList implements Serializable
   {
     return playerList.size();
   }
-  public void setShirtNumber(Player player, int shirtNumber)
-  {
-    boolean isShirtNumberOccupied = false;
-    for (int i = 0; i < playerList.size(); i++)
-    {
-      if (playerList.get(i).getShirtNumber() == shirtNumber)
-      {
-        isShirtNumberOccupied = true;
-        break;
-      }
-    }
-    if (isShirtNumberOccupied == true)
-    {
-      throw new IllegalShirtNumberException();
-    }
-    else
-    {
-      for (int i = 0; i < playerList.size(); i++)
-      {
-        if (playerList.get(i).equals(player))
-        {
-          playerList.get(i).setShirtNumber(shirtNumber);
-        }
-      }
-    }
-  }
-
 
   public  void add(Player player)
   {
@@ -146,23 +119,7 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
-  public String getAllInjuries()
-  {
-   PlayerList temp = new PlayerList();
-   for (int i=0; i< playerList.size(); i++)
-   {
-     if (!(playerList.get(i).getInjury()==null))
-     {
-       temp.add(playerList.get(i));
-     }
-   }
-   String temp1= "";
-   for (int i=0; i< temp.size(); i++)
-   {
-     temp1+=temp.get(i)+"\n";
-   }
-   return temp1;
-  }
+
   public String getInjuredDate()
   {
     String temp = "";

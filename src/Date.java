@@ -98,27 +98,6 @@ public class Date implements Serializable
     }
   }
 
-  public int numberOfDaysUntil(Date date2)
-  {
-    int count = 0;
-    Date temp = this.copy();
-    if (!(temp.isBefore(date2)))
-    {
-      return 0;
-    }
-    else
-    {
-      {
-        while ((temp.isBefore(date2)))
-        {
-          count++;
-          temp.nextDay();
-        }
-      }
-    }
-    return count;
-  }
-
   public static Date today()
   {
     GregorianCalendar currentDate = new GregorianCalendar();
@@ -126,11 +105,6 @@ public class Date implements Serializable
     int currentMonth = currentDate.get(GregorianCalendar.MONTH) + 1;
     int currentYear = currentDate.get(GregorianCalendar.YEAR);
     return new Date(currentDay, currentMonth, currentYear);
-  }
-
-  public Date copy()
-  {
-    return new Date(day, month, year);
   }
 
   public boolean equals(Object obj)

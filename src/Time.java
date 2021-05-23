@@ -50,26 +50,7 @@ public class Time implements Serializable
       return true;
     }
   }
-
-  public Time timeUntil(Time time2)
-  {
-    if (this.isBefore(time2))
-    {
-      int a = this.convertToSecond();
-      int b = time2.convertToSecond();
-      int difference = b - a;
-      return new Time(difference);
-    }
-    else
-      return new Time(0, 0, 0);
-  }
-
-  public Time copy()
-  {
-    return new Time(hour, minute, second);
-  }
-
-  public boolean equals(Object obj)
+    public boolean equals(Object obj)
   {
     if (!(obj instanceof Time))
     {

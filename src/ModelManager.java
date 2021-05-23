@@ -72,14 +72,6 @@ public class ModelManager
     saveMatches(allMatches);
   }
 
-  public void removeMatch(Match match)
-  {
-    MatchList allMatches = getAllMatches();
-    allMatches.removeMatch(match);
-
-    saveMatches(allMatches);
-  }
-
   //For Players
 
   public PlayerList getAllPlayers()
@@ -180,37 +172,6 @@ public class ModelManager
       }
     }
     return suspendedPlayers;
-  }
-
-  public void addInjuryToPlayer(String firstName, String lastName,
-      Injury injury)
-  {
-    PlayerList allPlayers = getAllPlayers();
-    for (int i = 0; i < allPlayers.size(); i++)
-    {
-      Player player = allPlayers.get(i);
-      if (player.getFirstName().equals(firstName) && player.getLastName()
-          .equals(lastName))
-      {
-        player.setInjury(injury);
-      }
-    }
-    savePlayers(allPlayers);
-  }
-
-  public void removeInjuryFromPlayer(String firstName, String lastName)
-  {
-    PlayerList allPlayers = getAllPlayers();
-    for (int i = 0; i < allPlayers.size(); i++)
-    {
-      Player player = allPlayers.get(i);
-      if (player.getFirstName().equals(firstName) && player.getLastName()
-          .equals(lastName))
-      {
-        player.setInjury(null);
-      }
-    }
-    savePlayers(allPlayers);
   }
 
   public void addPlayer(Player player)
