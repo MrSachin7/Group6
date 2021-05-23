@@ -3,11 +3,6 @@ import java.io.Serializable;
 public class LeagueMatch extends Match implements Serializable
 {
 
-  public LeagueMatch(String opponentTeam, Date matchDate, Time startTime,
-      boolean isHomeMatch, Formation formation)
-  {
-    super(opponentTeam, matchDate, startTime, isHomeMatch, formation);
-  }
 
   public LeagueMatch(String opponentTeam, Date matchDate, Time startTime,
       boolean isHomeMatch)
@@ -15,10 +10,6 @@ public class LeagueMatch extends Match implements Serializable
     super(opponentTeam, matchDate, startTime, isHomeMatch);
   }
 
-  public void setFormation(Formation formation)
-  {
-    super.setFormation(formation);
-  }
 
   public String matchType()
   {

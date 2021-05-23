@@ -7,17 +7,7 @@ public abstract class Match implements Serializable
   private Date matchDate;
   private Time startTime;
   private boolean isHomeMatch;
-  private Formation formation;
 
-  public Match(String opponentTeam, Date matchDate, Time startTime,
-      boolean isHomeMatch, Formation formation)
-  {
-    this.opponentTeam = opponentTeam;
-    this.matchDate = matchDate;
-    this.startTime = startTime;
-    this.isHomeMatch = isHomeMatch;
-    this.formation = formation;
-  }
 
   public Match(String opponentTeam, Date matchDate, Time startTime,
       boolean isHomeMatch)
@@ -26,22 +16,10 @@ public abstract class Match implements Serializable
     this.matchDate = matchDate;
     this.startTime = startTime;
     this.isHomeMatch = isHomeMatch;
-    this.formation = null;
   }
-
-  public void setFormation(Formation formation)
-  {
-    this.formation = formation;
-  }
-
   public Date getMatchDate()
   {
     return matchDate;
-  }
-
-  public Formation getFormation()
-  {
-    return formation;
   }
 
   public String getOpponentTeam()
@@ -64,7 +42,7 @@ public abstract class Match implements Serializable
     {
       Match temp = (Match) obj;
       return temp.isHomeMatch =
-          isHomeMatch && temp.formation.equals(formation) && temp.opponentTeam
+          isHomeMatch && temp.opponentTeam
               .equals(opponentTeam) && temp.startTime.equals(startTime)
               && temp.matchDate.equals(matchDate);
     }

@@ -390,8 +390,8 @@ public class Controller
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
     changeShirtNumberFirstName.setText("");
     changeShirtNumberLastName.setText("");
-    updatePlayersArea();
-    updateAllPlayersBox();
+   updateEveryBox();
+   updatePlayersArea();
   }
 
   private void changePosition()
@@ -402,8 +402,8 @@ public class Controller
     modelManager.changePosition(firstName, lastName, position);
     changePositionFirstName.setText("");
     changePositionLastName.setText("");
+    updateEveryBox();
     updatePlayersArea();
-    updateAllPlayersBox();
   }
 
   private void createPlayer()
@@ -422,8 +422,8 @@ public class Controller
     createPlayerFirstName.setText("");
     createPlayerLastName.setText("");
     createPlayerPosition.setText("");
-    updatePlayersArea();
-    updateAllPlayersBox();
+updateEveryBox();
+updatePlayersArea();
   }
 
   private void deletePlayer()
@@ -434,7 +434,7 @@ public class Controller
     deletePlayerFirstName.setText("");
     deletePlayerLastName.setText("");
     updatePlayersArea();
-
+updateEveryBox();
   }
 
   private void updateUpcomingMatchesArea()
@@ -504,6 +504,7 @@ public class Controller
     allInjuryInjuredDate.setText(allInjuries.getInjuredDate());
     allInjuryExpectedReturnDate.setText(allInjuries.getExpectedReturnDate());
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void addInjury()
@@ -529,6 +530,7 @@ public class Controller
     addInjuryLastName.setText("");
     allInjuries();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void allSuspension()
@@ -538,6 +540,7 @@ public class Controller
     suspendedPlayerNoOfGames
         .setText(allSuspendedPlayers.getNoOfGamesSuspended());
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void removeInjury()
@@ -550,6 +553,7 @@ public class Controller
     removeInjuryFirstName.setText("");
     allInjuries();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void addSuspension()
@@ -564,6 +568,7 @@ public class Controller
     addSuspendedLastName.setText("");
     allSuspension();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void removeSuspension()
@@ -575,6 +580,7 @@ public class Controller
     removeSuspensionLastName.setText("");
     allSuspension();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void allStarters()
@@ -595,6 +601,7 @@ public class Controller
     addStarterLastName.setText("");
     allStarters();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void removeStarter()
@@ -606,6 +613,7 @@ public class Controller
     removeStarterLastName.setText("");
     allStarters();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void allSubstitutes()
@@ -626,6 +634,7 @@ public class Controller
     addStarterLastName.setText("");
     allSubstitutes();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   private void removeSubstitute()
@@ -637,6 +646,7 @@ public class Controller
     removeStarterLastName.setText("");
     allSubstitutes();
     updateAllPlayersBox();
+    updateEveryBox();
   }
 
   public void handler(ActionEvent e)
