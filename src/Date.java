@@ -2,6 +2,12 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.GregorianCalendar;
 
+/**
+ * A class creating and managing the Date object
+ * @author Sachin Baral
+ * @version 1.0
+ */
+
 public class Date implements Serializable
 {
 
@@ -9,6 +15,12 @@ public class Date implements Serializable
     private int month;
     private int year;
 
+  /**
+   * A constructor creating a Date object
+   * @param day the day of the year
+   * @param month the month of the year
+   * @param year the year
+   */
     public Date(int day, int month, int year)
     {
       this.year = year;
@@ -24,6 +36,12 @@ public class Date implements Serializable
       else
         throw new IllegalDateException(" The day is not valid");
     }
+
+  /**
+   * Compares two Date object which comes earlier in a Calendar
+   * @param date2 the Date object to compare
+   * @return boolean (true if the given Date object comes before date2 in calendar) else false
+   */
   public boolean isBefore(Date date2)
   {
     if (date2.year > year)
@@ -44,6 +62,11 @@ public class Date implements Serializable
     }
   }
 
+  /**
+   * Checks if a Date object is a leap year
+   * @return boolean (true if the given Date object is a leap year),else false
+   */
+
   private boolean isLeapYear()
   {
     if ((year % 4 == 0) && (year % 100 != 0))
@@ -58,6 +81,10 @@ public class Date implements Serializable
       return false;
   }
 
+  /**
+   * Calculates the days in month of a Date object
+   * @return the number of days in month of a Date object
+   */
   private int daysInMonth()
   {
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
@@ -83,21 +110,10 @@ public class Date implements Serializable
     }
   }
 
-  private void nextDay()
-  {
-    day++;
-    if (day > daysInMonth())
-    {
-      month++;
-      day = 1;
-      if (month > 12)
-      {
-        year++;
-        month = 1;
-      }
-    }
-  }
-
+  /**
+   * A static method for the current day.
+   * @return Date Object of current day
+   */
   public static Date today()
   {
     GregorianCalendar currentDate = new GregorianCalendar();
@@ -106,6 +122,11 @@ public class Date implements Serializable
     int currentYear = currentDate.get(GregorianCalendar.YEAR);
     return new Date(currentDay, currentMonth, currentYear);
   }
+  /**
+   * Compares given object with the Match
+   * @param obj the object to compare with the match
+   * @return boolean (true if the given object is a Date object with all equal attributes), else false
+   */
 
   public boolean equals(Object obj)
   {
