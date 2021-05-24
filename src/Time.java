@@ -1,12 +1,23 @@
 import java.io.Serializable;
 import java.text.DecimalFormat;
 
+/**
+ * A class that creates and manages the Time object
+ * @author Sachin Baral
+ * @version 1.0
+ */
 public class Time implements Serializable
 {
   private int hour;
   private int minute;
   private int second;
 
+  /**
+   * A constructor time that creats a Time object
+   * @param h  hours
+   * @param m  minutes
+   * @param s seconds
+   */
   public Time(int h, int m, int s)
   {
     if (h <= 24 && h >= 0)
@@ -23,6 +34,11 @@ public class Time implements Serializable
     }
   }
 
+  /**
+   * A constructor that creates a Time with total time in seconds
+   * @param totalTimeInSecond the total time in seconds
+   */
+
   public Time(int totalTimeInSecond)
   {
     hour = (totalTimeInSecond / 3600);
@@ -32,22 +48,20 @@ public class Time implements Serializable
     second = totalTimeInSecond;
   }
 
+  /**
+   * Calculates the total time in seconds of the Time object
+   * @return the total time in seconds of the Time object
+   */
   public int convertToSecond()
   {
     return ((hour * 3600) + (minute * 60) + second);
   }
 
-  public boolean isBefore(Time time)
-  {
-    if (this.convertToSecond() >= time.convertToSecond())
-    {
-      return false;
-    }
-    else
-    {
-      return true;
-    }
-  }
+  /**
+   * Compares given object with the Match
+   * @param obj the object to compare with the match
+   * @return boolean (true if the given object is a Time  object with all equal attributes), else false
+   */
 
   public boolean equals(Object obj)
   {
