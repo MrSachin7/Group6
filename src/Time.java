@@ -9,20 +9,18 @@ public class Time implements Serializable
 
   public Time(int h, int m, int s)
   {
-   if (h<=24 && h>=0)
-   {
-     if (m<=60 && m>=0)
-     {
-       if (s<=60 && s>=0)
-       {
-         hour=h;
-         minute=m;
-         second=s;
-       }
-     }
-   }
-
-
+    if (h <= 24 && h >= 0)
+    {
+      if (m <= 60 && m >= 0)
+      {
+        if (s <= 60 && s >= 0)
+        {
+          hour = h;
+          minute = m;
+          second = s;
+        }
+      }
+    }
   }
 
   public Time(int totalTimeInSecond)
@@ -50,7 +48,8 @@ public class Time implements Serializable
       return true;
     }
   }
-    public boolean equals(Object obj)
+
+  public boolean equals(Object obj)
   {
     if (!(obj instanceof Time))
     {
@@ -58,14 +57,16 @@ public class Time implements Serializable
     }
     else
     {
-      Time other = (Time)obj;
-      return other.second==second && other.minute==minute && other.hour==hour;
+      Time other = (Time) obj;
+      return other.second == second && other.minute == minute
+          && other.hour == hour;
     }
   }
 
   public String toString()
   {
     DecimalFormat formatter = new DecimalFormat("00");
-    return formatter.format(hour)+":"+formatter.format(minute)+":"+formatter.format(second);
+    return formatter.format(hour) + ":" + formatter.format(minute) + ":"
+        + formatter.format(second);
   }
 }

@@ -1,40 +1,45 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * A class containing a list of Player objects.
+ * @author Sachin Baral
+ * @verrsion 1.0
+ */
 public class PlayerList implements Serializable
 {
   private ArrayList<Player> playerList;
 
+  /**
+   * No-argument constructor initializing the PlayerList.
+   */
   public PlayerList()
   {
     playerList = new ArrayList<Player>();
   }
 
-  public void addPlayer(Player player)
-  {
-    playerList.add(player);
-  }
-
-  public void addPlayers(Player[] players)
-  {
-    for (int i = 0; i < players.length; i++)
-    {
-      playerList.add(players[i]);
-    }
-  }
+  /**
+   * Calculates the size of size.
+   * @return the size of the List.
+   */
   public int size()
   {
     return playerList.size();
   }
-
+  /**
+   * Adds a Player to the List.
+   * @param player the player to add to the List.
+   */
   public  void add(Player player)
   {
     playerList.add(player);
   }
-  public void set(Player player,int index)
-  {
-    playerList.set(index,player);
-  }
+
+  /**
+   * Gets a player object from position index from the list.
+   * @param index the position in the list of the Player object
+   * @return the Player at index if one exists , else null
+   */
   public Player get(int index)
   {
    if (index<playerList.size())
@@ -47,32 +52,10 @@ public class PlayerList implements Serializable
    }
   }
 
-  public Player get(String firstName, String lastName)
-  {
-    for (int i=0; i<playerList.size();i++)
-    {
-      Player temp =playerList.get(i);
-      if (temp.getFirstName().equals(firstName) && temp.getLastName().equals(lastName))
-      {
-        return temp;
-      }
-    }
-    return null;
-  }
-  public int getIndex(String firstName, String lastName)
-  {
-    for(int i = 0; i<playerList.size(); i++)
-    {
-     Player temp = playerList.get(i);
-
-      if(temp.getFirstName().equals(firstName) && temp.getLastName().equals(lastName))
-      {
-        return i;
-      }
-    }
-    return -1;
-  }
-
+  /**
+   * Removes a Player object equal to given Player object if one exists.
+   * @param player the Player in the list to remove
+   */
 
   public void removePlayer(Player player)
   {
@@ -87,11 +70,10 @@ public class PlayerList implements Serializable
     }
   }
 
-  public ArrayList<Player> getPlayerList()
-  {
-    return playerList;
-  }
-
+  /**
+   * Gets all the Player object as a String.
+   * @return all the Player object as a String
+   */
   public String toString()
   {
     String temp = "";
@@ -101,6 +83,11 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+
+  /**
+   * Gets Shirt Numbers of all Player object in the list as a String.
+   * @return all the Shirt numbers of all Player object in the list
+   */
   public String getShirtNumbers()
   {
     String temp = "";
@@ -110,6 +97,10 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  /**
+   * Gets Positions of all Player object in the list as a String.
+   * @return all the Positions of all Player object in the list
+   */
   public String getAllPositions()
   {
     String temp = "";
@@ -119,6 +110,10 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  /**
+   * Gets Injury date of all Player object in the list as a String.
+   * @return all the Injury Date of all Player object in the list
+   */
 
   public String getInjuredDate()
   {
@@ -129,6 +124,10 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  /**
+   * Gets Expected return Date of all Player object in the list as a String.
+   * @return all the expected return date of all Player object in the list
+   */
   public String getExpectedReturnDate()
   {
     String temp = "";
@@ -138,6 +137,10 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  /**
+   * Gets no of games suspended of all Player object in the list as a String.
+   * @return no of games suspended of all Player object in the list
+   */
   public String getNoOfGamesSuspended()
   {
     String temp = "";
@@ -147,6 +150,10 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  /**
+   * Gets Birth Date of all Player object in the list as a String.
+   * @return Birth Date of all Player object in the list
+   */
   public String getBirthDate()
   {
     String temp = "";

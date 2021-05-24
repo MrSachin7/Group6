@@ -137,7 +137,7 @@ public class ModelManager
     {
       if (!(allPlayers.get(i).getInjury() == null))
       {
-        injuredPlayers.addPlayer(allPlayers.get(i));
+        injuredPlayers.add(allPlayers.get(i));
       }
     }
     return injuredPlayers;
@@ -151,7 +151,7 @@ public class ModelManager
     {
       if ((allPlayers.get(i).getInjury() == null) &&(allPlayers.get(i).getSuspension()==null))
       {
-        availablePlayers.addPlayer(allPlayers.get(i));
+        availablePlayers.add(allPlayers.get(i));
       }
     }
     return availablePlayers;
@@ -168,7 +168,7 @@ public class ModelManager
     {
       if (!(allPlayers.get(i).getSuspension() == null))
       {
-        suspendedPlayers.addPlayer(allPlayers.get(i));
+        suspendedPlayers.add(allPlayers.get(i));
       }
     }
     return suspendedPlayers;
@@ -177,7 +177,7 @@ public class ModelManager
   public void addPlayer(Player player)
   {
     PlayerList allPlayers = getAllPlayers();
-    allPlayers.addPlayer(player);
+    allPlayers.add(player);
     savePlayers(allPlayers);
   }
 
@@ -284,7 +284,7 @@ public class ModelManager
     {
       if ((allPlayers.get(i).getStartingOrNot().equals("Starting")))
       {
-        startingPlayers.addPlayer(allPlayers.get(i));
+        startingPlayers.add(allPlayers.get(i));
       }
     }
     return startingPlayers;
@@ -335,7 +335,7 @@ public class ModelManager
     {
       if ((allPlayers.get(i).getStartingOrNot().equals("Substitute")))
       {
-        startingPlayers.addPlayer(allPlayers.get(i));
+        startingPlayers.add(allPlayers.get(i));
       }
     }
     return startingPlayers;
