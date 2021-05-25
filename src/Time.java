@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 
 /**
  * A class that creates and manages the Time object
- * @author Sachin Baral
+ * @author Himal Sharma
  * @version 1.0
  */
 public class Time implements Serializable

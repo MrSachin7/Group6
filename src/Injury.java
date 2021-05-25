@@ -1,9 +1,18 @@
 import java.io.Serializable;
 
+/**
+ * @author Cristian-Marian Radu
+ */
 public class Injury implements Serializable
 {
   private Date injuryDate;
   private Date expectedReturnDate;
+
+  /**
+   * A constructor that initializes/ creates an Injury object
+   * @param injuryDate the date when injury happened
+   * @param expectedReturnDate the expected return date
+   */
   public Injury(Date injuryDate, Date expectedReturnDate)
   {
     if (expectedReturnDate.isBefore(injuryDate))
@@ -22,33 +31,38 @@ public class Injury implements Serializable
     }
   }
 
+  /**
+   * A constructor that creates an Injury object without return date
+   * @param injuryDate the date when the injury happened
+   */
   public Injury(Date injuryDate)
   {
     this.injuryDate = injuryDate;
     expectedReturnDate = null;
   }
 
-
-  public void setInjuryDate(Date injuryDate)
-  {
-    this.injuryDate = injuryDate;
-  }
-
+  /**
+   * Gets the injury date
+   * @return Date object storing the date of injury
+   */
   public Date getInjuryDate()
   {
     return injuryDate;
   }
 
-  public void setExpectedReturnDate(Date expectedReturnDate)
-  {
-    this.expectedReturnDate = expectedReturnDate;
-  }
-
+  /**
+   * Gets expected return date
+   * @return Date object storing expected return date
+   */
   public Date getExpectedReturnDate()
   {
     return expectedReturnDate;
   }
-
+  /**
+   * Compares a provided object to a Player object
+   * @param obj an object to be compared with the Player object
+   * @return return true if the given object is Player object that has all the attributes equal to the Player , else returns false
+   */
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Injury))
@@ -67,20 +81,10 @@ public class Injury implements Serializable
         return temp.injuryDate.equals(injuryDate) && temp.expectedReturnDate.equals(expectedReturnDate);
       }
     }
-  }
-
-  public Injury copy()
-  {
-    if (expectedReturnDate == null)
-    {
-      return new Injury(injuryDate);
-    }
-    else
-    {
-      return new Injury(injuryDate, expectedReturnDate);
-    }
-  }
-
+  }/**
+ * A method for returning the information of the Injury object in String.
+ * @return all the important attributes in readable String format
+ */
  public String toString()
  {
    return "InjuryDate :"+injuryDate+"\n Expected Return Date :"+expectedReturnDate;

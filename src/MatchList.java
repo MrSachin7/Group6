@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * A class containing a list of Match objects.
  *
- * @author Sachin Baral
+ * @author Emil Vassilev
  * @version 1.0
  */
 public class MatchList implements Serializable

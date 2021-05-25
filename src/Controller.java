@@ -5,6 +5,9 @@ import javafx.event.ActionEvent;
 
 import java.time.LocalDate;
 
+/**
+ * @author Sachin Baral
+ */
 public class Controller
 {
   @FXML private TextArea allPlayersBirthdate;
@@ -103,6 +106,9 @@ public class Controller
 
   private ModelManager modelManager;
 
+  /**
+   * A list of methods to run when the program starts
+   */
   public void initialize()
   {
     modelManager = new ModelManager("Matches.bin", "Players.bin");
@@ -651,6 +657,10 @@ updateEveryBox();
     updateEveryBox();
   }
 
+  /**
+   * A handler that handles all the buttons and resposive functions in the GUI.
+   * @param e the action event
+   */
   public void handler(ActionEvent e)
   {
     if (e.getSource() == updatePlayers)
