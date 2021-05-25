@@ -527,6 +527,23 @@ public class ModelManager
     return allUpcomingMatches;
   }
 
+  /**
+   * Removes a match from the list
+   * @param opponentTeam the opponent team of the match to remove
+   * @param startDate the starting date of the match to remove
+   */
+  public void removeMatch(String opponentTeam, Date startDate)
+  {
+    MatchList allMatches = getAllMatches();
+    for (int i=0; i<allMatches.size();i++)
+    {
+      if (allMatches.get(i).getOpponentTeam().equals(opponentTeam) && allMatches.get(i).getMatchDate().equals(startDate))
+      {
+        allMatches.removeMatch(allMatches.get(i));
+      }
+    }
+    saveMatches(allMatches);
+  }
 
 }
 

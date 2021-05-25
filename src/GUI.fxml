@@ -180,6 +180,21 @@
                                     </AnchorPane>
                               </content>
                             </Tab>
+                              <Tab text="Delete Match">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="deleteMatchOpponent" layoutX="114.0" layoutY="77.0" />
+                                          <Label layoutX="46.0" layoutY="81.0" text="Opponent" />
+                                          <ComboBox fx:id="deleteMatchComboBox" layoutX="406.0" layoutY="99.0" onAction="#handler" prefWidth="150.0" />
+                                          <Label layoutX="397.0" layoutY="68.0" text="Choose match" />
+                                          <Button fx:id="deleteMatch" layoutX="264.0" layoutY="252.0" mnemonicParsing="false" onAction="#handler" text="Delete" />
+                                          <DatePicker fx:id="deleteMatchDate" layoutX="102.0" layoutY="141.0" />
+                                          <Label layoutX="46.0" layoutY="145.0" text="Date" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
                           </tabs>
                         </TabPane>
                      </children>

@@ -103,6 +103,10 @@ public class Controller
   @FXML private Button removeSubstitute;
   @FXML private TextArea allStartersShirtNumber;
   @FXML private TextArea allSubstituteShirtNumber;
+  @FXML private TextField deleteMatchOpponent;
+  @FXML private DatePicker deleteMatchDate;
+  @FXML private ComboBox<Match> deleteMatchComboBox;
+  @FXML private Button deleteMatch;
 
   private ModelManager modelManager;
 
