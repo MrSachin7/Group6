@@ -167,6 +167,7 @@ public class Controller
       comboBoxShirtNo.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateChangePositionBox()
   {
     int currentIndex = comboBoxPosition.getSelectionModel().getSelectedIndex();
@@ -189,9 +190,11 @@ public class Controller
     }
 
   }
+
   private void updateDeletePlayerComboBox()
   {
-    int currentIndex = deletePlayerChoosePlayer.getSelectionModel().getSelectedIndex();
+    int currentIndex = deletePlayerChoosePlayer.getSelectionModel()
+        .getSelectedIndex();
 
     deletePlayerChoosePlayer.getItems().clear();
 
@@ -210,9 +213,11 @@ public class Controller
       deletePlayerChoosePlayer.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateAddSuspendedComboBox()
   {
-    int currentIndex = addSuspendedComboBox.getSelectionModel().getSelectedIndex();
+    int currentIndex = addSuspendedComboBox.getSelectionModel()
+        .getSelectedIndex();
 
     addSuspendedComboBox.getItems().clear();
 
@@ -231,9 +236,11 @@ public class Controller
       addSuspendedComboBox.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateAddInjuryComboBox()
   {
-    int currentIndex = addInjuryChoosePlayer.getSelectionModel().getSelectedIndex();
+    int currentIndex = addInjuryChoosePlayer.getSelectionModel()
+        .getSelectedIndex();
 
     addInjuryChoosePlayer.getItems().clear();
 
@@ -252,9 +259,11 @@ public class Controller
       addInjuryChoosePlayer.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateRemoveInjuryComboBox()
   {
-    int currentIndex = removeInjuryChoosePlayer.getSelectionModel().getSelectedIndex();
+    int currentIndex = removeInjuryChoosePlayer.getSelectionModel()
+        .getSelectedIndex();
 
     removeInjuryChoosePlayer.getItems().clear();
 
@@ -276,7 +285,8 @@ public class Controller
 
   private void updateRemoveSuspendedComboBox()
   {
-    int currentIndex = removeSuspensionComboBox.getSelectionModel().getSelectedIndex();
+    int currentIndex = removeSuspensionComboBox.getSelectionModel()
+        .getSelectedIndex();
 
     removeSuspensionComboBox.getItems().clear();
 
@@ -295,9 +305,11 @@ public class Controller
       removeSuspensionComboBox.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateAddStarterComboBox()
   {
-    int currentIndex = addStarterComboBox.getSelectionModel().getSelectedIndex();
+    int currentIndex = addStarterComboBox.getSelectionModel()
+        .getSelectedIndex();
 
     addStarterComboBox.getItems().clear();
 
@@ -316,9 +328,11 @@ public class Controller
       addStarterComboBox.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateRemoveStarterComboBox()
   {
-    int currentIndex = removeStarterComboBox.getSelectionModel().getSelectedIndex();
+    int currentIndex = removeStarterComboBox.getSelectionModel()
+        .getSelectedIndex();
 
     removeStarterComboBox.getItems().clear();
 
@@ -337,9 +351,11 @@ public class Controller
       removeStarterComboBox.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateAddSubstituteComboBox()
   {
-    int currentIndex = addSubstituteComboBox.getSelectionModel().getSelectedIndex();
+    int currentIndex = addSubstituteComboBox.getSelectionModel()
+        .getSelectedIndex();
 
     addSubstituteComboBox.getItems().clear();
 
@@ -358,9 +374,11 @@ public class Controller
       addSubstituteComboBox.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateRemoveSubstituteComboBox()
   {
-    int currentIndex = removeSubstituteComboBox.getSelectionModel().getSelectedIndex();
+    int currentIndex = removeSubstituteComboBox.getSelectionModel()
+        .getSelectedIndex();
 
     removeSubstituteComboBox.getItems().clear();
 
@@ -379,6 +397,7 @@ public class Controller
       removeSubstituteComboBox.getSelectionModel().select(currentIndex);
     }
   }
+
   private void updateEveryBox()
   {
     updateAllPlayersBox();
@@ -394,16 +413,17 @@ public class Controller
     updateRemoveSuspendedComboBox();
     updateDeletePlayerComboBox();
   }
+
   private void changeShirtNo()
   {
     String firstName = changeShirtNumberFirstName.getText();
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (int) spinnerShirtNo.getValue();
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
-    changeShirtNumberFirstName.setText("");
-    changeShirtNumberLastName.setText("");
-   updateEveryBox();
-   updatePlayersArea();
+    changeShirtNumberFirstName.clear();
+    changeShirtNumberLastName.clear();
+    updateEveryBox();
+    updatePlayersArea();
   }
 
   private void changePosition()
@@ -412,8 +432,8 @@ public class Controller
     String lastName = changePositionLastName.getText();
     String position = textFieldPosition.getText();
     modelManager.changePosition(firstName, lastName, position);
-    changePositionFirstName.setText("");
-    changePositionLastName.setText("");
+    changePositionFirstName.clear();
+    changePositionLastName.clear();
     updateEveryBox();
     updatePlayersArea();
   }
@@ -431,22 +451,22 @@ public class Controller
     int shirtNumber = (int) createPlayerShirtNumber.getValue();
     modelManager.addPlayer(new Player(firstName, lastName, newDate, position));
     modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
-    createPlayerFirstName.setText("");
-    createPlayerLastName.setText("");
-    createPlayerPosition.setText("");
-updateEveryBox();
-updatePlayersArea();
+    createPlayerFirstName.clear();
+    createPlayerLastName.clear();
+    createPlayerPosition.clear();
+    updateEveryBox();
+    updatePlayersArea();
   }
 
   private void deletePlayer()
   {
     String firstName = deletePlayerFirstName.getText();
     String lastName = deletePlayerLastName.getText();
-    modelManager.removePlayer(firstName,lastName);
-    deletePlayerFirstName.setText("");
-    deletePlayerLastName.setText("");
+    modelManager.removePlayer(firstName, lastName);
+    deletePlayerFirstName.clear();
+    deletePlayerLastName.clear();
     updatePlayersArea();
-updateEveryBox();
+    updateEveryBox();
   }
 
   private void updateUpcomingMatchesArea()
@@ -504,7 +524,21 @@ updateEveryBox();
       modelManager.addFriendlyMatch(
           new FriendlyMatch(opponent, newDate, newTime, isHomeMatch));
     }
-    createMatchOpponent.setText("");
+    createMatchOpponent.clear();
+    updateUpcomingMatchesArea();
+    updatePreviousMatchesArea();
+  }
+
+  private void removeMatch()
+  {
+    LocalDate temp = deleteMatchDate.getValue();
+    int day = temp.getDayOfMonth();
+    int month = temp.getMonthValue();
+    int year = temp.getYear();
+    Date tempDate = new Date(day,month,year);
+    String opponentTeam = deleteMatchOpponent.getText();
+    modelManager.removeMatch(opponentTeam,tempDate);
+    deleteMatchOpponent.clear();
     updateUpcomingMatchesArea();
     updatePreviousMatchesArea();
   }
@@ -538,8 +572,8 @@ updateEveryBox();
 
     Injury injury = new Injury(injuredDate, expectedReturnDate);
     modelManager.addInjury(firstName, lastName, injury);
-    addInjuryFirstName.setText("");
-    addInjuryLastName.setText("");
+    addInjuryFirstName.clear();
+    addInjuryLastName.clear();
     allInjuries();
     updateAllPlayersBox();
     updateEveryBox();
@@ -561,8 +595,8 @@ updateEveryBox();
     String lastName = removeInjuryLastName.getText();
 
     modelManager.removeInjury(firstName, lastName);
-    removeInjuryLastName.setText("");
-    removeInjuryFirstName.setText("");
+    removeInjuryLastName.clear();
+    removeInjuryFirstName.clear();
     allInjuries();
     updateAllPlayersBox();
     updateEveryBox();
@@ -576,8 +610,8 @@ updateEveryBox();
         .getValue();
     Suspension suspension = new Suspension(noOfGamesSuspended);
     modelManager.addSuspension(firstName, lastName, suspension);
-    addSuspendedFirstName.setText("");
-    addSuspendedLastName.setText("");
+    addSuspendedFirstName.clear();
+    addSuspendedLastName.clear();
     allSuspension();
     updateAllPlayersBox();
     updateEveryBox();
@@ -588,8 +622,8 @@ updateEveryBox();
     String firstName = removeSuspensionFirstName.getText();
     String lastName = removeSuspensionLastName.getText();
     modelManager.removeSuspension(firstName, lastName);
-    removeSuspensionFirstName.setText("");
-    removeSuspensionLastName.setText("");
+    removeSuspensionFirstName.clear();
+    removeSuspensionLastName.clear();
     allSuspension();
     updateAllPlayersBox();
     updateEveryBox();
@@ -609,10 +643,10 @@ updateEveryBox();
     String firstName = addStarterFirstName.getText();
     String lastName = addStarterLastName.getText();
     modelManager.addStartingPlayers(firstName, lastName);
-    addStarterFirstName.setText("");
-    addStarterLastName.setText("");
+    addStarterFirstName.clear();
+    addStarterLastName.clear();
     allStarters();
-  allSubstitutes();
+    allSubstitutes();
     updateEveryBox();
   }
 
@@ -621,8 +655,8 @@ updateEveryBox();
     String firstName = removeStarterFirstName.getText();
     String lastName = removeStarterLastName.getText();
     modelManager.removeStartingPlayers(firstName, lastName);
-    removeStarterFirstName.setText("");
-    removeStarterLastName.setText("");
+    removeStarterFirstName.clear();
+    removeStarterLastName.clear();
     allStarters();
     updateAllPlayersBox();
     updateEveryBox();
@@ -642,10 +676,10 @@ updateEveryBox();
     String firstName = addSubstituteFirstName.getText();
     String lastName = addSubstituteLastName.getText();
     modelManager.addSubstitutePlayers(firstName, lastName);
-    addSubstituteFirstName.setText("");
-    addStarterLastName.setText("");
+    addSubstituteFirstName.clear();
+    addStarterLastName.clear();
     allSubstitutes();
-   allStarters();
+    allStarters();
     updateEveryBox();
   }
 
@@ -654,15 +688,16 @@ updateEveryBox();
     String firstName = removeSubstituteFirstName.getText();
     String lastName = removeSubstituteLastName.getText();
     modelManager.removeSubstitutePlayers(firstName, lastName);
-    removeSubstituteFirstName.setText("");
-    removeStarterLastName.setText("");
+    removeSubstituteFirstName.clear();
+    removeStarterLastName.clear();
     allSubstitutes();
     updateAllPlayersBox();
     updateEveryBox();
   }
 
   /**
-   * A handler that handles all the buttons and resposive functions in the GUI.
+   * A handler that handles all the buttons and responsive functions in the GUI.
+   *
    * @param e the action event
    */
   public void handler(ActionEvent e)
@@ -742,7 +777,8 @@ updateEveryBox();
     }
     if (e.getSource() == deletePlayerChoosePlayer)
     {
-      Player temp = deletePlayerChoosePlayer.getSelectionModel().getSelectedItem();
+      Player temp = deletePlayerChoosePlayer.getSelectionModel()
+          .getSelectedItem();
 
       if (temp != null)
       {
@@ -766,14 +802,15 @@ updateEveryBox();
     }
     if (e.getSource() == removeInjuryChoosePlayer)
     {
-      Player temp = removeInjuryChoosePlayer.getSelectionModel().getSelectedItem();
+      Player temp = removeInjuryChoosePlayer.getSelectionModel()
+          .getSelectedItem();
 
       if (temp != null)
       {
         removeInjuryFirstName.setText(temp.getFirstName());
-       removeInjuryLastName.setText(temp.getLastName());
+        removeInjuryLastName.setText(temp.getLastName());
         removeInjuryFirstName.setEditable(false);
-       removeInjuryLastName.setEditable(false);
+        removeInjuryLastName.setEditable(false);
       }
     }
     if (e.getSource() == addSuspendedComboBox)
@@ -790,7 +827,8 @@ updateEveryBox();
     }
     if (e.getSource() == removeSuspensionComboBox)
     {
-      Player temp = removeSuspensionComboBox.getSelectionModel().getSelectedItem();
+      Player temp = removeSuspensionComboBox.getSelectionModel()
+          .getSelectedItem();
 
       if (temp != null)
       {
@@ -838,7 +876,8 @@ updateEveryBox();
     }
     if (e.getSource() == removeSubstituteComboBox)
     {
-      Player temp = removeSubstituteComboBox.getSelectionModel().getSelectedItem();
+      Player temp = removeSubstituteComboBox.getSelectionModel()
+          .getSelectedItem();
 
       if (temp != null)
       {
@@ -848,7 +887,6 @@ updateEveryBox();
         removeSubstituteLastName.setEditable(false);
       }
     }
-
 
     if (e.getSource() == addStarter)
     {
@@ -866,9 +904,13 @@ updateEveryBox();
     {
       removeSubstitute();
     }
-    if (e.getSource()==deletePlayer)
+    if (e.getSource() == deletePlayer)
     {
       deletePlayer();
+    }
+    if (e.getSource()==deleteMatch)
+    {
+      removeMatch();
     }
   }
 }
