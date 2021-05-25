@@ -77,6 +77,10 @@ public class Time implements Serializable
     }
   }
 
+  /**
+   * Gets hour,minute and second in a user-friendly way
+   * @return hour,minute and seconds in String.
+   */
   public String toString()
   {
     DecimalFormat formatter = new DecimalFormat("00");

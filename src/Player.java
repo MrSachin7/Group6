@@ -163,6 +163,10 @@ public class Player implements Serializable
     }
   }
 
+  /**
+   * Gets first and last name of a Player object in String.
+   * @return  first and last name of a Player object in String
+   */
 
   public String toString()
   {

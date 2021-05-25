@@ -2,8 +2,7 @@ import java.io.Serializable;
 
 /**
  * An abstract class that initialize and manage Match object
- * @author Sachin Baral
- * @version 1.0
+ * @author Bartosz Zielinski
  */
 public abstract class Match implements Serializable
 {
@@ -85,7 +84,10 @@ public abstract class Match implements Serializable
    */
   public abstract String matchType();
 
-
+  /**
+   * A method for returning the information of the Match in String.
+   * @return all the important attributes in readable String format
+   */
   public String toString()
   {
     return "Match Date :"+matchDate+"\n Starts at :"+startTime+"\n HomeMatch :"+isHomeMatch;
