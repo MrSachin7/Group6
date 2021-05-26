@@ -4,6 +4,7 @@ import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author Sachin Baral
@@ -105,8 +106,12 @@ public class Controller
   @FXML private TextArea allSubstituteShirtNumber;
   @FXML private TextField deleteMatchOpponent;
   @FXML private DatePicker deleteMatchDate;
-  @FXML private ComboBox<Match> deleteMatchComboBox;
   @FXML private Button deleteMatch;
+  @FXML private TextArea previousMatchesResult;
+  @FXML private TextField setResultOpponent;
+ @FXML private DatePicker setResultDate;
+  @FXML private TextField setResultResult;
+  @FXML private Button setResult;
 
   private ModelManager modelManager;
 
@@ -133,6 +138,9 @@ public class Controller
     allInjuries();
     allSuspension();
     allSubstitutes();
+    updatePreviousMatchesArea();
+    updateUpcomingMatchesArea();
+
   }
 
   private void updatePlayersArea()
@@ -143,8 +151,8 @@ public class Controller
     allPlayersShirtNumber.setText(players.getShirtNumbers());
     allPlayersPosition.setText(players.getAllPositions());
     allPlayersBirthdate.setText(players.getBirthDate());
-
   }
+
 
   private void updateAllPlayersBox()
   {
@@ -398,6 +406,8 @@ public class Controller
     }
   }
 
+
+
   private void updateEveryBox()
   {
     updateAllPlayersBox();
@@ -412,6 +422,7 @@ public class Controller
     updateRemoveSubstituteComboBox();
     updateRemoveSuspendedComboBox();
     updateDeletePlayerComboBox();
+
   }
 
   private void changeShirtNo()
@@ -486,6 +497,7 @@ public class Controller
     previousMatchesTimes.setText(matches.getAllTimes());
     previousMatchesDates.setText(matches.getAllDates());
     previousMatchesMatchType.setText(matches.getAllMatchesTypes());
+    previousMatchesResult.setText(matches.getAllResults());
   }
 
   private void createMatch()
@@ -527,6 +539,7 @@ public class Controller
     createMatchOpponent.clear();
     updateUpcomingMatchesArea();
     updatePreviousMatchesArea();
+    updateEveryBox();
   }
 
   private void removeMatch()
@@ -541,7 +554,24 @@ public class Controller
     deleteMatchOpponent.clear();
     updateUpcomingMatchesArea();
     updatePreviousMatchesArea();
+    updateEveryBox();
   }
+  private void setResult()
+  {
+    LocalDate temp = setResultDate.getValue();
+    int day = temp.getDayOfMonth();
+    int month = temp.getMonthValue();
+    int year = temp.getYear();
+    Date tempDate = new Date(day,month,year);
+    String opponentTeam = setResultOpponent.getText();
+    String result = setResultResult.getText();
+    modelManager.setResult(opponentTeam,tempDate,result);
+    setResultOpponent.clear();
+    setResultResult.clear();
+    updatePreviousMatchesArea();
+    updateEveryBox();
+  }
+
 
   private void allInjuries()
   {
@@ -911,6 +941,10 @@ public class Controller
     if (e.getSource()==deleteMatch)
     {
       removeMatch();
+    }
+    if (e.getSource()==setResult)
+    {
+      setResult();
     }
   }
 }

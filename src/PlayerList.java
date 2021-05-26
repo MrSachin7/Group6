@@ -64,10 +64,11 @@ public class PlayerList implements Serializable
     {
       if (!playerList.get(i).equals(player))
       {
-        temp.add(player);
+        temp.add(playerList.get(i));
       }
-        playerList= temp;
+
     }
+    playerList= temp;
   }
 
   /**

@@ -10,6 +10,7 @@ public abstract class Match implements Serializable
   private Date matchDate;
   private Time startTime;
   private boolean isHomeMatch;
+  private String result;
 
   /**
    * A constructor that creates a Match object.
@@ -25,6 +26,16 @@ public abstract class Match implements Serializable
     this.matchDate = matchDate;
     this.startTime = startTime;
     this.isHomeMatch = isHomeMatch;
+    this.result="";
+  }
+
+  /**
+   * Sets/change the result of the Match
+   * @param result the result of the match
+   */
+  public void setResult(String result)
+  {
+    this.result = result;
   }
 
   /**
@@ -57,6 +68,15 @@ public abstract class Match implements Serializable
   }
 
   /**
+   * Gets the result of the match
+   * @return result of the Match object
+   */
+  public String getResult()
+  {
+    return result;
+  }
+
+  /**
    * Compares given object with the Match
    * @param obj the object to compare with the match
    * @return boolean (true if the given object is a Match object with all equal attributes), else false
@@ -64,7 +84,7 @@ public abstract class Match implements Serializable
 
   public boolean equals(Object obj)
   {
-    if (!(obj instanceof Math))
+    if (!(obj instanceof Match))
     {
       return false;
     }
@@ -73,7 +93,7 @@ public abstract class Match implements Serializable
       Match temp = (Match) obj;
       return temp.isHomeMatch =
           isHomeMatch && temp.opponentTeam
-              .equals(opponentTeam) && temp.startTime.equals(startTime)
+              .equals(opponentTeam)
               && temp.matchDate.equals(matchDate);
     }
   }
@@ -90,6 +110,6 @@ public abstract class Match implements Serializable
    */
   public String toString()
   {
-    return "Match Date :"+matchDate+"\n Starts at :"+startTime+"\n HomeMatch :"+isHomeMatch;
+    return opponentTeam;
   }
 }

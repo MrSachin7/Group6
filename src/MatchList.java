@@ -59,21 +59,23 @@ public class MatchList implements Serializable
   }
 
   /**
-   * Removes the Match object from the list.
-   *
-   * @param match the Match object to remove from the list
+   * Removes match from matchList
+   * @param opponent
+   * @param startDate
    */
-  public void removeMatch(Match match)
+  public void removeMatch(String opponent, Date startDate)
   {
     ArrayList<Match> temp = new ArrayList<>();
     for (int i = 0; i < matchList.size(); i++)
     {
-      if (!matchList.get(i).equals(match))
+
+      if (!(matchList.get(i).getOpponentTeam().equals(opponent) && matchList.get(i).getMatchDate().equals(startDate)))
       {
-        temp.add(match);
+        temp.add(matchList.get(i));
       }
-      matchList = temp;
+
     }
+    matchList = temp;
   }
 
   /**
@@ -142,4 +144,16 @@ public class MatchList implements Serializable
     }
   }
 
+  public String getAllResults()
+  {
+    String temp = "";
+    for (int i = 0; i < matchList.size(); i++)
+    {
+      if (matchList.get(i).getMatchDate().isBefore(Date.today()))
+      {
+        temp += matchList.get(i).getResult() + "\n";
+      }
+    }
+    return temp;
+  }
 }

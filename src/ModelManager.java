@@ -11,7 +11,8 @@ public class ModelManager
 
   /**
    * A constructor that creates/initilaizes the model manager
-   * @param matchFileName the name of file where the information on MatchList object is stored.
+   *
+   * @param matchFileName  the name of file where the information on MatchList object is stored.
    * @param playerFileName the name of file where the information on PlayerList object is stored.
    */
   public ModelManager(String matchFileName, String playerFileName)
@@ -22,6 +23,7 @@ public class ModelManager
 
   /**
    * Gets all the matches stored in a file
+   *
    * @return MatchList Object stored in a file.
    */
 
@@ -50,6 +52,7 @@ public class ModelManager
 
   /**
    * Saves/Writes matches to the files
+   *
    * @param matches the MatchList object to write/save on the file
    */
 
@@ -71,6 +74,7 @@ public class ModelManager
 
   /**
    * Adds and saves a League Match to a MatchList
+   *
    * @param match a League Match object to add and save on the MatchList
    */
 
@@ -83,6 +87,7 @@ public class ModelManager
 
   /**
    * Adds and saves a Cup Match to a MatchList
+   *
    * @param match a Cup Match object to add and save on the MatchList
    */
   public void addCupMatch(CupMatch match)
@@ -91,8 +96,10 @@ public class ModelManager
     allMatches.addMatch(match);
     saveMatches(allMatches);
   }
+
   /**
    * Adds and saves a Friendly Match to a MatchList
+   *
    * @param match a Friendly Match object to add and save on the MatchList
    */
   public void addFriendlyMatch(FriendlyMatch match)
@@ -106,6 +113,7 @@ public class ModelManager
 
   /**
    * Gets all the players stored in a file
+   *
    * @return PlayerList Object stored in a file.
    */
   public PlayerList getAllPlayers()
@@ -130,8 +138,10 @@ public class ModelManager
     }
     return allPlayers;
   }
+
   /**
    * Saves/Writes players to the files
+   *
    * @param players the PlayerList object to write/save on the file
    */
   public void savePlayers(PlayerList players)
@@ -152,8 +162,9 @@ public class ModelManager
 
   /**
    * Removes a player and save it to file
+   *
    * @param firstName the first name of a player to remove from file
-   * @param lastName the last name of a player to remove from file
+   * @param lastName  the last name of a player to remove from file
    */
   public void removePlayer(String firstName, String lastName)
   {
@@ -164,7 +175,7 @@ public class ModelManager
       if (player.getFirstName().equals(firstName) && player.getLastName()
           .equals(lastName))
       {
-      allPlayers.removePlayer(player);
+        allPlayers.removePlayer(player);
       }
     }
     savePlayers(allPlayers);
@@ -172,6 +183,7 @@ public class ModelManager
 
   /**
    * Gets all the injured players from the file
+   *
    * @return the PlayerList object with all the Players Object (if the Injury object in it is not null)
    */
   public PlayerList getAllInjuredPlayers()
@@ -188,8 +200,10 @@ public class ModelManager
     }
     return injuredPlayers;
   }
+
   /**
    * Gets all the available players to play a match from the file
+   *
    * @return the PlayerList object with all the Players Object (if the Injury object and the Suspension in it is not null)
    */
   public PlayerList getAllAvailablePlayers()
@@ -199,7 +213,8 @@ public class ModelManager
 
     for (int i = 0; i < allPlayers.size(); i++)
     {
-      if ((allPlayers.get(i).getInjury() == null) &&(allPlayers.get(i).getSuspension()==null))
+      if ((allPlayers.get(i).getInjury() == null) && (
+          allPlayers.get(i).getSuspension() == null))
       {
         availablePlayers.add(allPlayers.get(i));
       }
@@ -209,6 +224,7 @@ public class ModelManager
 
   /**
    * Gets all the suspension players from the file
+   *
    * @return the PlayerList object with all the Players Object (if the Suspension object in it is not null)
    */
 
@@ -229,6 +245,7 @@ public class ModelManager
 
   /**
    * Adds and saves a Player to a file
+   *
    * @param player a Player Object to add on the file
    */
   public void addPlayer(Player player)
@@ -240,8 +257,9 @@ public class ModelManager
 
   /**
    * Changes a player's shirt number and saves it to the file
-   * @param firstName the firstName of a player to change shirt number
-   * @param lastName  the lastName of a player to change shirt number
+   *
+   * @param firstName   the firstName of a player to change shirt number
+   * @param lastName    the lastName of a player to change shirt number
    * @param shirtNumber the new shirtNumber to change to of  a player
    */
   public void changeShirtNumber(String firstName, String lastName,
@@ -260,11 +278,13 @@ public class ModelManager
     savePlayers(allPlayers);
 
   }
+
   /**
    * Changes a player's position and saves it to the file
+   *
    * @param firstName the firstName of a player to change shirt number
    * @param lastName  the lastName of a player to change shirt number
-   * @param position the new position to change to of  a player
+   * @param position  the new position to change to of  a player
    */
 
   public void changePosition(String firstName, String lastName, String position)
@@ -284,9 +304,10 @@ public class ModelManager
 
   /**
    * Adds an Injury object to a player and saves it
+   *
    * @param firstName the first name of a player to add injury
-   * @param lastName the last name of a player to add injuury
-   * @param injury the Injury object to add
+   * @param lastName  the last name of a player to add injuury
+   * @param injury    the Injury object to add
    */
   public void addInjury(String firstName, String lastName, Injury injury)
   {
@@ -305,8 +326,9 @@ public class ModelManager
 
   /**
    * Removes an Injury object from a Player i.e sets it to null
+   *
    * @param firstName the first name of a player to remove injury
-   * @param lastName the last name of a player to remove injury
+   * @param lastName  the last name of a player to remove injury
    */
 
   public void removeInjury(String firstName, String lastName)
@@ -326,8 +348,9 @@ public class ModelManager
 
   /**
    * Adds and saves a Suspension object to a Player object
-   * @param firstName the first name of a player to add suspension
-   * @param lastName the last name of a player to add suspension
+   *
+   * @param firstName  the first name of a player to add suspension
+   * @param lastName   the last name of a player to add suspension
    * @param suspension the Suspension object to add to the player
    */
 
@@ -349,8 +372,9 @@ public class ModelManager
 
   /**
    * Removes a Suspension object from a Player and saves it (i.e set it to null)
+   *
    * @param firstName the first name of the player to remove Suspension
-   * @param lastName the last name of a player to remove Suspension
+   * @param lastName  the last name of a player to remove Suspension
    */
   public void removeSuspension(String firstName, String lastName)
   {
@@ -369,6 +393,7 @@ public class ModelManager
 
   /**
    * Gets all the players that are starting in a match
+   *
    * @return a PlayerList object with all the players that are starting
    */
   public PlayerList getAllStartingPlayers()
@@ -388,8 +413,9 @@ public class ModelManager
 
   /**
    * Adds a Player's status to starting
+   *
    * @param firstName the first name of a player to add as starting
-   * @param lastName the last name of a player to add as starting
+   * @param lastName  the last name of a player to add as starting
    */
   public void addStartingPlayers(String firstName, String lastName)
   {
@@ -412,8 +438,9 @@ public class ModelManager
 
   /**
    * Removes a player from starting players of a match
+   *
    * @param firstName the first name of a player to remove from starting players
-   * @param lastName the last name of a player to remove from starting players
+   * @param lastName  the last name of a player to remove from starting players
    */
   public void removeStartingPlayers(String firstName, String lastName)
   {
@@ -431,8 +458,10 @@ public class ModelManager
     }
     savePlayers(allPlayers);
   }
+
   /**
    * Gets all the players that are substitute in a match
+   *
    * @return a PlayerList object with all the players that are substitute in a match
    */
   public PlayerList getAllSubstitutePlayers()
@@ -449,10 +478,12 @@ public class ModelManager
     }
     return startingPlayers;
   }
+
   /**
    * Adds a Player's status to substitute
+   *
    * @param firstName the first name of a player to add as substitute
-   * @param lastName the last name of a player to add as substitue
+   * @param lastName  the last name of a player to add as substitue
    */
   public void addSubstitutePlayers(String firstName, String lastName)
   {
@@ -468,10 +499,12 @@ public class ModelManager
     }
     savePlayers(allPlayers);
   }
+
   /**
    * Removes a player from substitute players of a match
+   *
    * @param firstName the first name of a player to remove from substitute players
-   * @param lastName the last name of a player to remove from substitute players
+   * @param lastName  the last name of a player to remove from substitute players
    */
   public void removeSubstitutePlayers(String firstName, String lastName)
   {
@@ -490,14 +523,15 @@ public class ModelManager
 
   /**
    * Gets all the matches before the current date
+   *
    * @return a MatchList object with all the Matches object before the current Date
    */
   public MatchList getALlPreviousMatches()
   {
     MatchList allMatches = getAllMatches();
-    MatchList allPreviousMatches=new MatchList();
+    MatchList allPreviousMatches = new MatchList();
     Date today = Date.today();
-    for (int i=0; i<allMatches.size(); i++ )
+    for (int i = 0; i < allMatches.size(); i++)
     {
       Match match = allMatches.get(i);
       if (match.getMatchDate().isBefore(today))
@@ -507,16 +541,18 @@ public class ModelManager
     }
     return allPreviousMatches;
   }
+
   /**
    * Gets all the matches after the current date
+   *
    * @return a MatchList object with all the Matches object after the current Date
    */
   public MatchList getALlUpcomingMatches()
   {
     MatchList allMatches = getAllMatches();
-    MatchList allUpcomingMatches=new MatchList();
+    MatchList allUpcomingMatches = new MatchList();
     Date today = Date.today();
-    for (int i=0; i<allMatches.size(); i++ )
+    for (int i = 0; i < allMatches.size(); i++)
     {
       Match match = allMatches.get(i);
       if (!(match.getMatchDate().isBefore(today)))
@@ -529,21 +565,37 @@ public class ModelManager
 
   /**
    * Removes a match from the list
+   *
    * @param opponentTeam the opponent team of the match to remove
-   * @param startDate the starting date of the match to remove
+
    */
   public void removeMatch(String opponentTeam, Date startDate)
   {
     MatchList allMatches = getAllMatches();
-    for (int i=0; i<allMatches.size();i++)
+    allMatches.removeMatch(opponentTeam,startDate);
+    saveMatches(allMatches);
+  }
+
+  /**
+   * Sets a result for a match
+   * @param opponentTeam the result of a match to change/set
+   * @param startDate the starting date of the match to set result
+   * @param result the result to set to a match
+   */
+  public void setResult(String opponentTeam, Date startDate, String result)
+  {
+    MatchList allMatches = getAllMatches();
+    for (int i = 0; i < allMatches.size(); i++)
     {
-      if (allMatches.get(i).getOpponentTeam().equals(opponentTeam) && allMatches.get(i).getMatchDate().equals(startDate))
+Match match = allMatches.get(i);
+      if (match.getOpponentTeam().equals(opponentTeam) && match.getMatchDate().equals(startDate))
       {
-        allMatches.removeMatch(allMatches.get(i));
+        if (match.getMatchDate().isBefore(Date.today()))
+        {
+          match.setResult(result);
+        }
       }
     }
     saveMatches(allMatches);
   }
-
 }
-

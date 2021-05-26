@@ -14,16 +14,9 @@ public class CupMatch extends Match implements Serializable
   }
   public boolean equals(Object obj)
   {
-    if (!(obj instanceof CupMatch))
-    {
-      return false;
+     return super.equals(obj);
     }
-    else
-    {
-      CupMatch temp = (CupMatch)obj;
-      return super.equals(temp);
-    }
-  }
+
 
   public String toString()
   {

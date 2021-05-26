@@ -32,16 +32,10 @@ public class FriendlyMatch extends Match implements Serializable
    */
   public boolean equals(Object obj)
   {
-    if (!(obj instanceof FriendlyMatch))
-    {
-      return false;
+
+      return super.equals(obj);
     }
-    else
-    {
-      FriendlyMatch temp = (FriendlyMatch) obj;
-      return super.equals(temp);
-    }
-  }
+
   /**
    * A method for returning the information of the Match in String.
    * @return all the important attributes in readable String format

@@ -35,16 +35,10 @@ public class LeagueMatch extends Match implements Serializable
 
   public boolean equals(Object obj)
   {
-    if (!(obj instanceof LeagueMatch))
-    {
-      return false;
+
+      return super.equals(obj);
     }
-    else
-    {
-      LeagueMatch temp = (LeagueMatch) obj;
-      return super.equals(temp);
-    }
-  }
+
 
   /**
    * A method for returning the information of the Match in String.
