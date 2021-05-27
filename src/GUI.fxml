@@ -216,7 +216,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Avalibiality">
+            <Tab text="Availability">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -291,7 +291,7 @@
                                        <children>
                                           <TabPane layoutY="-8.0" prefHeight="364.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
                                             <tabs>
-                                              <Tab text="All suspended player ">
+                                              <Tab text="All Suspension">
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
