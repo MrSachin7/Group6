@@ -74,20 +74,6 @@ public class PlayerList implements Serializable
   }
 
   /**
-   * Gets all the Player object as a String.
-   * @return all the Player object as a String
-   */
-  public String toString()
-  {
-    String temp = "";
-    for (int i = 0; i < playerList.size(); i++)
-    {
-      temp += playerList.get(i) + "\n";
-    }
-    return temp;
-  }
-
-  /**
    * Gets Shirt Numbers of all Player object in the list as a String.
    * @return all the Shirt numbers of all Player object in the list
    */
@@ -184,6 +170,21 @@ public class PlayerList implements Serializable
         }
       });
     }
+
+
+  /**
+   * Gets all the Player object as a String.
+   * @return all the Player object as a String
+   */
+  public String toString()
+  {
+    String temp = "";
+    for (int i = 0; i < playerList.size(); i++)
+    {
+      temp += playerList.get(i) + "\n";
+    }
+    return temp;
   }
+}
 
 
