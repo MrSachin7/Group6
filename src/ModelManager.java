@@ -1,5 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * @author Sachin Baral
@@ -146,6 +149,7 @@ public class ModelManager
    */
   public void savePlayers(PlayerList players)
   {
+    players.sortPlayers();
     try
     {
       MyFileHandler.writeToBinaryFile(playerFileName, players);

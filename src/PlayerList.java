@@ -1,5 +1,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * A class containing a list of Player objects.
@@ -164,5 +166,21 @@ public class PlayerList implements Serializable
     }
     return temp;
   }
+  public ArrayList<Player> getAllPlayers()
+  {
+    return playerList;
   }
+
+  public void sortPlayers()
+  {
+      Collections.sort(playerList,new Comparator<Player>()
+      {
+        public int compare(Player p1,Player p2)
+        {
+          return p1.getFirstName().compareTo(p2.getFirstName());
+        }
+      });
+    }
+  }
+
 

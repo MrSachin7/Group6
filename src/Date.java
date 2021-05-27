@@ -146,4 +146,12 @@ public class Date implements Serializable
     DecimalFormat formatter = new DecimalFormat("00");
     return formatter.format(day) + "/" + formatter.format(month)+ "/" + formatter.format(year);
   }
+  public int compareTo(Date date)
+  {
+    if (date.isBefore(this))
+    {
+      return 1;
+    }
+    else return 0;
+  }
 }

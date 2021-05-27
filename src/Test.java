@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Collections;
 
 public class Test
 {
@@ -23,7 +24,8 @@ public class Test
     playerList.add(player3);
     playerList.add(player4);
     playerList.add(player5);
-    MyFileHandler.writeToBinaryFile("Players.bin",playerList);
-   MyFileHandler.writeToBinaryFile("Matches.bin",matchList);
+modelManager.saveMatches(matchList);
+modelManager.savePlayers(playerList);
+
   }
 }

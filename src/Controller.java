@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 
 import java.time.LocalDate;
 
+
 /**
  * @author Sachin Baral
  */
@@ -139,6 +140,7 @@ public class Controller
     allSubstitutes();
     updatePreviousMatchesArea();
     updateUpcomingMatchesArea();
+
 
   }
 
@@ -723,6 +725,7 @@ public class Controller
     updateAllPlayersBox();
     updateEveryBox();
   }
+
 
   /**
    * A handler that handles all the buttons and responsive functions in the GUI.
