@@ -34,25 +34,6 @@ public class Player implements Serializable
     suspension = null;
     startingOrNot="Not set";
   }
-
-  /**
-   * Gets either a player's status in active squad at a moment.
-   * @return the status of player in active squad
-   */
-  public String getStartingOrNot()
-  {
-    return startingOrNot;
-  }
-
-  /**
-   * Sets the status of a player in active squad.
-   * @param startingOrNot the status of player in active squad
-   */
-  public void setStartingOrNot(String startingOrNot)
-  {
-    this.startingOrNot = startingOrNot;
-  }
-
   /**
    * Sets/changes the shirtNumber of a Player object.
    * @param shirtNumber the shirtnumber to change or add
@@ -69,7 +50,14 @@ public class Player implements Serializable
   {
     this.position = position;
   }
-
+  /**
+   * Sets the status of a player in active squad.
+   * @param startingOrNot the status of player in active squad
+   */
+  public void setStartingOrNot(String startingOrNot)
+  {
+    this.startingOrNot = startingOrNot;
+  }
   /**
    * Adds/changes Injury object to Player object
    * @param injury Injury object to add on the Player object
@@ -86,6 +74,16 @@ public class Player implements Serializable
   {
     this.suspension = suspension;
   }
+
+  /**
+   * Gets either a player's status in active squad at a moment.
+   * @return the status of player in active squad
+   */
+  public String getStartingOrNot()
+  {
+    return startingOrNot;
+  }
+
 
   /**
    * Gets the first name from a Player Object.
