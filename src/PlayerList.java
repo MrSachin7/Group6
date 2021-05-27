@@ -171,6 +171,9 @@ public class PlayerList implements Serializable
     return playerList;
   }
 
+  /**
+   * Arranges players by alphabetical order
+   */
   public void sortPlayers()
   {
       Collections.sort(playerList,new Comparator<Player>()

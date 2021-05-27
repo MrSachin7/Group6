@@ -152,6 +152,10 @@ public class Controller
     allPlayersShirtNumber.setText(players.getShirtNumbers());
     allPlayersPosition.setText(players.getAllPositions());
     allPlayersBirthdate.setText(players.getBirthDate());
+    allPlayersShirtNumber.setEditable(false);
+    allPlayersName.setEditable(false);
+    allPlayersBirthdate.setEditable(false);
+    allPlayersPosition.setEditable(false);
   }
 
 
