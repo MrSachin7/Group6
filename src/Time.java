@@ -47,16 +47,6 @@ public class Time implements Serializable
     totalTimeInSecond -= (60 * minute);
     second = totalTimeInSecond;
   }
-
-  /**
-   * Calculates the total time in seconds of the Time object
-   * @return the total time in seconds of the Time object
-   */
-  public int convertToSecond()
-  {
-    return ((hour * 3600) + (minute * 60) + second);
-  }
-
   /**
    * Compares given object with the Match
    * @param obj the object to compare with the match

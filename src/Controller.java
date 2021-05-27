@@ -923,7 +923,6 @@ public class Controller
         removeSubstituteLastName.setEditable(false);
       }
     }
-
     if (e.getSource() == addStarter)
     {
       addStarter();

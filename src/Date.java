@@ -141,17 +141,14 @@ public class Date implements Serializable
     }
   }
 
+  /**
+   * Gets the date object in a readable formatted manner
+   * @return the information of the object in readable and understandable String.
+   */
   public String toString()
   {
     DecimalFormat formatter = new DecimalFormat("00");
     return formatter.format(day) + "/" + formatter.format(month)+ "/" + formatter.format(year);
   }
-  public int compareTo(Date date)
-  {
-    if (date.isBefore(this))
-    {
-      return 1;
-    }
-    else return 0;
-  }
+
 }
