@@ -144,6 +144,10 @@ public class MatchList implements Serializable
     }
   }
 
+  /**
+   * Gets results from all the matches of the list
+   * @return result pf all Match object of from a list
+   */
   public String getAllResults()
   {
     String temp = "";

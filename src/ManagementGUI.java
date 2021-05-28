@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * @author Himal Sharma
  */
-  public class FirstGUI extends Application
+  public class ManagementGUI extends Application
   {
     public void start(Stage window) throws IOException
     {

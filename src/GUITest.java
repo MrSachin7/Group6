@@ -7,6 +7,6 @@ public class GUITest
 {
   public static void main(String[] args)
   {
-    Application.launch(FirstGUI.class);
+    Application.launch(ManagementGUI.class);
   }
 }
