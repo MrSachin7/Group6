@@ -440,6 +440,7 @@ public class Controller
     changeShirtNumberLastName.clear();
     updateEveryBox();
     updatePlayersArea();
+    modelManager.exportPlayersToXml();
   }
 
   private void changePosition()
@@ -452,6 +453,7 @@ public class Controller
     changePositionLastName.clear();
     updateEveryBox();
     updatePlayersArea();
+    modelManager.exportPlayersToXml();
   }
 
   private void createPlayer()
@@ -472,6 +474,7 @@ public class Controller
     createPlayerPosition.clear();
     updateEveryBox();
     updatePlayersArea();
+    modelManager.exportPlayersToXml();
   }
 
   private void deletePlayer()
@@ -483,6 +486,7 @@ public class Controller
     deletePlayerLastName.clear();
     updatePlayersArea();
     updateEveryBox();
+    modelManager.exportPlayersToXml();
   }
 
   private void updateUpcomingMatchesArea()
@@ -545,6 +549,7 @@ public class Controller
     updateUpcomingMatchesArea();
     updatePreviousMatchesArea();
     updateEveryBox();
+
   }
 
   private void removeMatch()

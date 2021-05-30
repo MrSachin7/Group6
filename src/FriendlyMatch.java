@@ -1,5 +1,4 @@
 import java.io.Serializable;
-
 /**
  * @author Bartosz Zielinski
  */

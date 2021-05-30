@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -568,28 +569,29 @@ public class ModelManager
    * Removes a match from the list
    *
    * @param opponentTeam the opponent team of the match to remove
-
    */
   public void removeMatch(String opponentTeam, Date startDate)
   {
     MatchList allMatches = getAllMatches();
-    allMatches.removeMatch(opponentTeam,startDate);
+    allMatches.removeMatch(opponentTeam, startDate);
     saveMatches(allMatches);
   }
 
   /**
    * Sets a result for a match
+   *
    * @param opponentTeam the result of a match to change/set
-   * @param startDate the starting date of the match to set result
-   * @param result the result to set to a match
+   * @param startDate    the starting date of the match to set result
+   * @param result       the result to set to a match
    */
   public void setResult(String opponentTeam, Date startDate, String result)
   {
     MatchList allMatches = getAllMatches();
     for (int i = 0; i < allMatches.size(); i++)
     {
-Match match = allMatches.get(i);
-      if (match.getOpponentTeam().equals(opponentTeam) && match.getMatchDate().equals(startDate))
+      Match match = allMatches.get(i);
+      if (match.getOpponentTeam().equals(opponentTeam) && match.getMatchDate()
+          .equals(startDate))
       {
         if (match.getMatchDate().isBefore(Date.today()))
         {
@@ -598,5 +600,89 @@ Match match = allMatches.get(i);
       }
     }
     saveMatches(allMatches);
+  }
+
+  public void exportPlayersToXml()
+  {
+    String fileName = "Players.xml";
+    String appendPlayer = "";
+    PlayerList allPlayers = getAllPlayers();
+    allPlayers.sortPlayers();
+    try
+    {
+      FileHandlerXML.writeToTextFile(fileName,
+          "<?xml version=\"1.0\" encoding =\"UTF-8\"?>");
+      FileHandlerXML.appendToTextFile(fileName, "<playerList>");
+      for (int i = 0; i < allPlayers.size(); i++)
+      {
+        Player player = allPlayers.get(i);
+        appendPlayer += "<player><firstName>" + player.getFirstName() + "</firstName>"
+            + "<shirtNumber>" + player.getShirtNumber() + "</shirtNumber>"
+            + "<birthDate>" + player.getBirthDate() + "</birthDate>"
+            + "<position>" + player.getPosition() + "</position></player>";
+      }
+      FileHandlerXML.appendToTextFile(fileName, appendPlayer);
+      FileHandlerXML.appendToTextFile(fileName, "</playerList>");
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+  }
+
+  public void exportUpcomingMatchesToXml()
+  {
+    String fileName = "UpcomingMatches.xml";
+    String appendMatch = "";
+    MatchList upcomingMatches = getALlUpcomingMatches();
+    try
+    {
+      FileHandlerXML.writeToTextFile(fileName,
+          "<?xml version=\"1.0\" encoding =\"UTF-8\"?>");
+      FileHandlerXML.appendToTextFile(fileName, "<matchList>");
+      for (int i = 0; i < upcomingMatches.size(); i++)
+      {
+        Match match = upcomingMatches.get(i);
+        appendMatch +=
+            "<match><opponentTeam>" + match.getOpponentTeam() + "</opponentTeam>"
+                + "<matchDate>" + match.getOpponentTeam() + "</matchDate>"
+                + "<matchTime>" + match.getStartTime() + "</matchTime>"
+                + "<matchType>" + match.matchType() + "</matchType></match>";
+      }
+      FileHandlerXML.appendToTextFile(fileName, appendMatch);
+      FileHandlerXML.appendToTextFile(fileName, "</matchList>");
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File Not Found");
+    }
+  }
+  public void exportPreviousMatchesToXml()
+  {
+    String fileName = "UpcomingMatches.xml";
+    String appendMatch = "";
+    MatchList previousMatches = getALlUpcomingMatches();
+    try
+    {
+      FileHandlerXML.writeToTextFile(fileName,
+          "<?xml version=\"1.0\" encoding =\"UTF-8\"?>");
+      FileHandlerXML.appendToTextFile(fileName, "<matchList>");
+      for (int i = 0; i < previousMatches.size(); i++)
+      {
+        Match match = previousMatches.get(i);
+        appendMatch +=
+            "<match><opponentTeam>" + match.getOpponentTeam() + "</opponentTeam>"
+                + "<matchDate>" + match.getOpponentTeam() + "</matchDate>"
+                + "<matchTime>" + match.getStartTime() + "</matchTime>"
+                + "<matchType>" + match.matchType() + "</matchType>"
+        +"<result>"+match.getResult()+"</result></match>";
+      }
+      FileHandlerXML.appendToTextFile(fileName, appendMatch);
+      FileHandlerXML.appendToTextFile(fileName, "</matchList>");
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File Not Found");
+    }
   }
 }

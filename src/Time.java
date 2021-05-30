@@ -13,7 +13,7 @@ public class Time implements Serializable
   private int second;
 
   /**
-   * A constructor time that creats a Time object
+   * A constructor time that creates a Time object
    * @param h  hours
    * @param m  minutes
    * @param s seconds
