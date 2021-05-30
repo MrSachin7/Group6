@@ -63,4 +63,3 @@ public class FileHandlerXML
   }
 }
 
-  // Reads the first line from the file with the given file name and returns it as a String

@@ -632,7 +632,7 @@ public class ModelManager
 
   public void exportUpcomingMatchesToXml()
   {
-    String fileName = "UpcomingMatches.xml";
+    String fileName = "upcomingMatches.xml";
     String appendMatch = "";
     MatchList upcomingMatches = getALlUpcomingMatches();
     try
