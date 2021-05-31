@@ -1,0 +1,106 @@
+html{
+height: 100vh;
+}
+body{
+    margin-top: 5px;
+    /* background-image: linear-gradient(#ebf4f5, #b5c6e0); */
+    /* background-size: cover; */
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* Search bar */
+.sh{
+    margin-top:6px ;
+}
+/* for text shadow in carousel */
+.bacdrop{
+
+    background: rgba(128, 95, 95, 0.3);
+}
+.glass{
+    min-width: 100%;
+/* margin: auto; */
+/* max-width: 96%; */
+margin-top: 2px;
+background:rgb(37, 41, 41,.7);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 11.5px );
+-webkit-backdrop-filter: blur( 11.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+color: white;
+}
+.glass-text{
+    color: white;
+}
+
+.carousel-item img{
+    margin-top: .3em;
+    min-height: 35em;
+    max-height: 35em;
+}
+
+
+/* For news secgtion */
+
+.card.style{
+    width: 20rem;
+    display: flex;
+}
+
+.pagination{
+    justify-content: center;
+}
+.card-title a{
+    color: black;
+}
+.card-title a:hover{
+    color: red;
+    text-decoration: underline;
+}
+.card-image-top{
+    width: auto;
+    height: 50px;
+}
+/* For the past result from XML  */
+#xmlResult{
+    font-weight: 800;
+    margin: auto;
+    font-size: larger;
+    }
+
+/* News section finished */
+
+
+
+/* mfff */
+@media (max-width: 305px) {
+    .noBefore{
+      display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+  
+.carousel-item img{
+    min-height: 20em;
+    max-height: 20em;
+}
+
+}
+@media (max-width: 720px) {
+  
+ .last_news{
+     display: none;
+ }}
+
+
+
+
+
+
+

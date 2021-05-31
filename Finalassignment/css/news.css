@@ -1,0 +1,8 @@
+.card.style{
+    width: 20rem;
+    display: flex;
+}
+
+.pagination{
+    justify-content: center;
+}

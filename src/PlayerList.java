@@ -85,6 +85,8 @@ public class PlayerList implements Serializable
       temp += playerList.get(i).getShirtNumber()+"\n";
     }
     return temp;
+
+
   }
   /**
    * Gets Positions of all Player object in the list as a String.
@@ -183,6 +185,7 @@ public class PlayerList implements Serializable
     {
       temp += playerList.get(i) + "\n";
     }
+
     return temp;
   }
 }

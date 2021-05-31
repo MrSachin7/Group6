@@ -1,10 +1,12 @@
 import java.io.Serializable;
 
+
 /**
  * A class that creates and manages Player Object
  * @author Himal Sharma
  * @version 1.0
  */
+
 public class Player implements Serializable
 {
   private String firstName;
