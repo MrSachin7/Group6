@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 
 import java.time.LocalDate;
 
-
 /**
  * @author Sachin Baral
  */
@@ -109,10 +108,11 @@ public class Controller
   @FXML private Button deleteMatch;
   @FXML private TextArea previousMatchesResult;
   @FXML private TextField setResultOpponent;
- @FXML private DatePicker setResultDate;
+  @FXML private DatePicker setResultDate;
   @FXML private TextField setResultResult;
   @FXML private Button setResult;
-
+  @FXML private Button exportPlayers;
+  @FXML private Button exportMatches;
   private ModelManager modelManager;
 
   /**
@@ -141,7 +141,6 @@ public class Controller
     updatePreviousMatchesArea();
     updateUpcomingMatchesArea();
 
-
   }
 
   private void updatePlayersArea()
@@ -157,7 +156,6 @@ public class Controller
     allPlayersBirthdate.setEditable(false);
     allPlayersPosition.setEditable(false);
   }
-
 
   private void updateAllPlayersBox()
   {
@@ -411,8 +409,6 @@ public class Controller
     }
   }
 
-
-
   private void updateEveryBox()
   {
     updateAllPlayersBox();
@@ -474,7 +470,7 @@ public class Controller
     createPlayerPosition.clear();
     updateEveryBox();
     updatePlayersArea();
-    modelManager.exportPlayersToXml();
+
   }
 
   private void deletePlayer()
@@ -486,7 +482,7 @@ public class Controller
     deletePlayerLastName.clear();
     updatePlayersArea();
     updateEveryBox();
-    modelManager.exportPlayersToXml();
+
   }
 
   private void updateUpcomingMatchesArea()
@@ -558,30 +554,30 @@ public class Controller
     int day = temp.getDayOfMonth();
     int month = temp.getMonthValue();
     int year = temp.getYear();
-    Date tempDate = new Date(day,month,year);
+    Date tempDate = new Date(day, month, year);
     String opponentTeam = deleteMatchOpponent.getText();
-    modelManager.removeMatch(opponentTeam,tempDate);
+    modelManager.removeMatch(opponentTeam, tempDate);
     deleteMatchOpponent.clear();
     updateUpcomingMatchesArea();
     updatePreviousMatchesArea();
     updateEveryBox();
   }
+
   private void setResult()
   {
     LocalDate temp = setResultDate.getValue();
     int day = temp.getDayOfMonth();
     int month = temp.getMonthValue();
     int year = temp.getYear();
-    Date tempDate = new Date(day,month,year);
+    Date tempDate = new Date(day, month, year);
     String opponentTeam = setResultOpponent.getText();
     String result = setResultResult.getText();
-    modelManager.setResult(opponentTeam,tempDate,result);
+    modelManager.setResult(opponentTeam, tempDate, result);
     setResultOpponent.clear();
     setResultResult.clear();
     updatePreviousMatchesArea();
     updateEveryBox();
   }
-
 
   private void allInjuries()
   {
@@ -734,7 +730,6 @@ public class Controller
     updateAllPlayersBox();
     updateEveryBox();
   }
-
 
   /**
    * A handler that handles all the buttons and responsive functions in the GUI.
@@ -948,13 +943,22 @@ public class Controller
     {
       deletePlayer();
     }
-    if (e.getSource()==deleteMatch)
+    if (e.getSource() == deleteMatch)
     {
       removeMatch();
     }
-    if (e.getSource()==setResult)
+    if (e.getSource() == setResult)
     {
       setResult();
+    }
+    if (e.getSource()==exportMatches)
+    {
+      modelManager.exportUpcomingMatchesToXml();
+      modelManager.exportPreviousMatchesToXml();
+    }
+    if (e.getSource()==exportPlayers)
+    {
+      modelManager.exportPlayersToXml();
     }
   }
 }

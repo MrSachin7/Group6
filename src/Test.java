@@ -11,6 +11,9 @@ public class Test
     Date bartoszdate = new Date(4, 11, 1998);
     Date emilDate = new Date(6, 12, 1997);
     Date marianDate = new Date(29, 8, 1996);
+    Date matchDate= new Date(8,6,2021);
+    Date matchdate2= new Date(30,5,2021);
+    Time time = new Time(20,45,0);
     ModelManager modelManager = new ModelManager("Matches.bin", "Players.bin");
     PlayerList playerList = new PlayerList();
     MatchList matchList = new MatchList();
@@ -26,10 +29,13 @@ public class Test
     playerList.add(player3);
     playerList.add(player4);
     playerList.add(player5);
+    LeagueMatch match1 = new LeagueMatch("Juventus",matchDate,time,true);
+    CupMatch match2 = new CupMatch("Barcelona",matchdate2,time,false);
+    matchList.addMatch(match1);
+    matchList.addMatch(match2);
     modelManager.saveMatches(matchList);
     modelManager.savePlayers(playerList);
-    modelManager.exportPlayersToXml();
-    modelManager.exportUpcomingMatchesToXml();
+
 
   }
 }

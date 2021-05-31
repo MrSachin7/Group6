@@ -647,7 +647,7 @@ public class ModelManager
             "<match><opponentTeam>" + match.getOpponentTeam() + "</opponentTeam>"
                 + "<matchDate>" + match.getOpponentTeam() + "</matchDate>"
                 + "<matchTime>" + match.getStartTime() + "</matchTime>"
-                + "<matchType>" + match.matchType() + "</matchType></match>";
+                + "<matchType>" + match.matchType() + "</matchType>"+"<venue>"+match.homeOrAway()+"</venue></match>";
       }
       FileHandlerXML.appendToTextFile(fileName, appendMatch);
       FileHandlerXML.appendToTextFile(fileName, "</matchList>");
@@ -659,9 +659,9 @@ public class ModelManager
   }
   public void exportPreviousMatchesToXml()
   {
-    String fileName = "UpcomingMatches.xml";
+    String fileName = "previousMatches.xml";
     String appendMatch = "";
-    MatchList previousMatches = getALlUpcomingMatches();
+    MatchList previousMatches = getALlPreviousMatches();
     try
     {
       FileHandlerXML.writeToTextFile(fileName,
@@ -675,7 +675,7 @@ public class ModelManager
                 + "<matchDate>" + match.getOpponentTeam() + "</matchDate>"
                 + "<matchTime>" + match.getStartTime() + "</matchTime>"
                 + "<matchType>" + match.matchType() + "</matchType>"
-        +"<result>"+match.getResult()+"</result></match>";
+        +"<result>"+match.getResult()+"</result>"+"<venue>"+match.homeOrAway()+"</venue></match>";
       }
       FileHandlerXML.appendToTextFile(fileName, appendMatch);
       FileHandlerXML.appendToTextFile(fileName, "</matchList>");

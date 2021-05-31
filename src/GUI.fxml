@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -15,7 +16,7 @@
 
 <AnchorPane prefHeight="426.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <TabPane layoutX="-1.0" prefHeight="386.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-1.0" prefHeight="426.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Player">
             <content>
@@ -36,7 +37,10 @@
                                           <Button fx:id="updatePlayers" layoutX="469.0" layoutY="167.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                           <TextArea fx:id="allPlayersBirthdate" layoutX="346.0" layoutY="43.0" prefHeight="276.0" prefWidth="78.0" />
                                           <Label layoutX="346.0" layoutY="16.0" text="Birth Date" />
-                                       </children></AnchorPane>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets></AnchorPane>
                               </content>
                             </Tab>
                             <Tab text="Change shirt number">
@@ -469,6 +473,28 @@
                           </tabs>
                         </TabPane>
                      </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Export">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="7.0" prefHeight="353.0" prefWidth="621.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Export to Website">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="exportPlayers" layoutX="239.0" layoutY="99.0" mnemonicParsing="false" onAction="#handler" text="Export Players" />
+                                          <Button fx:id="exportMatches" layoutX="235.0" layoutY="186.0" mnemonicParsing="false" onAction="#handler" text="Export Matches" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
               </content>
             </Tab>
         </tabs>
