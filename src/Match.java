@@ -112,4 +112,12 @@ public abstract class Match implements Serializable
   {
     return opponentTeam;
   }
+  public String homeOrAway()
+  {
+    if (isHomeMatch==true)
+    {
+      return "Home";
+    }
+    return "Away";
+  }
 }
