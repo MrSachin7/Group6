@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -661,7 +660,7 @@ public class ModelManager
   }
   public void exportPreviousMatchesToXml()
   {
-    String fileName = "Finalassignment/Xml/previousMatches.xml";
+    String fileName = "Finalassignmentml/previousMatches.xml";
     String appendMatch = "";
     MatchList previousMatches = getALlPreviousMatches();
     try
