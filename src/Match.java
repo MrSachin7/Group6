@@ -27,6 +27,8 @@ public abstract class Match implements Serializable
     this.startTime = startTime;
     this.isHomeMatch = isHomeMatch;
     this.result="";
+
+
   }
 
   /**
@@ -120,4 +122,6 @@ public abstract class Match implements Serializable
     }
     return "Away";
   }
+
+
 }

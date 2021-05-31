@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    background-color: darkgrey;
+    margin-left: auto;
+    margin-right: auto;
+    
+    text-align: center;
+    padding: 0;
+}
+.players {
+   
+    
+    text-align: center;
+    padding: 0; 
+}
+
+.player {
+    width: 100%;
+    
+}
+
+.players img {
+    
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    margin-left: 0;
+    margin-right: 0;
+    
+} 
+.players figcaption {
+    margin-top: 8px;
+    font-size: 25px;
+    
+    text-shadow: 1px 1px black;
+}
+
+
+
+.jumbotron {
+    margin-bottom: auto;
+  background-image:url(img/background2.jpg);
+    background-position: 12% 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
+   
+}
+
+h1 {
+    font-family: "Trirong", serif;
+    font-size: 60px;
+    text-align: center;
+}
+.navbar-image {
+    width: 100px;
+    float: left;
+    height: 50px;
+}
+
+.linear-wipe {
+   font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.card-body {
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+

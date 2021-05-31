@@ -423,7 +423,6 @@ public class Controller
     updateRemoveSubstituteComboBox();
     updateRemoveSuspendedComboBox();
     updateDeletePlayerComboBox();
-
   }
 
   private void changeShirtNo()
@@ -436,7 +435,7 @@ public class Controller
     changeShirtNumberLastName.clear();
     updateEveryBox();
     updatePlayersArea();
-    modelManager.exportPlayersToXml();
+
   }
 
   private void changePosition()
@@ -449,7 +448,6 @@ public class Controller
     changePositionLastName.clear();
     updateEveryBox();
     updatePlayersArea();
-    modelManager.exportPlayersToXml();
   }
 
   private void createPlayer()
@@ -503,6 +501,7 @@ public class Controller
     previousMatchesDates.setText(matches.getAllDates());
     previousMatchesMatchType.setText(matches.getAllMatchesTypes());
     previousMatchesResult.setText(matches.getAllResults());
+
   }
 
   private void createMatch()
@@ -561,6 +560,7 @@ public class Controller
     updateUpcomingMatchesArea();
     updatePreviousMatchesArea();
     updateEveryBox();
+
   }
 
   private void setResult()
@@ -577,6 +577,7 @@ public class Controller
     setResultResult.clear();
     updatePreviousMatchesArea();
     updateEveryBox();
+
   }
 
   private void allInjuries()

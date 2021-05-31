@@ -1,0 +1,89 @@
+.heading{
+    text-align: center;
+    padding:10vh 0;
+    background-color: white;
+    margin-bottom: 0;
+    color: black;
+    margin-top: 0;
+}
+
+.the-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    
+}
+
+
+.image{
+    width: 100%;
+   
+    padding-right: 30px;
+
+}
+.text{
+    padding-left: 30px;
+}
+.text2{
+    padding-right: 30px;
+}
+
+.grey{
+    background:#252927;
+    color: white;
+}
+
+.new-stadium{
+    padding-left: 30px;
+}
+.establishment
+{
+margin-bottom: 0;
+
+}
+.est{
+   width: 100%;
+   margin-bottom: 0;
+   margin-left: -15px;
+}
+.History{
+    background-color: white;
+    margin-bottom: 0;
+    text-align: center;
+}
+.hero-img
+{
+    width:96.5vw;
+
+}
+.white
+{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: black;
+    
+}
+.category-link
+{
+    font-size: 28px;
+    margin: 40px;
+    padding-bottom: 20px;
+    color: black;
+}
+
+.p
+{
+    margin-bottom: 0;
+}
+.image2
+{
+    width: 45vw;
+}
+.logo
+{
+    height: 8vh;
+
+}

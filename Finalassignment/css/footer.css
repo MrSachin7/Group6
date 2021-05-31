@@ -1,0 +1,102 @@
+p{
+    color: #999;
+    line-height: 25px
+}
+.footer-head{
+    color: #fff;
+    padding: 80px 0 80px;
+    font-size: 18px;
+}
+.footer-top{
+    background: #252929;
+}
+.segment-one h3{
+    color: #fff;
+    text-transform: uppercase;
+
+}
+.segment-two h2{
+    color: #fff;
+    text-transform: uppercase;
+}
+.segment-two h2::before{
+    color: #c65039;
+    padding-right: 10px;
+}
+.segment-two ul{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+.segment-two ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    line-height: 40px;
+}
+.segment-two ul li a {
+  color: #999;
+  text-decoration: none ;
+  
+}
+.segment-two ul li a:hover {
+    color:red;
+    text-decoration: underline ;
+    
+  }
+.segment-three h2{
+    color: #fff;
+    text-transform: uppercase;
+}
+.segment-three h2::before{
+    color: #c65039;
+    padding-right: 10px;
+}
+.segment-three a{
+    background: #49484948;
+    width: 40px;
+    height:40px ;
+    display: inline-block;
+    border-radius: 50%;
+
+}
+.segment-three a i{
+font-size: 20px;
+color: blue;
+padding: 10px 12px;
+}
+.segment-four h2{
+    color: white;
+    text-transform: uppercase;
+    font-size: large;
+}
+.segment-four h2::before{
+    color: #c65039;
+    padding-right: 10px;
+    
+}
+.segment-four form input[type=submit]{
+    background: red;
+    border: none;
+    padding: 3px 15px;
+    margin-top: 5px;
+    color:white ;
+    text-transform: uppercase;
+    border-radius: 50px;
+
+}
+
+.segment-four form input[type=email]{
+  
+    border: none;
+    padding: 3px 15px;
+    margin-top: 5px;
+    color:black ;
+    border-radius: 20px;
+    box-decoration-break: inherit;
+    border: spacing 0;
+}
+.footer-bottom-text{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    line-height: 75px;
+}
+
