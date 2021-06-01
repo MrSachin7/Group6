@@ -454,7 +454,7 @@ public class ModelManager
       if (player.getFirstName().equals(firstName) && player.getLastName()
           .equals(lastName))
       {
-        player.setStartingOrNot(" ");
+        player.setStartingOrNot("Not set");
       }
     }
     savePlayers(allPlayers);
@@ -516,7 +516,7 @@ public class ModelManager
       if (player.getFirstName().equals(firstName) && player.getLastName()
           .equals(lastName))
       {
-        player.setStartingOrNot("");
+        player.setStartingOrNot("Not set");
       }
     }
     savePlayers(allPlayers);

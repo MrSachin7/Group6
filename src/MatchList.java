@@ -68,7 +68,6 @@ public class MatchList implements Serializable
     ArrayList<Match> temp = new ArrayList<>();
     for (int i = 0; i < matchList.size(); i++)
     {
-
       if (!(matchList.get(i).getOpponentTeam().equals(opponent) && matchList.get(i).getMatchDate().equals(startDate)))
       {
         temp.add(matchList.get(i));

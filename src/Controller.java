@@ -490,6 +490,10 @@ public class Controller
     upcomingMatchesTimes.setText(matches.getAllTimes());
     upcomingMatchesDates.setText(matches.getAllDates());
     upcomingMatchesMatchType.setText(matches.getAllMatchesTypes());
+    upcomingMatchesOpponents.setEditable(false);
+    upcomingMatchesTimes.setEditable(false);
+    upcomingMatchesDates.setEditable(false);
+    upcomingMatchesMatchType.setEditable(false);
 
   }
 
@@ -746,11 +750,13 @@ public class Controller
     if (e.getSource() == changeShirtNumber)
     {
       changeShirtNo();
+      AlertBox.display("Shirt number changed");
     }
     if (e.getSource() == savePosition)
     {
       changePosition();
       updatePlayersArea();
+      AlertBox.display("Position saved");
     }
     if (e.getSource() == upcomingMatchesUpdate)
     {
@@ -759,10 +765,12 @@ public class Controller
     if (e.getSource() == createPlayer)
     {
       createPlayer();
+      AlertBox.display("Player created successfully");
     }
     if (e.getSource() == createMatch)
     {
       createMatch();
+      AlertBox.display("Matches created successfully");
     }
     if (e.getSource() == allInjuryUpdate)
     {
@@ -771,10 +779,12 @@ public class Controller
     if (e.getSource() == addInjury)
     {
       addInjury();
+      AlertBox.display("Injury added to the player successfully");
     }
     if (e.getSource() == removeInjury)
     {
       removeInjury();
+      AlertBox.display("Injury removed successfully");
     }
     if (e.getSource() == suspendedUpdate)
     {
@@ -783,10 +793,12 @@ public class Controller
     if (e.getSource() == addSuspension)
     {
       addSuspension();
+      AlertBox.display("Suspension added to the player successfully");
     }
     if (e.getSource() == removeSuspension)
     {
       removeSuspension();
+      AlertBox.display("Suspension removed successfully");
     }
     if (e.getSource() == comboBoxShirtNo)
     {
@@ -927,39 +939,48 @@ public class Controller
     if (e.getSource() == addStarter)
     {
       addStarter();
+      AlertBox.display("Player is now on a starter");
     }
     if (e.getSource() == removeStarter)
     {
       removeStarter();
+      AlertBox.display("Player is now removed from starters");
     }
     if (e.getSource() == addSubstitute)
     {
       addSubstitute();
+      AlertBox.display("Player is now a substitute");
     }
     if (e.getSource() == removeSubstitute)
     {
       removeSubstitute();
+      AlertBox.display("Player is now removed from substitutes");
     }
     if (e.getSource() == deletePlayer)
     {
       deletePlayer();
+      AlertBox.display("Player has been removed");
     }
     if (e.getSource() == deleteMatch)
     {
       removeMatch();
+      AlertBox.display("Match has been removed");
     }
     if (e.getSource() == setResult)
     {
       setResult();
+      AlertBox.display("Result set successfully");
     }
     if (e.getSource()==exportMatches)
     {
       modelManager.exportUpcomingMatchesToXml();
       modelManager.exportPreviousMatchesToXml();
+      AlertBox.display("Matches have been exported.");
     }
     if (e.getSource()==exportPlayers)
     {
       modelManager.exportPlayersToXml();
+      AlertBox.display("Players have been exported");
     }
   }
 }
