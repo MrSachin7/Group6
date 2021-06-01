@@ -660,7 +660,7 @@ public class ModelManager
   }
   public void exportPreviousMatchesToXml()
   {
-    String fileName = "Finalassignmentml/previousMatches.xml";
+    String fileName = "Finalassignment/Xml/previousMatches.xml";
     String appendMatch = "";
     MatchList previousMatches = getALlPreviousMatches();
     try

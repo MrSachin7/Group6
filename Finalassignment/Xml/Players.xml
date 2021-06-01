@@ -21,20 +21,14 @@
 </player>
 <player>
    <name>Himal Sharma</name>
-   <shirtNumber>0</shirtNumber>
+   <shirtNumber>1</shirtNumber>
    <birthDate>02/05/1999</birthDate>
     <position>Defender</position>
 </player>
 <player>
    <name>Sachin Baral</name>
-   <shirtNumber>0</shirtNumber>
+   <shirtNumber>7</shirtNumber>
    <birthDate>25/09/2002</birthDate>
     <position>Striker</position>
-</player>
-<player>
-   <name>Test 123</name>
-   <shirtNumber>8</shirtNumber>
-   <birthDate>04/05/2021</birthDate>
-    <position>Dont</position>
 </player>
 </playerList>
