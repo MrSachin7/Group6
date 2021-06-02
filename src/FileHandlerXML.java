@@ -1,23 +1,40 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class FileHandlerXML
 {
-  // Writes the given string to a file with the given file name
+  /**
+   * Writes the given String to the given file.
+   *
+   * @param fileName the name of the file to write the string
+   * @param str      the string to write on the file
+   * @throws FileNotFoundException the exception to throw when the file is not found.
+   */
   public static void writeToTextFile(String fileName, String str) throws FileNotFoundException
   {
     writeText(fileName, str, false);
   }
 
-  // Appends the given string to a file with the given file name
+  /**
+   * Appends the given String to the given file.
+   *
+   * @param fileName the name of the file to append to the String
+   * @param str      the string to append the string
+   * @throws FileNotFoundException the exception to throw when the file is not found.
+   */
   public static void appendToTextFile(String fileName, String str) throws FileNotFoundException
   {
     writeText(fileName, str, true);
   }
 
-  // writeToTextFile and appendToTextFile are almost identical - only the boolean in the constructor
-  // of the FileOutputStream differs. So I made this private method that both methods call
+  /**
+   * Writes or append the text to a given file
+   *
+   * @param fileName the name of the file to write / append the string
+   * @param str      the string to write / append
+   * @param append   boolean, true to append , false to write
+   * @throws FileNotFoundException
+   */
   private static void writeText(String fileName, String str, boolean append)
       throws FileNotFoundException
   {
@@ -37,29 +54,7 @@ public class FileHandlerXML
       }
     }
   }
-
-  private static void writeText(String fileName, String[] strs, boolean append)
-      throws FileNotFoundException
-  {
-    PrintWriter writeToFile = null;
-
-    try
-    {
-      FileOutputStream fileOutStream = new FileOutputStream(fileName, append);
-      writeToFile = new PrintWriter(fileOutStream);
-
-      for (int i = 0; i < strs.length; i++)
-      {
-        writeToFile.println(strs[i]);
-      }
-    }
-    finally
-    {
-      if (writeToFile != null)
-      {
-        writeToFile.close();
-      }
-    }
-  }
 }
+
+
 
