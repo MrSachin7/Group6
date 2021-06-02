@@ -412,6 +412,20 @@ public class ModelManager
     return startingPlayers;
   }
 
+  public PlayerList getAllNotStartingPlayers()
+  {
+    PlayerList allPlayers = getAllAvailablePlayers();
+    PlayerList notstartingPlayers = new PlayerList();
+
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      if (!(allPlayers.get(i).getStartingOrNot().equals("Starting")))
+      {
+        notstartingPlayers.add(allPlayers.get(i));
+      }
+    }
+    return notstartingPlayers;
+  }
   /**
    * Adds a Player's status to starting
    *
@@ -727,5 +741,18 @@ public class ModelManager
       }
     }
     return "";
+  }
+  public boolean isShirtNumberOccupied(int shirtNumber)
+  {
+    PlayerList allPlayers = getAllPlayers();
+    for (int i=0;i<allPlayers.size();i++)
+    {
+      Player player = allPlayers.get(i);
+      if (player.getShirtNumber()==shirtNumber)
+      {
+        return true;
+      }
+    }
+    return false;
   }
 }

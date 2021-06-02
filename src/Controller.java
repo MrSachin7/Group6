@@ -324,7 +324,7 @@ public class Controller
 
     addStarterComboBox.getItems().clear();
 
-    PlayerList players = modelManager.getAllAvailablePlayers();
+    PlayerList players = modelManager.getAllNotStartingPlayers();
     for (int i = 0; i < players.size(); i++)
     {
       addStarterComboBox.getItems().add(players.get(i));
@@ -430,12 +430,18 @@ public class Controller
     String firstName = changeShirtNumberFirstName.getText();
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (int) spinnerShirtNo.getValue();
-    modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
-    changeShirtNumberFirstName.clear();
-    changeShirtNumberLastName.clear();
-    updateEveryBox();
-    updatePlayersArea();
-
+    if (modelManager.isShirtNumberOccupied(shirtNumber)==true)
+    {
+      AlertBox.display("Shirt Number is already occupied");
+    }
+    else
+    {
+      modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
+      changeShirtNumberFirstName.clear();
+      changeShirtNumberLastName.clear();
+      updateEveryBox();
+      updatePlayersArea();
+    }
   }
 
   private void changePosition()
@@ -443,6 +449,10 @@ public class Controller
     String firstName = changePositionFirstName.getText();
     String lastName = changePositionLastName.getText();
     String position = textFieldPosition.getText();
+    if (position.equals(""))
+    {
+      AlertBox.display("Position cannot be empty");
+    }
     modelManager.changePosition(firstName, lastName, position);
     changePositionFirstName.clear();
     changePositionLastName.clear();
@@ -468,6 +478,10 @@ public class Controller
     else if (lastName.equals(""))
     {
       AlertBox.display("Last name cannot be empty");
+    }
+    else if (modelManager.isShirtNumberOccupied(shirtNumber)==true)
+    {
+      AlertBox.display("Shirt Number is already occupied");
     }
     else
     {
