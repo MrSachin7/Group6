@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_6_2_2021_12_09_PM_[Default_Changelist]" date="1622628588501" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_2021_12_09_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/2/2021 12:09 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SEP-PROJECT/Controller.class" />
+    <option name="AFTER_PATH" value="out/production/SEP-PROJECT/Controller.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_2021_12_09_PM_[Default_Changelist]/Controller.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SEP-PROJECT/ModelManager.class" />
+    <option name="AFTER_PATH" value="out/production/SEP-PROJECT/ModelManager.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_2021_12_09_PM_[Default_Changelist]/ModelManager.class" />
+  </binary>
+</changelist>
