@@ -462,12 +462,16 @@ deleteMatchDate.setValue(LocalDate.now());
     {
       AlertBox.display("Position cannot be empty");
     }
-    modelManager.changePosition(firstName, lastName, position);
-    changePositionFirstName.clear();
-    changePositionLastName.clear();
-    updateEveryBox();
-    updatePlayersArea();
-    AlertBox.display("Position has been changed");
+    else
+    {
+      modelManager.changePosition(firstName, lastName, position);
+      changePositionFirstName.clear();
+      changePositionLastName.clear();
+      updateEveryBox();
+      updatePlayersArea();
+      AlertBox.display("Position has been changed");
+    }
+
   }
 
   private void createPlayer()
