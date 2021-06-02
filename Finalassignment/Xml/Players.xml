@@ -5,7 +5,7 @@
    <name>Bartosz Zielenski</name>
    <shirtNumber>0</shirtNumber>
    <birthDate>04/11/1998</birthDate>
-    <position>GoalKeeper</position>
+    <position>left winger</position>
 </player>
 <player>
    <name>Cristian-Marian Radu</name>
@@ -15,7 +15,7 @@
 </player>
 <player>
    <name>Emil Vassilev</name>
-   <shirtNumber>0</shirtNumber>
+   <shirtNumber>8</shirtNumber>
    <birthDate>06/12/1997</birthDate>
     <position>Left Winger</position>
 </player>

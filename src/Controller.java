@@ -141,13 +141,11 @@ public class Controller
     updatePreviousMatchesArea();
     updateUpcomingMatchesArea();
     createMatchDate.setValue(LocalDate.now());
-setResultDate.setValue(LocalDate.now());
-deleteMatchDate.setValue(LocalDate.now());
+    setResultDate.setValue(LocalDate.now());
+    deleteMatchDate.setValue(LocalDate.now());
     addInjuryInjuryDate.setValue(LocalDate.now());
     addInjuryExpectedReturnDate.setValue(LocalDate.now());
     createPlayerDatePicker.setValue(LocalDate.now());
-
-
 
   }
 
@@ -960,7 +958,7 @@ deleteMatchDate.setValue(LocalDate.now());
       {
         modelManager.removeSubstitutePlayers(firstName, lastName);
         removeSubstituteFirstName.clear();
-        removeStarterLastName.clear();
+        removeSubstituteLastName.clear();
         allSubstitutes();
         updateAllPlayersBox();
         updateEveryBox();
