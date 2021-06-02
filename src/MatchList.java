@@ -60,8 +60,8 @@ public class MatchList implements Serializable
 
   /**
    * Removes match from matchList
-   * @param opponent
-   * @param startDate
+   * @param opponent the opponent of the match to remove
+   * @param startDate the start date of the match to remove
    */
   public void removeMatch(String opponent, Date startDate)
   {

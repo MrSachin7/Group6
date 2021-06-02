@@ -578,7 +578,7 @@ public class ModelManager
 
   /**
    * Removes a match from the list
-   *
+   * @param startDate the start date of the match to remove
    * @param opponentTeam the opponent team of the match to remove
    */
   public void removeMatch(String opponentTeam, Date startDate)
