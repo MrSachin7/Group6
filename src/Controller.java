@@ -140,6 +140,13 @@ public class Controller
     allSubstitutes();
     updatePreviousMatchesArea();
     updateUpcomingMatchesArea();
+    createMatchDate.setValue(LocalDate.now());
+setResultDate.setValue(LocalDate.now());
+deleteMatchDate.setValue(LocalDate.now());
+    addInjuryInjuryDate.setValue(LocalDate.now());
+    addInjuryExpectedReturnDate.setValue(LocalDate.now());
+
+
 
   }
 
@@ -430,7 +437,7 @@ public class Controller
     String firstName = changeShirtNumberFirstName.getText();
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (int) spinnerShirtNo.getValue();
-    if (modelManager.isShirtNumberOccupied(shirtNumber)==true)
+    if (modelManager.isShirtNumberOccupied(shirtNumber) == true)
     {
       AlertBox.display("Shirt Number is already occupied");
     }
@@ -479,7 +486,7 @@ public class Controller
     {
       AlertBox.display("Last name cannot be empty");
     }
-    else if (modelManager.isShirtNumberOccupied(shirtNumber)==true)
+    else if (modelManager.isShirtNumberOccupied(shirtNumber) == true)
     {
       AlertBox.display("Shirt Number is already occupied");
     }
