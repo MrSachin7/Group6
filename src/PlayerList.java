@@ -6,7 +6,7 @@ import java.util.Comparator;
 /**
  * A class containing a list of Player objects.
  * @author Sachin Baral
- * @verrsion 1.0
+ * @version 1.0
  */
 public class PlayerList implements Serializable
 {
