@@ -6,7 +6,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-
+/**
+ * @author Sachin Baral
+ */
 public class AlertBox
 {
   public static void display(String message)
@@ -30,6 +32,7 @@ public class AlertBox
 
     Scene scene = new Scene(layout);
     window.setScene(scene);
+    window.setResizable(false);
     window.showAndWait();
 
   }
