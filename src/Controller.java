@@ -145,6 +145,7 @@ setResultDate.setValue(LocalDate.now());
 deleteMatchDate.setValue(LocalDate.now());
     addInjuryInjuryDate.setValue(LocalDate.now());
     addInjuryExpectedReturnDate.setValue(LocalDate.now());
+    createPlayerDatePicker.setValue(LocalDate.now());
 
 
 
@@ -448,6 +449,7 @@ deleteMatchDate.setValue(LocalDate.now());
       changeShirtNumberLastName.clear();
       updateEveryBox();
       updatePlayersArea();
+      AlertBox.display("Shirt number has been changed");
     }
   }
 
@@ -465,6 +467,7 @@ deleteMatchDate.setValue(LocalDate.now());
     changePositionLastName.clear();
     updateEveryBox();
     updatePlayersArea();
+    AlertBox.display("Position has been changed");
   }
 
   private void createPlayer()
