@@ -422,8 +422,7 @@ public class ModelManager
   {
     PlayerList allPlayers = getAllPlayers();
     PlayerList allStartingPlayers = getAllStartingPlayers();
-    if (allStartingPlayers.size() < 11)
-    {
+
       for (int i = 0; i < allPlayers.size(); i++)
       {
         Player player = allPlayers.get(i);
@@ -435,7 +434,6 @@ public class ModelManager
       }
       savePlayers(allPlayers);
     }
-  }
 
   /**
    * Removes a player from starting players of a match
@@ -601,6 +599,10 @@ public class ModelManager
     saveMatches(allMatches);
   }
 
+  /**
+   * Writes the information of Players in a XMl file
+   */
+
   public void exportPlayersToXml()
   {
     String fileName = ".\\Finalassignment\\Xml\\Players.xml";
@@ -629,6 +631,9 @@ public class ModelManager
     }
   }
 
+  /**
+   * Writes the information of Upcoming matches in a XML file
+   */
   public void exportUpcomingMatchesToXml()
   {
     String fileName = "Finalassignment/Xml/upcomingMatches.xml";
@@ -658,6 +663,10 @@ public class ModelManager
       System.out.println("File Not Found");
     }
   }
+
+  /**
+   * Writes the information of a previous matches in Xml file
+   */
   public void exportPreviousMatchesToXml()
   {
     String fileName = "Finalassignment/Xml/previousMatches.xml";
@@ -686,5 +695,37 @@ public class ModelManager
     {
       System.out.println("File Not Found");
     }
+  }
+  /**
+   * Searches the match by matchDate and opponent team in a matchlist
+   * @param opponentTeam the opponent team of the match to search
+   * @param matchDate the date of the match to search
+   * @return the Match object with the given opponent team and match date if any, else null
+   */
+  public String searchMatch(String opponentTeam, Date matchDate)
+  {
+    MatchList allMatches = getAllMatches();
+    for (int i=0; i< allMatches.size();i++)
+    {
+      Match match = allMatches.get(i);
+      if (match.getMatchDate().equals(matchDate) && match.getOpponentTeam().equals(opponentTeam))
+      {
+        return "Match found";
+      }
+    }
+    return "";
+  }
+  public String searchPlayer(String firstName, String lastName)
+  {
+   PlayerList allPlayers = getAllPlayers();
+    for (int i=0; i< allPlayers.size();i++)
+    {
+     Player player = allPlayers.get(i);
+      if (player.getFirstName().equals(firstName) && player.getLastName().equals(lastName))
+      {
+        return "Player found";
+      }
+    }
+    return "";
   }
 }

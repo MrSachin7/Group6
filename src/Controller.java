@@ -461,13 +461,26 @@ public class Controller
     int year = temp.getYear();
     Date newDate = new Date(day, month, year);
     int shirtNumber = (int) createPlayerShirtNumber.getValue();
-    modelManager.addPlayer(new Player(firstName, lastName, newDate, position));
-    modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
-    createPlayerFirstName.clear();
-    createPlayerLastName.clear();
-    createPlayerPosition.clear();
-    updateEveryBox();
-    updatePlayersArea();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      modelManager
+          .addPlayer(new Player(firstName, lastName, newDate, position));
+      modelManager.changeShirtNumber(firstName, lastName, shirtNumber);
+      createPlayerFirstName.clear();
+      createPlayerLastName.clear();
+      createPlayerPosition.clear();
+      updateEveryBox();
+      updatePlayersArea();
+      AlertBox.display("Player created successfully");
+    }
 
   }
 
@@ -475,11 +488,23 @@ public class Controller
   {
     String firstName = deletePlayerFirstName.getText();
     String lastName = deletePlayerLastName.getText();
-    modelManager.removePlayer(firstName, lastName);
-    deletePlayerFirstName.clear();
-    deletePlayerLastName.clear();
-    updatePlayersArea();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      modelManager.removePlayer(firstName, lastName);
+      deletePlayerFirstName.clear();
+      deletePlayerLastName.clear();
+      updatePlayersArea();
+      updateEveryBox();
+      AlertBox.display("Player deleted successfully");
+    }
 
   }
 
@@ -516,38 +541,47 @@ public class Controller
     int year = temp.getYear();
     Date newDate = new Date(day, month, year);
     String opponent = createMatchOpponent.getText();
-    int hour = (int) createMatchHour.getValue();
-    int minute = (int) createMatchMinute.getValue();
-    int second = 0;
-    Time newTime = new Time(hour, minute, second);
-    boolean isHomeMatch = false;
-    if (createMatchHome.isSelected())
+    if (opponent.equals(""))
     {
-      isHomeMatch = true;
+      AlertBox.display("Opponent name cannot be empty");
     }
-    if (createMatchAway.isSelected())
+    else
     {
-      isHomeMatch = false;
+      int hour = (int) createMatchHour.getValue();
+      int minute = (int) createMatchMinute.getValue();
+      int second = 0;
+      Time newTime = new Time(hour, minute, second);
+      boolean isHomeMatch = false;
+      if (createMatchHome.isSelected())
+      {
+        isHomeMatch = true;
+      }
+      if (createMatchAway.isSelected())
+      {
+        isHomeMatch = false;
+      }
+      if (createMatchLeague.isSelected())
+      {
+        modelManager.addLeagueMatch(
+            new LeagueMatch(opponent, newDate, newTime, isHomeMatch));
+      }
+      if (createMatchCup.isSelected())
+      {
+        modelManager
+            .addCupMatch(new CupMatch(opponent, newDate, newTime, isHomeMatch));
+      }
+      if (createMatchFriendly.isSelected())
+      {
+        modelManager.addFriendlyMatch(
+            new FriendlyMatch(opponent, newDate, newTime, isHomeMatch));
+      }
+      createMatchOpponent.clear();
+      updateUpcomingMatchesArea();
+      updatePreviousMatchesArea();
+      updateEveryBox();
+      AlertBox.display("Match created");
+
     }
-    if (createMatchLeague.isSelected())
-    {
-      modelManager.addLeagueMatch(
-          new LeagueMatch(opponent, newDate, newTime, isHomeMatch));
-    }
-    if (createMatchCup.isSelected())
-    {
-      modelManager
-          .addCupMatch(new CupMatch(opponent, newDate, newTime, isHomeMatch));
-    }
-    if (createMatchFriendly.isSelected())
-    {
-      modelManager.addFriendlyMatch(
-          new FriendlyMatch(opponent, newDate, newTime, isHomeMatch));
-    }
-    createMatchOpponent.clear();
-    updateUpcomingMatchesArea();
-    updatePreviousMatchesArea();
-    updateEveryBox();
 
   }
 
@@ -558,12 +592,21 @@ public class Controller
     int month = temp.getMonthValue();
     int year = temp.getYear();
     Date tempDate = new Date(day, month, year);
+
     String opponentTeam = deleteMatchOpponent.getText();
-    modelManager.removeMatch(opponentTeam, tempDate);
-    deleteMatchOpponent.clear();
-    updateUpcomingMatchesArea();
-    updatePreviousMatchesArea();
-    updateEveryBox();
+    if (modelManager.searchMatch(opponentTeam, tempDate).equals("Match found"))
+    {
+      modelManager.removeMatch(opponentTeam, tempDate);
+      deleteMatchOpponent.clear();
+      updateUpcomingMatchesArea();
+      updatePreviousMatchesArea();
+      updateEveryBox();
+      AlertBox.display("Match has been removed");
+    }
+    else
+    {
+      AlertBox.display("Match not found");
+    }
 
   }
 
@@ -576,11 +619,19 @@ public class Controller
     Date tempDate = new Date(day, month, year);
     String opponentTeam = setResultOpponent.getText();
     String result = setResultResult.getText();
-    modelManager.setResult(opponentTeam, tempDate, result);
-    setResultOpponent.clear();
-    setResultResult.clear();
-    updatePreviousMatchesArea();
-    updateEveryBox();
+    if (modelManager.searchMatch(opponentTeam, tempDate).equals("Match found"))
+    {
+      modelManager.setResult(opponentTeam, tempDate, result);
+      setResultOpponent.clear();
+      setResultResult.clear();
+      updatePreviousMatchesArea();
+      updateEveryBox();
+      AlertBox.display("Result set successfully");
+    }
+    else
+    {
+      AlertBox.display("Match not found");
+    }
 
   }
 
@@ -598,26 +649,44 @@ public class Controller
   {
     String firstName = addInjuryFirstName.getText();
     String lastName = addInjuryLastName.getText();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        LocalDate temp1 = addInjuryInjuryDate.getValue();
+        int d1 = temp1.getDayOfMonth();
+        int m1 = temp1.getMonthValue();
+        int y1 = temp1.getYear();
+        Date injuredDate = new Date(d1, m1, y1);
 
-    LocalDate temp1 = addInjuryInjuryDate.getValue();
-    int d1 = temp1.getDayOfMonth();
-    int m1 = temp1.getMonthValue();
-    int y1 = temp1.getYear();
-    Date injuredDate = new Date(d1, m1, y1);
+        LocalDate temp2 = addInjuryExpectedReturnDate.getValue();
+        int d2 = temp2.getDayOfMonth();
+        int m2 = temp2.getMonthValue();
+        int y2 = temp2.getYear();
+        Date expectedReturnDate = new Date(d2, m2, y2);
 
-    LocalDate temp2 = addInjuryExpectedReturnDate.getValue();
-    int d2 = temp2.getDayOfMonth();
-    int m2 = temp2.getMonthValue();
-    int y2 = temp2.getYear();
-    Date expectedReturnDate = new Date(d2, m2, y2);
-
-    Injury injury = new Injury(injuredDate, expectedReturnDate);
-    modelManager.addInjury(firstName, lastName, injury);
-    addInjuryFirstName.clear();
-    addInjuryLastName.clear();
-    allInjuries();
-    updateAllPlayersBox();
-    updateEveryBox();
+        Injury injury = new Injury(injuredDate, expectedReturnDate);
+        modelManager.addInjury(firstName, lastName, injury);
+        addInjuryFirstName.clear();
+        addInjuryLastName.clear();
+        allInjuries();
+        updateAllPlayersBox();
+        updateEveryBox();
+        AlertBox.display("Injury added to the player");
+      }
+      else
+      {
+        AlertBox.display("Player not found");
+      }
+    }
   }
 
   private void allSuspension()
@@ -634,40 +703,94 @@ public class Controller
   {
     String firstName = removeInjuryFirstName.getText();
     String lastName = removeInjuryLastName.getText();
-
-    modelManager.removeInjury(firstName, lastName);
-    removeInjuryLastName.clear();
-    removeInjuryFirstName.clear();
-    allInjuries();
-    updateAllPlayersBox();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        modelManager.removeInjury(firstName, lastName);
+        removeInjuryLastName.clear();
+        removeInjuryFirstName.clear();
+        allInjuries();
+        updateAllPlayersBox();
+        updateEveryBox();
+      }
+      else
+      {
+        AlertBox.display("Player not found");
+      }
+    }
   }
 
   private void addSuspension()
   {
     String firstName = addSuspendedFirstName.getText();
     String lastName = addSuspendedLastName.getText();
-    int noOfGamesSuspended = (int) addSuspendedNumberOfGamesSuspended
-        .getValue();
-    Suspension suspension = new Suspension(noOfGamesSuspended);
-    modelManager.addSuspension(firstName, lastName, suspension);
-    addSuspendedFirstName.clear();
-    addSuspendedLastName.clear();
-    allSuspension();
-    updateAllPlayersBox();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        int noOfGamesSuspended = (int) addSuspendedNumberOfGamesSuspended
+            .getValue();
+        Suspension suspension = new Suspension(noOfGamesSuspended);
+        modelManager.addSuspension(firstName, lastName, suspension);
+        addSuspendedFirstName.clear();
+        addSuspendedLastName.clear();
+        allSuspension();
+        updateAllPlayersBox();
+        updateEveryBox();
+      }
+      else
+      {
+        AlertBox.display("Player not found");
+      }
+    }
   }
 
   private void removeSuspension()
   {
     String firstName = removeSuspensionFirstName.getText();
     String lastName = removeSuspensionLastName.getText();
-    modelManager.removeSuspension(firstName, lastName);
-    removeSuspensionFirstName.clear();
-    removeSuspensionLastName.clear();
-    allSuspension();
-    updateAllPlayersBox();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        modelManager.removeSuspension(firstName, lastName);
+        removeSuspensionFirstName.clear();
+        removeSuspensionLastName.clear();
+        allSuspension();
+        updateAllPlayersBox();
+        updateEveryBox();
+        AlertBox.display("Suspension removed from a player");
+      }
+      else
+      {
+        AlertBox.display("Player not found");
+      }
+    }
   }
 
   private void allStarters()
@@ -683,24 +806,72 @@ public class Controller
   {
     String firstName = addStarterFirstName.getText();
     String lastName = addStarterLastName.getText();
-    modelManager.addStartingPlayers(firstName, lastName);
-    addStarterFirstName.clear();
-    addStarterLastName.clear();
-    allStarters();
-    allSubstitutes();
-    updateEveryBox();
+    int allStarters = modelManager.getAllStartingPlayers().size();
+    if (allStarters >= 11)
+    {
+      AlertBox.display("Cannot have more than 11 starters.");
+    }
+    else
+    {
+      if (firstName.equals(""))
+      {
+        AlertBox.display("First name cannot be empty");
+      }
+      else if (lastName.equals(""))
+      {
+        AlertBox.display("Last name cannot be empty");
+      }
+      else
+      {
+        if (modelManager.searchPlayer(firstName, lastName)
+            .equals("Player found"))
+        {
+          modelManager.addStartingPlayers(firstName, lastName);
+          addStarterFirstName.clear();
+          addStarterLastName.clear();
+          allStarters();
+          allSubstitutes();
+          updateEveryBox();
+          AlertBox.display("Player added to starting list");
+        }
+        else
+        {
+          AlertBox.display("Player not found");
+        }
+      }
+
+    }
   }
 
   private void removeStarter()
   {
     String firstName = removeStarterFirstName.getText();
     String lastName = removeStarterLastName.getText();
-    modelManager.removeStartingPlayers(firstName, lastName);
-    removeStarterFirstName.clear();
-    removeStarterLastName.clear();
-    allStarters();
-    updateAllPlayersBox();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        modelManager.removeStartingPlayers(firstName, lastName);
+        removeStarterFirstName.clear();
+        removeStarterLastName.clear();
+        allStarters();
+        updateAllPlayersBox();
+        updateEveryBox();
+        AlertBox.display("Player removed from starters");
+      }
+      else
+      {
+        AlertBox.display("Pleyer not found");
+      }
+    }
   }
 
   private void allSubstitutes()
@@ -716,24 +887,62 @@ public class Controller
   {
     String firstName = addSubstituteFirstName.getText();
     String lastName = addSubstituteLastName.getText();
-    modelManager.addSubstitutePlayers(firstName, lastName);
-    addSubstituteFirstName.clear();
-    addStarterLastName.clear();
-    allSubstitutes();
-    allStarters();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        modelManager.addSubstitutePlayers(firstName, lastName);
+        addSubstituteFirstName.clear();
+        addStarterLastName.clear();
+        allSubstitutes();
+        allStarters();
+        updateEveryBox();
+        AlertBox.display("Player added to substitute");
+      }
+      else
+      {
+        AlertBox.display("Player not found");
+      }
+    }
   }
 
   private void removeSubstitute()
   {
     String firstName = removeSubstituteFirstName.getText();
     String lastName = removeSubstituteLastName.getText();
-    modelManager.removeSubstitutePlayers(firstName, lastName);
-    removeSubstituteFirstName.clear();
-    removeStarterLastName.clear();
-    allSubstitutes();
-    updateAllPlayersBox();
-    updateEveryBox();
+    if (firstName.equals(""))
+    {
+      AlertBox.display("First name cannot be empty");
+    }
+    else if (lastName.equals(""))
+    {
+      AlertBox.display("Last name cannot be empty");
+    }
+    else
+    {
+      if (modelManager.searchPlayer(firstName, lastName).equals("Player found"))
+      {
+        modelManager.removeSubstitutePlayers(firstName, lastName);
+        removeSubstituteFirstName.clear();
+        removeStarterLastName.clear();
+        allSubstitutes();
+        updateAllPlayersBox();
+        updateEveryBox();
+        AlertBox.display("Player removed from substitute");
+      }
+      else
+      {
+        AlertBox.display("Player not found");
+      }
+    }
   }
 
   /**
@@ -750,13 +959,13 @@ public class Controller
     if (e.getSource() == changeShirtNumber)
     {
       changeShirtNo();
-      AlertBox.display("Shirt number changed");
+
     }
     if (e.getSource() == savePosition)
     {
       changePosition();
       updatePlayersArea();
-      AlertBox.display("Position saved");
+
     }
     if (e.getSource() == upcomingMatchesUpdate)
     {
@@ -765,12 +974,12 @@ public class Controller
     if (e.getSource() == createPlayer)
     {
       createPlayer();
-      AlertBox.display("Player created successfully");
+
     }
     if (e.getSource() == createMatch)
     {
       createMatch();
-      AlertBox.display("Matches created successfully");
+
     }
     if (e.getSource() == allInjuryUpdate)
     {
@@ -779,12 +988,12 @@ public class Controller
     if (e.getSource() == addInjury)
     {
       addInjury();
-      AlertBox.display("Injury added to the player successfully");
+
     }
     if (e.getSource() == removeInjury)
     {
       removeInjury();
-      AlertBox.display("Injury removed successfully");
+
     }
     if (e.getSource() == suspendedUpdate)
     {
@@ -793,12 +1002,12 @@ public class Controller
     if (e.getSource() == addSuspension)
     {
       addSuspension();
-      AlertBox.display("Suspension added to the player successfully");
+
     }
     if (e.getSource() == removeSuspension)
     {
       removeSuspension();
-      AlertBox.display("Suspension removed successfully");
+
     }
     if (e.getSource() == comboBoxShirtNo)
     {
@@ -939,48 +1148,48 @@ public class Controller
     if (e.getSource() == addStarter)
     {
       addStarter();
-      AlertBox.display("Player is now on a starter");
+
     }
     if (e.getSource() == removeStarter)
     {
       removeStarter();
-      AlertBox.display("Player is now removed from starters");
+
     }
     if (e.getSource() == addSubstitute)
     {
       addSubstitute();
-      AlertBox.display("Player is now a substitute");
+
     }
     if (e.getSource() == removeSubstitute)
     {
       removeSubstitute();
-      AlertBox.display("Player is now removed from substitutes");
+
     }
     if (e.getSource() == deletePlayer)
     {
       deletePlayer();
-      AlertBox.display("Player has been removed");
+
     }
     if (e.getSource() == deleteMatch)
     {
       removeMatch();
-      AlertBox.display("Match has been removed");
+
     }
     if (e.getSource() == setResult)
     {
       setResult();
-      AlertBox.display("Result set successfully");
+
     }
-    if (e.getSource()==exportMatches)
+    if (e.getSource() == exportMatches)
     {
       modelManager.exportUpcomingMatchesToXml();
       modelManager.exportPreviousMatchesToXml();
-      AlertBox.display("Matches have been exported.");
+
     }
-    if (e.getSource()==exportPlayers)
+    if (e.getSource() == exportPlayers)
     {
       modelManager.exportPlayersToXml();
-      AlertBox.display("Players have been exported");
+
     }
   }
 }
