@@ -1184,11 +1184,13 @@ public class Controller
     {
       modelManager.exportUpcomingMatchesToXml();
       modelManager.exportPreviousMatchesToXml();
+      AlertBox.display("Matches have been exported");
 
     }
     if (e.getSource() == exportPlayers)
     {
       modelManager.exportPlayersToXml();
+      AlertBox.display("Players have been exported");
 
     }
   }
