@@ -21,11 +21,12 @@ body{
     background: rgba(128, 95, 95, 0.3);
 }
 .glass{
+    max-height: 50%;
     min-width: 100%;
 /* margin: auto; */
 /* max-width: 96%; */
 margin-top: 2px;
-background:rgb(37, 41, 41,.7);
+background:#5f7a6be7;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 11.5px );
 -webkit-backdrop-filter: blur( 11.5px );
@@ -41,6 +42,10 @@ color: white;
     margin-top: .3em;
     min-height: 35em;
     max-height: 35em;
+}
+
+#nextGame p, #lastResult p{
+    color: rebeccapurple;
 }
 
 
@@ -76,7 +81,7 @@ color: white;
 
 
 
-/* mfff */
+/* media */
 @media (max-width: 305px) {
     .noBefore{
       display: none;
@@ -97,7 +102,26 @@ color: white;
  .last_news{
      display: none;
  }}
-
+ @media (min-width: 990px) {
+    #lastResult{
+        min-height: 40%;
+        max-height:fit-content;
+        
+        }
+        #nextGame{
+        min-height:40%;
+        }
+ }
+ @media (min-width: 1000px) {
+    #lastResult{
+        min-height: fit-content;
+        max-height: 55%;
+        }
+        #nextGame{
+        min-height:52%;
+        max-height: 55%;
+        }
+ }
 
 
 
