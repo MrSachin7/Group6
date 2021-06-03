@@ -1,6 +1,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * A class containing a list of Match objects.
@@ -160,5 +161,18 @@ public class MatchList implements Serializable
     return temp;
   }
 
+  /**
+   * Sorts matches by the date .
+   */
+  public void sortMatchesAscending()
+  {
+    Collections.sort(matchList,new Comparator<Match>()
+    {
+      public int compare(Match p1,Match p2)
+      {
+        return p1.getMatchDate().sortAscending(p2.getMatchDate());
+      }
+    });
+  }
 
 }

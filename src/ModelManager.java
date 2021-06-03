@@ -58,6 +58,7 @@ public class ModelManager
 
   public void saveMatches(MatchList matches)
   {
+    matches.sortMatchesAscending();
     try
     {
       MyFileHandler.writeToBinaryFile(matchFileName, matches);

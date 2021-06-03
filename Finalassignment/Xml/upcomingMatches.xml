@@ -8,4 +8,18 @@
    <matchType>  League Match</matchType>
    <venue>  Home</venue>
 </match>  
+<match>
+   <opponentTeam>  adsasd</opponentTeam>
+   <matchDate>  05/06/2021</matchDate>
+   <matchTime>  11:15:00</matchTime>
+   <matchType>  Cup Match</matchType>
+   <venue>  Home</venue>
+</match>  
+<match>
+   <opponentTeam>  Barcelona</opponentTeam>
+   <matchDate>  05/06/2021</matchDate>
+   <matchTime>  11:15:00</matchTime>
+   <matchType>  Cup Match</matchType>
+   <venue>  Home</venue>
+</match>  
 </matchList>

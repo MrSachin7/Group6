@@ -63,6 +63,21 @@ public class Date implements Serializable
   }
 
   /**
+   * A helping method for sorting matches by date
+   * @param date2 the date to compare
+   * @return -5 if the given match is after the match, else 1
+   */
+  public int sortAscending(Date date2)
+  {
+    if (this.isBefore(date2))
+    {
+      return -5;
+    }
+   else return 1;
+  }
+
+
+  /**
    * Checks if a Date object is a leap year
    * @return boolean (true if the given Date object is a leap year),else false
    */

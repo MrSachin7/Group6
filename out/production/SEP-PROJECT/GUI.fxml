@@ -16,13 +16,13 @@
 
 <AnchorPane prefHeight="426.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <TabPane layoutX="-1.0" prefHeight="426.0" prefWidth="630.0" style="-fx-background-color: #bfbaba;" styleClass="AnchorPane" stylesheets="@gui.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-1.0" prefHeight="426.0" prefWidth="630.0" style="-fx-background-color: #e0e2db;" styleClass="AnchorPane" stylesheets="@gui.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Player">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="958.0">
                      <children>
-                        <TabPane prefHeight="358.0" prefWidth="582.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane layoutY="-1.0" prefHeight="391.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="All players">
                               <content>
