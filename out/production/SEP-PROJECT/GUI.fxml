@@ -16,27 +16,27 @@
 
 <AnchorPane prefHeight="426.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <TabPane layoutX="-1.0" prefHeight="426.0" prefWidth="630.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-1.0" prefHeight="426.0" prefWidth="630.0" style="-fx-background-color: #bfbaba;" styleClass="AnchorPane" stylesheets="@gui.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Player">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="958.0">
                      <children>
                         <TabPane prefHeight="358.0" prefWidth="582.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="All players">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="616.0" stylesheets="@gui.css">
                                        <children>
                                           <Label layoutX="21.0" layoutY="16.0" text="Names" />
-                                          <TextArea fx:id="allPlayersName" layoutX="14.0" layoutY="42.0" prefHeight="278.0" prefWidth="140.0" promptText="Players names" />
-                                          <Label layoutX="255.0" layoutY="16.0" text="Position" />
-                                          <TextArea fx:id="allPlayersPosition" layoutX="255.0" layoutY="41.0" prefHeight="278.0" prefWidth="83.0" promptText="position" />
-                                          <TextArea fx:id="allPlayersShirtNumber" layoutX="169.0" layoutY="41.0" prefHeight="279.0" prefWidth="78.0" promptText="Shirt Number" />
-                                          <Label layoutX="154.0" layoutY="16.0" text="Shirt Number" />
-                                          <Button fx:id="updatePlayers" layoutX="469.0" layoutY="167.0" mnemonicParsing="false" onAction="#handler" text="Update" />
-                                          <TextArea fx:id="allPlayersBirthdate" layoutX="346.0" layoutY="43.0" prefHeight="276.0" prefWidth="78.0" />
-                                          <Label layoutX="346.0" layoutY="16.0" text="Birth Date" />
+                                          <TextArea fx:id="allPlayersName" layoutX="14.0" layoutY="40.0" prefHeight="280.0" prefWidth="166.0" promptText="Players names" styleClass="textFields" stylesheets="@gui.css" />
+                                          <Label layoutX="277.0" layoutY="16.0" text="Position" />
+                                          <TextArea fx:id="allPlayersPosition" layoutX="277.0" layoutY="39.0" prefHeight="280.0" prefWidth="136.0" promptText="position" styleClass="textFields" />
+                                          <TextArea fx:id="allPlayersShirtNumber" layoutX="187.0" layoutY="40.0" prefHeight="280.0" prefWidth="78.0" promptText="Shirt Number" styleClass="textFields" />
+                                          <Label layoutX="190.0" layoutY="16.0" text="Shirt Number" />
+                                          <Button fx:id="updatePlayers" layoutX="526.0" layoutY="139.0" mnemonicParsing="false" onAction="#handler" text="Update" />
+                                          <TextArea fx:id="allPlayersBirthdate" layoutX="423.0" layoutY="39.0" prefHeight="280.0" prefWidth="100.0" styleClass="textFields" />
+                                          <Label layoutX="419.0" layoutY="16.0" text="Birth Date" />
                                        </children>
                                        <opaqueInsets>
                                           <Insets />
@@ -45,17 +45,17 @@
                             </Tab>
                             <Tab text="Change shirt number">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="582.0" style="-fx-border-color: #8a8e94;">
                                        <children>
                                           <Label layoutX="387.0" layoutY="76.0" text="Player" />
                                           <Label layoutX="31.0" layoutY="143.0" text="ShirtNumber" />
-                                          <Button fx:id="changeShirtNumber" layoutX="291.0" layoutY="201.0" mnemonicParsing="false" onAction="#handler" text="Change ShirtNumber" />
-                                          <Spinner fx:id="spinnerShirtNo" layoutX="111.0" layoutY="139.0" />
-                                          <ComboBox fx:id="comboBoxShirtNo" layoutX="378.0" layoutY="113.0" onAction="#handler" prefHeight="0.0" prefWidth="150.0" />
-                                          <TextField fx:id="changeShirtNumberFirstName" layoutX="99.0" layoutY="32.0" onAction="#handler" />
+                                          <Button fx:id="changeShirtNumber" layoutX="275.0" layoutY="210.0" mnemonicParsing="false" onAction="#handler" text="Change ShirtNumber" />
+                                          <Spinner fx:id="spinnerShirtNo" layoutX="111.0" layoutY="139.0" styleClass="Box" />
+                                          <ComboBox fx:id="comboBoxShirtNo" layoutX="378.0" layoutY="113.0" onAction="#handler" prefHeight="0.0" prefWidth="150.0" styleClass="ComboBox" />
+                                          <TextField fx:id="changeShirtNumberFirstName" layoutX="99.0" layoutY="32.0" onAction="#handler" styleClass="ComboBox" />
                                           <Label layoutX="31.0" layoutY="36.0" text="First Name" />
                                           <Label layoutX="32.0" layoutY="85.0" text="Last Name" />
-                                          <TextField fx:id="changeShirtNumberLastName" layoutX="100.0" layoutY="81.0" onAction="#handler" />
+                                          <TextField fx:id="changeShirtNumberLastName" layoutX="100.0" layoutY="81.0" onAction="#handler" styleClass="ComboBox" />
                                        </children></AnchorPane>
                               </content>
                             </Tab>
@@ -66,12 +66,12 @@
                                           <Label layoutX="374.0" layoutY="64.0" text="Player" />
                                           <Button fx:id="savePosition" layoutX="355.0" layoutY="209.0" mnemonicParsing="false" onAction="#handler" text="Change Position" />
                                           <Label layoutX="55.0" layoutY="169.0" text="Position" />
-                                          <TextField fx:id="textFieldPosition" layoutX="141.0" layoutY="165.0" onAction="#handler" promptText="new position" />
-                                          <TextField fx:id="changePositionFirstName" layoutX="86.0" layoutY="39.0" onAction="#handler" />
+                                          <TextField fx:id="textFieldPosition" layoutX="141.0" layoutY="165.0" onAction="#handler" promptText="new position" styleClass="ComboBox" />
+                                          <TextField fx:id="changePositionFirstName" layoutX="86.0" layoutY="39.0" onAction="#handler" styleClass="ComboBox" />
                                           <Label layoutX="26.0" layoutY="43.0" text="First Name" />
                                           <Label layoutX="27.0" layoutY="94.0" text="Last Name" />
-                                          <TextField fx:id="changePositionLastName" layoutX="87.0" layoutY="90.0" onAction="#handler" />
-                                          <ComboBox fx:id="comboBoxPosition" layoutX="396.0" layoutY="82.0" onAction="#handler" prefWidth="150.0" />
+                                          <TextField fx:id="changePositionLastName" layoutX="87.0" layoutY="90.0" onAction="#handler" styleClass="ComboBox" />
+                                          <ComboBox fx:id="comboBoxPosition" layoutX="396.0" layoutY="82.0" onAction="#handler" prefWidth="150.0" styleClass="ComboBox" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
@@ -82,14 +82,14 @@
                                           <Label layoutX="25.0" layoutY="31.0" text="FirstName" />
                                           <Label layoutX="29.0" layoutY="197.0" text="Position:" />
                                           <Label layoutX="25.0" layoutY="240.0" text="Shirt number:" />
-                                          <TextField fx:id="createPlayerFirstName" layoutX="120.0" layoutY="26.0" onAction="#handler" prefHeight="26.0" prefWidth="180.0" promptText="First Name" />
-                                          <TextField fx:id="createPlayerPosition" layoutX="120.0" layoutY="192.0" onAction="#handler" prefHeight="26.0" prefWidth="180.0" promptText="Position" />
+                                          <TextField fx:id="createPlayerFirstName" layoutX="120.0" layoutY="26.0" onAction="#handler" prefHeight="26.0" prefWidth="180.0" promptText="First Name" styleClass="ComboBox" />
+                                          <TextField fx:id="createPlayerPosition" layoutX="120.0" layoutY="192.0" onAction="#handler" prefHeight="26.0" prefWidth="180.0" promptText="Position" styleClass="ComboBox" />
                                           <Button fx:id="createPlayer" layoutX="482.0" layoutY="284.0" mnemonicParsing="false" onAction="#handler" text="Create Player" />
-                                          <Spinner fx:id="createPlayerShirtNumber" layoutX="120.0" layoutY="236.0" prefHeight="26.0" prefWidth="180.0" />
-                                          <TextField fx:id="createPlayerLastName" layoutX="120.0" layoutY="91.0" onAction="#handler" prefHeight="26.0" prefWidth="174.0" promptText="Last Name" />
+                                          <Spinner fx:id="createPlayerShirtNumber" layoutX="120.0" layoutY="236.0" prefHeight="26.0" prefWidth="180.0" styleClass="Box" />
+                                          <TextField fx:id="createPlayerLastName" layoutX="120.0" layoutY="91.0" onAction="#handler" prefHeight="26.0" prefWidth="174.0" promptText="Last Name" styleClass="ComboBox" />
                                           <Label layoutX="25.0" layoutY="96.0" text="LastName" />
-                                          <DatePicker fx:id="createPlayerDatePicker" layoutX="120.0" layoutY="144.0" />
-                                          <Label layoutX="47.0" layoutY="148.0" text="Birth Date" />
+                                          <DatePicker fx:id="createPlayerDatePicker" layoutX="120.0" layoutY="144.0" styleClass="Box" />
+                                          <Label layoutX="24.0" layoutY="148.0" text="Birth Date" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
@@ -97,9 +97,9 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextField fx:id="deletePlayerFirstName" layoutX="83.0" layoutY="51.0" />
-                                          <TextField fx:id="deletePlayerLastName" layoutX="84.0" layoutY="128.0" />
-                                          <ComboBox fx:id="deletePlayerChoosePlayer" layoutX="396.0" layoutY="77.0" onAction="#handler" prefWidth="150.0" />
+                                          <TextField fx:id="deletePlayerFirstName" layoutX="83.0" layoutY="51.0" styleClass="ComboBox" />
+                                          <TextField fx:id="deletePlayerLastName" layoutX="84.0" layoutY="128.0" styleClass="ComboBox" />
+                                          <ComboBox fx:id="deletePlayerChoosePlayer" layoutX="396.0" layoutY="77.0" onAction="#handler" prefWidth="150.0" styleClass="ComboBox" />
                                           <Label layoutX="396.0" layoutY="55.0" text="Choose Player" />
                                           <Label layoutX="14.0" layoutY="55.0" text="First Name" />
                                           <Label layoutX="15.0" layoutY="132.0" text="Last Name" />
@@ -123,13 +123,13 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextArea fx:id="upcomingMatchesOpponents" layoutX="29.0" layoutY="48.0" prefHeight="217.0" prefWidth="126.0" />
-                                          <TextArea fx:id="upcomingMatchesDates" layoutX="174.0" layoutY="48.0" prefHeight="221.0" prefWidth="114.0" />
-                                          <TextArea fx:id="upcomingMatchesTimes" layoutX="311.0" layoutY="49.0" prefHeight="224.0" prefWidth="119.0" />
+                                          <TextArea fx:id="upcomingMatchesOpponents" layoutX="29.0" layoutY="48.0" prefHeight="220.0" prefWidth="126.0" styleClass="textFields" />
+                                          <TextArea fx:id="upcomingMatchesDates" layoutX="174.0" layoutY="48.0" prefHeight="220.0" prefWidth="114.0" styleClass="textFields" />
+                                          <TextArea fx:id="upcomingMatchesTimes" layoutX="311.0" layoutY="49.0" prefHeight="220.0" prefWidth="119.0" styleClass="textFields" />
                                           <Label layoutX="32.0" layoutY="24.0" text="Opponents" />
                                           <Label layoutX="174.0" layoutY="24.0" text="Date" />
                                           <Label layoutX="311.0" layoutY="24.0" text="Time" />
-                                          <TextArea fx:id="upcomingMatchesMatchType" layoutX="447.0" layoutY="48.0" prefHeight="225.0" prefWidth="118.0" />
+                                          <TextArea fx:id="upcomingMatchesMatchType" layoutX="447.0" layoutY="48.0" prefHeight="220.0" prefWidth="118.0" styleClass="textFields" />
                                           <Label layoutX="444.0" layoutY="24.0" text="Match Type" />
                                           <Button fx:id="upcomingMatchesUpdate" layoutX="272.0" layoutY="295.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                        </children>
@@ -140,17 +140,17 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextArea fx:id="previousMatchesOpponents" layoutX="18.0" layoutY="51.0" prefHeight="200.0" prefWidth="124.0" />
-                                          <TextArea fx:id="previousMatchesDates" layoutX="151.0" layoutY="51.0" prefHeight="200.0" prefWidth="101.0" />
-                                          <TextArea fx:id="previousMatchesTimes" layoutX="265.0" layoutY="51.0" prefHeight="200.0" prefWidth="86.0" />
-                                          <TextArea fx:id="previousMatchesMatchType" layoutX="362.0" layoutY="51.0" prefHeight="200.0" prefWidth="87.0" />
+                                          <TextArea fx:id="previousMatchesOpponents" layoutX="18.0" layoutY="51.0" prefHeight="200.0" prefWidth="124.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesDates" layoutX="151.0" layoutY="51.0" prefHeight="200.0" prefWidth="101.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesTimes" layoutX="265.0" layoutY="51.0" prefHeight="200.0" prefWidth="86.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesMatchType" layoutX="362.0" layoutY="51.0" prefHeight="200.0" prefWidth="87.0" styleClass="textFields" />
                                           <Label layoutX="20.0" layoutY="24.0" text="Opponents" />
                                           <Label layoutX="275.0" layoutY="24.0" text="Time" />
                                           <Label layoutX="362.0" layoutY="24.0" text="Match Type" />
                                           <Label layoutX="166.0" layoutY="24.0" text="Date" />
                                           <Button fx:id="previousMatchesUpdate" layoutX="275.0" layoutY="272.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                           <Label layoutX="480.0" layoutY="24.0" text="Result" />
-                                          <TextArea fx:id="previousMatchesResult" layoutX="460.0" layoutY="51.0" prefHeight="200.0" prefWidth="112.0" />
+                                          <TextArea fx:id="previousMatchesResult" layoutX="460.0" layoutY="51.0" prefHeight="200.0" prefWidth="112.0" styleClass="textFields" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
@@ -166,10 +166,10 @@
                                                 <ToggleGroup fx:id="MatchVenue" />
                                              </toggleGroup></RadioButton>
                                           <RadioButton fx:id="createMatchAway" layoutX="93.0" layoutY="165.0" mnemonicParsing="false" text="Away" toggleGroup="$MatchVenue" />
-                                          <TextField fx:id="createMatchOpponent" layoutX="118.0" layoutY="87.0" />
-                                          <DatePicker fx:id="createMatchDate" layoutX="101.0" layoutY="14.0" />
-                                          <Spinner fx:id="createMatchHour" layoutX="361.0" layoutY="160.0" prefHeight="26.0" prefWidth="70.0" />
-                                          <Spinner fx:id="createMatchMinute" layoutX="469.0" layoutY="160.0" prefHeight="26.0" prefWidth="67.0" />
+                                          <TextField fx:id="createMatchOpponent" layoutX="118.0" layoutY="87.0" styleClass="ComboBox" />
+                                          <DatePicker fx:id="createMatchDate" layoutX="101.0" layoutY="14.0" styleClass="Box" />
+                                          <Spinner fx:id="createMatchHour" layoutX="361.0" layoutY="160.0" prefHeight="26.0" prefWidth="70.0" styleClass="Box" />
+                                          <Spinner fx:id="createMatchMinute" layoutX="469.0" layoutY="160.0" prefHeight="26.0" prefWidth="67.0" styleClass="Box" />
                                           <Label layoutX="361.0" layoutY="122.0" text="Hour:" />
                                           <Label layoutX="469.0" layoutY="121.0" prefHeight="20.0" prefWidth="46.0" text="Minute" />
                                           <Label layoutX="20.0" layoutY="133.0" text="MatchVenue" />
@@ -190,12 +190,12 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextField fx:id="setResultOpponent" layoutX="113.0" layoutY="44.0" />
-                                          <TextField fx:id="setResultResult" layoutX="113.0" layoutY="159.0" />
+                                          <TextField fx:id="setResultOpponent" layoutX="113.0" layoutY="44.0" styleClass="ComboBox" />
+                                          <TextField fx:id="setResultResult" layoutX="113.0" layoutY="159.0" styleClass="ComboBox" />
                                           <Button fx:id="setResult" layoutX="277.0" layoutY="268.0" mnemonicParsing="false" onAction="#handler" text="Add" />
                                           <Label layoutX="41.0" layoutY="48.0" text="Opponent" />
                                           <Label layoutX="41.0" layoutY="162.0" text="Result" />
-                                          <DatePicker fx:id="setResultDate" layoutX="99.0" layoutY="100.0" />
+                                          <DatePicker fx:id="setResultDate" layoutX="99.0" layoutY="100.0" styleClass="Box" />
                                           <Label layoutX="28.0" layoutY="102.0" text="MatchDate" />
                                        </children>
                                     </AnchorPane>
@@ -205,10 +205,10 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextField fx:id="deleteMatchOpponent" layoutX="114.0" layoutY="77.0" />
+                                          <TextField fx:id="deleteMatchOpponent" layoutX="114.0" layoutY="77.0" styleClass="ComboBox" />
                                           <Label layoutX="46.0" layoutY="81.0" text="Opponent" />
                                           <Button fx:id="deleteMatch" layoutX="264.0" layoutY="252.0" mnemonicParsing="false" onAction="#handler" text="Delete" />
-                                          <DatePicker fx:id="deleteMatchDate" layoutX="100.0" layoutY="142.0" />
+                                          <DatePicker fx:id="deleteMatchDate" layoutX="100.0" layoutY="142.0" styleClass="Box" />
                                           <Label layoutX="30.0" layoutY="144.0" text="Match Date" />
                                        </children>
                                     </AnchorPane>
@@ -241,9 +241,9 @@
                                                             <TextField layoutX="21.0" layoutY="84.0" />
                                                             <TextField layoutX="21.0" layoutY="109.0" />
                                                             <TextField layoutX="21.0" layoutY="134.0" />
-                                                            <TextArea fx:id="allInjuryName" layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" />
-                                                            <TextArea fx:id="allInjuryExpectedReturnDate" layoutX="439.0" layoutY="60.0" prefHeight="200.0" prefWidth="120.0" promptText="Expected Return Date" />
-                                                            <TextArea fx:id="allInjuryInjuredDate" layoutX="267.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Injured Date" />
+                                                            <TextArea fx:id="allInjuryName" layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="List of players" styleClass="textFields" />
+                                                            <TextArea fx:id="allInjuryExpectedReturnDate" layoutX="439.0" layoutY="60.0" prefHeight="200.0" prefWidth="120.0" promptText="Expected Return Date" styleClass="textFields" />
+                                                            <TextArea fx:id="allInjuryInjuredDate" layoutX="267.0" layoutY="59.0" prefHeight="200.0" prefWidth="120.0" promptText="Injured Date" styleClass="textFields" />
                                                             <Label layoutX="267.0" layoutY="25.0" text="Injured Date" />
                                                             <Button fx:id="allInjuryUpdate" layoutX="285.0" layoutY="268.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                                          </children></AnchorPane>
@@ -253,17 +253,17 @@
                                                 <content>
                                                   <AnchorPane fx:id="" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <DatePicker fx:id="addInjuryInjuryDate" layoutX="147.0" layoutY="179.0" />
+                                                            <DatePicker fx:id="addInjuryInjuryDate" layoutX="147.0" layoutY="179.0" styleClass="Box" />
                                                             <Label layoutX="36.0" layoutY="183.0" text="Injury Date" />
                                                             <Label layoutX="15.0" layoutY="245.0" text="Excepted Return Date" />
-                                                            <DatePicker fx:id="addInjuryExpectedReturnDate" layoutX="147.0" layoutY="241.0" />
+                                                            <DatePicker fx:id="addInjuryExpectedReturnDate" layoutX="147.0" layoutY="241.0" styleClass="Box" />
                                                             <Button fx:id="addInjury" layoutX="430.0" layoutY="225.0" mnemonicParsing="false" onAction="#handler" prefHeight="40.0" prefWidth="75.0" text="Add" />
                                                             <Label layoutX="429.0" layoutY="14.0" text="Choose player:" />
-                                                            <TextField fx:id="addInjuryFirstName" layoutX="160.0" layoutY="45.0" />
-                                                            <TextField fx:id="addInjuryLastName" layoutX="160.0" layoutY="116.0" />
+                                                            <TextField fx:id="addInjuryFirstName" layoutX="160.0" layoutY="45.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="addInjuryLastName" layoutX="160.0" layoutY="116.0" styleClass="ComboBox" />
                                                             <Label layoutX="44.0" layoutY="40.0" text="First Name" />
                                                             <Label layoutX="45.0" layoutY="111.0" text="Last Name" />
-                                                            <ComboBox fx:id="addInjuryChoosePlayer" layoutX="432.0" layoutY="49.0" onAction="#handler" prefWidth="150.0" />
+                                                            <ComboBox fx:id="addInjuryChoosePlayer" layoutX="432.0" layoutY="49.0" onAction="#handler" prefWidth="150.0" styleClass="Box" />
                                                          </children>
                                                       </AnchorPane>
                                                 </content>
@@ -274,11 +274,11 @@
                                                          <children>
                                                             <Label layoutX="347.0" layoutY="39.0" prefHeight="29.0" prefWidth="102.0" text="Choose Player:" />
                                                             <Button fx:id="removeInjury" layoutX="263.0" layoutY="243.0" mnemonicParsing="false" onAction="#handler" prefHeight="29.0" prefWidth="95.0" text="Remove Injury" />
-                                                            <TextField fx:id="removeInjuryFirstName" layoutX="113.0" layoutY="62.0" />
-                                                            <TextField fx:id="removeInjuryLastName" layoutX="113.0" layoutY="126.0" />
+                                                            <TextField fx:id="removeInjuryFirstName" layoutX="113.0" layoutY="62.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="removeInjuryLastName" layoutX="113.0" layoutY="126.0" styleClass="ComboBox" />
                                                             <Label layoutX="46.0" layoutY="67.0" text="First Name" />
                                                             <Label layoutX="47.0" layoutY="130.0" text="Last Name" />
-                                                            <ComboBox fx:id="removeInjuryChoosePlayer" layoutX="367.0" layoutY="75.0" onAction="#handler" prefWidth="150.0" />
+                                                            <ComboBox fx:id="removeInjuryChoosePlayer" layoutX="367.0" layoutY="75.0" onAction="#handler" prefWidth="150.0" styleClass="Box" />
                                                          </children>
                                                       </AnchorPane>
                                                   </content>
@@ -299,8 +299,8 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextArea fx:id="suspendedPlayerNames" layoutX="21.0" layoutY="78.0" prefHeight="180.0" prefWidth="223.0" />
-                                                            <TextArea fx:id="suspendedPlayerNoOfGames" layoutX="292.0" layoutY="78.0" prefHeight="180.0" prefWidth="146.0" />
+                                                            <TextArea fx:id="suspendedPlayerNames" layoutX="21.0" layoutY="78.0" prefHeight="180.0" prefWidth="223.0" styleClass="textFields" />
+                                                            <TextArea fx:id="suspendedPlayerNoOfGames" layoutX="292.0" layoutY="78.0" prefHeight="180.0" prefWidth="146.0" styleClass="textFields" />
                                                             <Label layoutX="21.0" layoutY="42.0" text="Names" />
                                                             <Label layoutX="266.0" layoutY="42.0" text="Number Of Games Suspended" />
                                                             <Button fx:id="suspendedUpdate" layoutX="279.0" layoutY="265.0" mnemonicParsing="false" onAction="#handler" text="Update" />
@@ -312,10 +312,10 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextField fx:id="addSuspendedFirstName" layoutX="165.0" layoutY="51.0" />
-                                                            <TextField fx:id="addSuspendedLastName" layoutX="165.0" layoutY="108.0" />
+                                                            <TextField fx:id="addSuspendedFirstName" layoutX="165.0" layoutY="51.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="addSuspendedLastName" layoutX="165.0" layoutY="108.0" styleClass="ComboBox" />
                                                             <Spinner fx:id="addSuspendedNumberOfGamesSuspended" layoutX="165.0" layoutY="168.0" />
-                                                            <ComboBox fx:id="addSuspendedComboBox" layoutX="363.0" layoutY="64.0" onAction="#handler" prefWidth="150.0" />
+                                                            <ComboBox fx:id="addSuspendedComboBox" layoutX="363.0" layoutY="64.0" onAction="#handler" prefWidth="150.0" styleClass="Box" />
                                                             <Button fx:id="addSuspension" layoutX="240.0" layoutY="254.0" mnemonicParsing="false" onAction="#handler" text="Add Suspension" />
                                                             <Label layoutX="60.0" layoutY="55.0" text="First Name" />
                                                             <Label layoutX="60.0" layoutY="112.0" text="Last Name" />
@@ -331,9 +331,9 @@
                                                          <children>
                                                             <Button fx:id="removeSuspension" layoutX="254.0" layoutY="227.0" mnemonicParsing="false" onAction="#handler" text="Remove Suspension" />
                                                             <Label layoutX="338.0" layoutY="53.0" text="Choose Player" />
-                                                            <ComboBox fx:id="removeSuspensionComboBox" layoutX="330.0" layoutY="95.0" onAction="#handler" prefWidth="150.0" />
-                                                            <TextField fx:id="removeSuspensionFirstName" layoutX="97.0" layoutY="62.0" />
-                                                            <TextField fx:id="removeSuspensionLastName" layoutX="98.0" layoutY="133.0" />
+                                                            <ComboBox fx:id="removeSuspensionComboBox" layoutX="330.0" layoutY="95.0" onAction="#handler" prefWidth="150.0" styleClass="Box" />
+                                                            <TextField fx:id="removeSuspensionFirstName" layoutX="97.0" layoutY="62.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="removeSuspensionLastName" layoutX="98.0" layoutY="133.0" styleClass="ComboBox" />
                                                             <Label layoutX="28.0" layoutY="66.0" text="First Name" />
                                                             <Label layoutX="29.0" layoutY="137.0" text="Last Name" />
                                                          </children>
@@ -382,9 +382,9 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextField fx:id="addStarterFirstName" layoutX="91.0" layoutY="48.0" />
-                                                            <TextField fx:id="addStarterLastName" layoutX="92.0" layoutY="117.0" />
-                                                            <ComboBox fx:id="addStarterComboBox" layoutX="374.0" layoutY="85.0" onAction="#handler" prefWidth="150.0" />
+                                                            <TextField fx:id="addStarterFirstName" layoutX="91.0" layoutY="48.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="addStarterLastName" layoutX="92.0" layoutY="117.0" styleClass="ComboBox" />
+                                                            <ComboBox fx:id="addStarterComboBox" layoutX="374.0" layoutY="85.0" onAction="#handler" prefWidth="150.0" styleClass="ComboBox" />
                                                             <Button fx:id="addStarter" layoutX="266.0" layoutY="204.0" mnemonicParsing="false" onAction="#handler" prefHeight="26.0" prefWidth="55.0" text="Add" />
                                                             <Label layoutX="28.0" layoutY="52.0" text="First Name" />
                                                             <Label layoutX="29.0" layoutY="121.0" text="Last Name" />
@@ -397,9 +397,9 @@
                                                   <content>
                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextField fx:id="removeStarterFirstName" layoutX="94.0" layoutY="55.0" />
-                                                            <TextField fx:id="removeStarterLastName" layoutX="95.0" layoutY="124.0" />
-                                                            <ComboBox fx:id="removeStarterComboBox" layoutX="358.0" layoutY="81.0" onAction="#handler" prefWidth="150.0" />
+                                                            <TextField fx:id="removeStarterFirstName" layoutX="94.0" layoutY="55.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="removeStarterLastName" layoutX="95.0" layoutY="124.0" styleClass="ComboBox" />
+                                                            <ComboBox fx:id="removeStarterComboBox" layoutX="358.0" layoutY="81.0" onAction="#handler" prefWidth="150.0" styleClass="ComboBox" />
                                                             <Label layoutX="15.0" layoutY="59.0" text="First Name" />
                                                             <Label layoutX="16.0" layoutY="128.0" text="Last Name" />
                                                             <Label layoutX="358.0" layoutY="50.0" text="Choose Player" />
@@ -438,9 +438,9 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextField fx:id="addSubstituteFirstName" layoutX="119.0" layoutY="66.0" />
-                                                            <TextField fx:id="addSubstituteLastName" layoutX="119.0" layoutY="146.0" />
-                                                            <ComboBox fx:id="addSubstituteComboBox" layoutX="378.0" layoutY="92.0" onAction="#handler" prefWidth="150.0" />
+                                                            <TextField fx:id="addSubstituteFirstName" layoutX="119.0" layoutY="66.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="addSubstituteLastName" layoutX="119.0" layoutY="146.0" styleClass="ComboBox" />
+                                                            <ComboBox fx:id="addSubstituteComboBox" layoutX="378.0" layoutY="92.0" onAction="#handler" prefWidth="150.0" styleClass="ComboBox" />
                                                             <Label layoutX="52.0" layoutY="70.0" text="First Name" />
                                                             <Label layoutX="38.0" layoutY="150.0" text="Last Name" />
                                                             <Label layoutX="378.0" layoutY="58.0" text="Choose Player" />
@@ -454,9 +454,9 @@
                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
                                                             <Button fx:id="removeSubstitute" layoutX="273.0" layoutY="245.0" mnemonicParsing="false" onAction="#handler" text="Remove" />
-                                                            <TextField fx:id="removeSubstituteFirstName" layoutX="95.0" layoutY="60.0" />
-                                                            <TextField fx:id="removeSubstituteLastName" layoutX="96.0" layoutY="160.0" />
-                                                            <ComboBox fx:id="removeSubstituteComboBox" layoutX="350.0" layoutY="112.0" onAction="#handler" prefWidth="150.0" />
+                                                            <TextField fx:id="removeSubstituteFirstName" layoutX="95.0" layoutY="60.0" styleClass="ComboBox" />
+                                                            <TextField fx:id="removeSubstituteLastName" layoutX="96.0" layoutY="160.0" styleClass="ComboBox" />
+                                                            <ComboBox fx:id="removeSubstituteComboBox" layoutX="350.0" layoutY="112.0" onAction="#handler" prefWidth="150.0" styleClass="ComboBox" />
                                                             <Label layoutX="30.0" layoutY="64.0" text="First Name" />
                                                             <Label layoutX="31.0" layoutY="164.0" text="Last Name" />
                                                             <Label layoutX="357.0" layoutY="77.0" text="Choose Player" />
@@ -485,8 +485,14 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Button fx:id="exportPlayers" layoutX="239.0" layoutY="99.0" mnemonicParsing="false" onAction="#handler" text="Export Players" />
-                                          <Button fx:id="exportMatches" layoutX="235.0" layoutY="186.0" mnemonicParsing="false" onAction="#handler" text="Export Matches" />
+                                          <Button fx:id="exportPlayers" layoutX="239.0" layoutY="99.0" mnemonicParsing="false" onAction="#handler" text="Export Players">
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding></Button>
+                                          <Button fx:id="exportMatches" layoutX="235.0" layoutY="184.0" mnemonicParsing="false" onAction="#handler" text="Export Matches">
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding></Button>
                                        </children>
                                     </AnchorPane>
                               </content>
