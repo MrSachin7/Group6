@@ -6,7 +6,7 @@ import java.util.Comparator;
 /**
  * A class containing a list of Match objects.
  *
- * @author Emil Vassilev
+ * @author Sachin Baral
  * @version 1.0
  */
 public class MatchList implements Serializable
@@ -162,7 +162,7 @@ public class MatchList implements Serializable
   }
 
   /**
-   * Sorts matches by the date .
+   * Sorts matches by the date(ascending) .
    */
   public void sortMatchesAscending()
   {
@@ -174,6 +174,10 @@ public class MatchList implements Serializable
       }
     });
   }
+
+  /**
+   * Sort matches by date (descending)
+   */
   public void sortMatchesDescending()
   {
     Collections.sort(matchList,new Comparator<Match>()
