@@ -43,7 +43,7 @@
                                        </opaqueInsets></AnchorPane>
                               </content>
                             </Tab>
-                            <Tab text="Change shirt number">
+                            <Tab closable="false" text="Change shirt number">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="582.0" style="-fx-border-color: #8a8e94;">
                                        <children>
@@ -52,10 +52,10 @@
                                           <Button fx:id="changeShirtNumber" layoutX="275.0" layoutY="210.0" mnemonicParsing="false" onAction="#handler" text="Change ShirtNumber" />
                                           <Spinner fx:id="spinnerShirtNo" layoutX="111.0" layoutY="139.0" styleClass="Box" />
                                           <ComboBox fx:id="comboBoxShirtNo" layoutX="378.0" layoutY="113.0" onAction="#handler" prefHeight="0.0" prefWidth="150.0" styleClass="ComboBox" />
-                                          <TextField fx:id="changeShirtNumberFirstName" layoutX="99.0" layoutY="32.0" onAction="#handler" styleClass="ComboBox" />
+                                          <TextField fx:id="changeShirtNumberFirstName" layoutX="99.0" layoutY="32.0" onAction="#handler" promptText="First name" styleClass="ComboBox" />
                                           <Label layoutX="31.0" layoutY="36.0" text="First Name" />
                                           <Label layoutX="32.0" layoutY="85.0" text="Last Name" />
-                                          <TextField fx:id="changeShirtNumberLastName" layoutX="100.0" layoutY="81.0" onAction="#handler" styleClass="ComboBox" />
+                                          <TextField fx:id="changeShirtNumberLastName" layoutX="100.0" layoutY="81.0" onAction="#handler" styleClass="ComboBox" text="Last name" />
                                        </children></AnchorPane>
                               </content>
                             </Tab>
@@ -123,13 +123,13 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextArea fx:id="upcomingMatchesOpponents" layoutX="29.0" layoutY="48.0" prefHeight="220.0" prefWidth="126.0" styleClass="textFields" />
-                                          <TextArea fx:id="upcomingMatchesDates" layoutX="174.0" layoutY="48.0" prefHeight="220.0" prefWidth="114.0" styleClass="textFields" />
-                                          <TextArea fx:id="upcomingMatchesTimes" layoutX="311.0" layoutY="49.0" prefHeight="220.0" prefWidth="119.0" styleClass="textFields" />
+                                          <TextArea fx:id="upcomingMatchesOpponents" editable="false" layoutX="29.0" layoutY="48.0" prefHeight="220.0" prefWidth="126.0" styleClass="textFields" />
+                                          <TextArea fx:id="upcomingMatchesDates" editable="false" layoutX="174.0" layoutY="48.0" prefHeight="220.0" prefWidth="114.0" styleClass="textFields" />
+                                          <TextArea fx:id="upcomingMatchesTimes" editable="false" layoutX="311.0" layoutY="48.0" prefHeight="220.0" prefWidth="119.0" styleClass="textFields" />
                                           <Label layoutX="32.0" layoutY="24.0" text="Opponents" />
                                           <Label layoutX="174.0" layoutY="24.0" text="Date" />
                                           <Label layoutX="311.0" layoutY="24.0" text="Time" />
-                                          <TextArea fx:id="upcomingMatchesMatchType" layoutX="447.0" layoutY="48.0" prefHeight="220.0" prefWidth="118.0" styleClass="textFields" />
+                                          <TextArea fx:id="upcomingMatchesMatchType" editable="false" layoutX="447.0" layoutY="48.0" prefHeight="220.0" prefWidth="118.0" styleClass="textFields" />
                                           <Label layoutX="444.0" layoutY="24.0" text="Match Type" />
                                           <Button fx:id="upcomingMatchesUpdate" layoutX="272.0" layoutY="295.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                        </children>
@@ -140,17 +140,17 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextArea fx:id="previousMatchesOpponents" layoutX="18.0" layoutY="51.0" prefHeight="200.0" prefWidth="124.0" styleClass="textFields" />
-                                          <TextArea fx:id="previousMatchesDates" layoutX="151.0" layoutY="51.0" prefHeight="200.0" prefWidth="101.0" styleClass="textFields" />
-                                          <TextArea fx:id="previousMatchesTimes" layoutX="265.0" layoutY="51.0" prefHeight="200.0" prefWidth="86.0" styleClass="textFields" />
-                                          <TextArea fx:id="previousMatchesMatchType" layoutX="362.0" layoutY="51.0" prefHeight="200.0" prefWidth="87.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesOpponents" editable="false" layoutX="18.0" layoutY="51.0" prefHeight="200.0" prefWidth="124.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesDates" editable="false" layoutX="151.0" layoutY="51.0" prefHeight="200.0" prefWidth="101.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesTimes" editable="false" layoutX="265.0" layoutY="51.0" prefHeight="200.0" prefWidth="86.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesMatchType" editable="false" layoutX="362.0" layoutY="51.0" prefHeight="200.0" prefWidth="87.0" styleClass="textFields" />
                                           <Label layoutX="20.0" layoutY="24.0" text="Opponents" />
                                           <Label layoutX="275.0" layoutY="24.0" text="Time" />
                                           <Label layoutX="362.0" layoutY="24.0" text="Match Type" />
                                           <Label layoutX="166.0" layoutY="24.0" text="Date" />
                                           <Button fx:id="previousMatchesUpdate" layoutX="275.0" layoutY="272.0" mnemonicParsing="false" onAction="#handler" text="Update" />
                                           <Label layoutX="480.0" layoutY="24.0" text="Result" />
-                                          <TextArea fx:id="previousMatchesResult" layoutX="460.0" layoutY="51.0" prefHeight="200.0" prefWidth="112.0" styleClass="textFields" />
+                                          <TextArea fx:id="previousMatchesResult" editable="false" layoutX="460.0" layoutY="51.0" prefHeight="200.0" prefWidth="112.0" styleClass="textFields" />
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
@@ -368,11 +368,11 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextArea fx:id="allStartersPlayers" layoutX="14.0" layoutY="53.0" prefHeight="240.0" prefWidth="200.0" />
-                                                            <TextArea fx:id="allStartersShirtNumber" layoutX="234.0" layoutY="54.0" prefHeight="238.0" prefWidth="126.0" />
+                                                            <TextArea fx:id="allStartersPlayers" editable="false" layoutX="14.0" layoutY="53.0" prefHeight="240.0" prefWidth="200.0" />
+                                                            <TextArea fx:id="allStartersShirtNumber" editable="false" layoutX="227.0" layoutY="54.0" prefHeight="238.0" prefWidth="126.0" />
                                                             <Label layoutX="14.0" layoutY="24.0" text="Players" />
                                                             <Label layoutX="234.0" layoutY="24.0" text="Shirt Number" />
-                                                            <TextArea fx:id="allStartersPosition" layoutX="376.0" layoutY="55.0" prefHeight="236.0" prefWidth="108.0" />
+                                                            <TextArea fx:id="allStartersPosition" editable="false" layoutX="376.0" layoutY="55.0" prefHeight="236.0" prefWidth="108.0" />
                                                             <Label layoutX="387.0" layoutY="24.0" text="Position" />
                                                          </children>
                                                       </AnchorPane>
@@ -424,11 +424,11 @@
                                                 <content>
                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
-                                                            <TextArea fx:id="allSubstitutePlayers" layoutX="52.0" layoutY="68.0" prefHeight="200.0" prefWidth="200.0" />
-                                                            <TextArea fx:id="allSubstituteShirtNumber" layoutX="285.0" layoutY="68.0" prefHeight="200.0" prefWidth="90.0" />
+                                                            <TextArea fx:id="allSubstitutePlayers" editable="false" layoutX="52.0" layoutY="68.0" prefHeight="200.0" prefWidth="200.0" />
+                                                            <TextArea fx:id="allSubstituteShirtNumber" editable="false" layoutX="285.0" layoutY="68.0" prefHeight="200.0" prefWidth="90.0" />
                                                             <Label layoutX="60.0" layoutY="39.0" text="Substitute Players" />
-                                                            <Label layoutX="452.0" layoutY="48.0" text="Position" />
-                                                            <TextArea fx:id="allSubstitutePosition" layoutX="390.0" layoutY="68.0" prefHeight="200.0" prefWidth="94.0" />
+                                                            <Label layoutX="398.0" layoutY="39.0" text="Position" />
+                                                            <TextArea fx:id="allSubstitutePosition" editable="false" layoutX="390.0" layoutY="68.0" prefHeight="200.0" prefWidth="94.0" />
                                                             <Label layoutX="285.0" layoutY="39.0" text="Shirt Number" />
                                                          </children>
                                                       </AnchorPane>
