@@ -174,5 +174,14 @@ public class MatchList implements Serializable
       }
     });
   }
-
+  public void sortMatchesDescending()
+  {
+    Collections.sort(matchList,new Comparator<Match>()
+    {
+      public int compare(Match p1,Match p2)
+      {
+        return p1.getMatchDate().sortDescending(p2.getMatchDate());
+      }
+    });
+  }
 }

@@ -1,5 +1,4 @@
 import javafx.application.Application;
-
 /**
  * @author Sachin Baral
  */

@@ -24,6 +24,11 @@ public class Test
     Player player4 = new Player("Himal", "Sharma", himalDate, "Defender");
     Player player5 = new Player("Bartosz", "Zielenski", bartoszdate,
         "GoalKeeper");
+    player1.setShirtNumber(7);
+    player2.setShirtNumber(8);
+    player3.setShirtNumber(9);
+    player4.setShirtNumber(10);
+    player5.setShirtNumber(11);
     playerList.add(player1);
     playerList.add(player2);
     playerList.add(player3);
