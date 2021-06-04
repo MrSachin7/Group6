@@ -2,6 +2,13 @@
 <matchList>
 
 <match>
+   <opponentTeam>  PSG</opponentTeam>
+   <matchDate>  04/06/2021</matchDate>
+   <matchTime>  20:00:00</matchTime>
+   <matchType>  Friendly Match</matchType>
+   <venue>  Away</venue>
+</match>  
+<match>
    <opponentTeam>  Juventus</opponentTeam>
    <matchDate>  08/06/2021</matchDate>
    <matchTime>  20:45:00</matchTime>
@@ -9,17 +16,31 @@
    <venue>  Home</venue>
 </match>  
 <match>
-   <opponentTeam>  adsasd</opponentTeam>
-   <matchDate>  05/06/2021</matchDate>
-   <matchTime>  11:15:00</matchTime>
+   <opponentTeam>  Aarhus</opponentTeam>
+   <matchDate>  09/06/2021</matchDate>
+   <matchTime>  15:30:00</matchTime>
    <matchType>  Cup Match</matchType>
    <venue>  Home</venue>
 </match>  
 <match>
-   <opponentTeam>  Barcelona</opponentTeam>
-   <matchDate>  05/06/2021</matchDate>
-   <matchTime>  11:15:00</matchTime>
+   <opponentTeam>  Horsens</opponentTeam>
+   <matchDate>  12/06/2021</matchDate>
+   <matchTime>  19:30:00</matchTime>
+   <matchType>  League Match</matchType>
+   <venue>  Home</venue>
+</match>  
+<match>
+   <opponentTeam>  Manchester United</opponentTeam>
+   <matchDate>  16/06/2021</matchDate>
+   <matchTime>  21:45:00</matchTime>
    <matchType>  Cup Match</matchType>
    <venue>  Home</venue>
+</match>  
+<match>
+   <opponentTeam>  Juventus</opponentTeam>
+   <matchDate>  20/06/2021</matchDate>
+   <matchTime>  21:00:00</matchTime>
+   <matchType>  Cup Match</matchType>
+   <venue>  Away</venue>
 </match>  
 </matchList>
