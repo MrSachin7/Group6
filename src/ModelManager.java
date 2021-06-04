@@ -644,7 +644,7 @@ public class ModelManager
 
   public void exportPlayersToXml()
   {
-    String fileName = ".\\Finalassignment\\Xml\\Players.xml";
+    String fileName = ".\\Website\\Xml\\Players.xml";
     String appendPlayer = "";
     PlayerList allPlayers = getAllPlayers();
     allPlayers.sortPlayers();
@@ -675,7 +675,7 @@ public class ModelManager
    */
   public void exportUpcomingMatchesToXml()
   {
-    String fileName = "Finalassignment/Xml/upcomingMatches.xml";
+    String fileName = "Website/Xml/upcomingMatches.xml";
     String appendMatch = "";
     MatchList upcomingMatches = getALlUpcomingMatches();
     try
@@ -708,7 +708,7 @@ public class ModelManager
    */
   public void exportPreviousMatchesToXml()
   {
-    String fileName = "Finalassignment/Xml/previousMatches.xml";
+    String fileName = "Website/Xml/previousMatches.xml";
     String appendMatch = "";
     MatchList previousMatches = getALlPreviousMatches();
     try
