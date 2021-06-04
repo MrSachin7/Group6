@@ -2,14 +2,14 @@ function readXML(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState==4 && this.status==200){
-            showData(this);
+            showupcomingData(this);
         }
     };
     xhttp.open("GET", "./Xml/upcomingMatches.xml", true);
     xhttp.send();
 };
 
-function showData(xml) {
+function showupcomingData(xml) {
     var i;
     var code ="";
     var xmlDoc = xml.responseXML;
