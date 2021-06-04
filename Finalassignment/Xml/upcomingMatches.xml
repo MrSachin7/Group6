@@ -9,10 +9,17 @@
    <venue>  Home</venue>
 </match>  
 <match>
-   <opponentTeam>  Real Madrid</opponentTeam>
-   <matchDate>  09/06/2021</matchDate>
-   <matchTime>  08:45:00</matchTime>
-   <matchType>  Friendly Match</matchType>
+   <opponentTeam>  adsasd</opponentTeam>
+   <matchDate>  05/06/2021</matchDate>
+   <matchTime>  11:15:00</matchTime>
+   <matchType>  Cup Match</matchType>
+   <venue>  Home</venue>
+</match>  
+<match>
+   <opponentTeam>  Barcelona</opponentTeam>
+   <matchDate>  05/06/2021</matchDate>
+   <matchTime>  11:15:00</matchTime>
+   <matchType>  Cup Match</matchType>
    <venue>  Home</venue>
 </match>  
 </matchList>

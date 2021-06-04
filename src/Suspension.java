@@ -15,7 +15,6 @@ public class Suspension implements Serializable
   public Suspension(int numberOfGamesSuspended)
   {
     this.numberOfGamesSuspended=numberOfGamesSuspended;
-
   }
 
   /**

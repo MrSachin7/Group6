@@ -140,6 +140,12 @@ public class Controller
     allSubstitutes();
     updatePreviousMatchesArea();
     updateUpcomingMatchesArea();
+    createMatchDate.setValue(LocalDate.now());
+    setResultDate.setValue(LocalDate.now());
+    deleteMatchDate.setValue(LocalDate.now());
+    addInjuryInjuryDate.setValue(LocalDate.now());
+    addInjuryExpectedReturnDate.setValue(LocalDate.now());
+    createPlayerDatePicker.setValue(LocalDate.now());
 
   }
 
@@ -430,7 +436,7 @@ public class Controller
     String firstName = changeShirtNumberFirstName.getText();
     String lastName = changeShirtNumberLastName.getText();
     int shirtNumber = (int) spinnerShirtNo.getValue();
-    if (modelManager.isShirtNumberOccupied(shirtNumber)==true)
+    if (modelManager.isShirtNumberOccupied(shirtNumber) == true)
     {
       AlertBox.display("Shirt Number is already occupied");
     }
@@ -441,6 +447,7 @@ public class Controller
       changeShirtNumberLastName.clear();
       updateEveryBox();
       updatePlayersArea();
+      AlertBox.display("Shirt number has been changed");
     }
   }
 
@@ -453,11 +460,16 @@ public class Controller
     {
       AlertBox.display("Position cannot be empty");
     }
-    modelManager.changePosition(firstName, lastName, position);
-    changePositionFirstName.clear();
-    changePositionLastName.clear();
-    updateEveryBox();
-    updatePlayersArea();
+    else
+    {
+      modelManager.changePosition(firstName, lastName, position);
+      changePositionFirstName.clear();
+      changePositionLastName.clear();
+      updateEveryBox();
+      updatePlayersArea();
+      AlertBox.display("Position has been changed");
+    }
+
   }
 
   private void createPlayer()
@@ -479,7 +491,7 @@ public class Controller
     {
       AlertBox.display("Last name cannot be empty");
     }
-    else if (modelManager.isShirtNumberOccupied(shirtNumber)==true)
+    else if (modelManager.isShirtNumberOccupied(shirtNumber) == true)
     {
       AlertBox.display("Shirt Number is already occupied");
     }
@@ -946,7 +958,7 @@ public class Controller
       {
         modelManager.removeSubstitutePlayers(firstName, lastName);
         removeSubstituteFirstName.clear();
-        removeStarterLastName.clear();
+        removeSubstituteLastName.clear();
         allSubstitutes();
         updateAllPlayersBox();
         updateEveryBox();

@@ -1,11 +1,12 @@
 import java.io.Serializable;
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * A class containing a list of Match objects.
  *
- * @author Emil Vassilev
+ * @author Sachin Baral
  * @version 1.0
  */
 public class MatchList implements Serializable
@@ -60,8 +61,8 @@ public class MatchList implements Serializable
 
   /**
    * Removes match from matchList
-   * @param opponent
-   * @param startDate
+   * @param opponent the opponent of the match to remove
+   * @param startDate the start date of the match to remove
    */
   public void removeMatch(String opponent, Date startDate)
   {
@@ -160,5 +161,31 @@ public class MatchList implements Serializable
     return temp;
   }
 
+  /**
+   * Sorts matches by the date(ascending) .
+   */
+  public void sortMatchesAscending()
+  {
+    Collections.sort(matchList,new Comparator<Match>()
+    {
+      public int compare(Match p1,Match p2)
+      {
+        return p1.getMatchDate().sortAscending(p2.getMatchDate());
+      }
+    });
+  }
 
+  /**
+   * Sort matches by date (descending)
+   */
+  public void sortMatchesDescending()
+  {
+    Collections.sort(matchList,new Comparator<Match>()
+    {
+      public int compare(Match p1,Match p2)
+      {
+        return p1.getMatchDate().sortDescending(p2.getMatchDate());
+      }
+    });
+  }
 }

@@ -58,6 +58,7 @@ public class ModelManager
 
   public void saveMatches(MatchList matches)
   {
+    matches.sortMatchesAscending();
     try
     {
       MyFileHandler.writeToBinaryFile(matchFileName, matches);
@@ -552,6 +553,7 @@ public class ModelManager
         allPreviousMatches.addMatch(match);
       }
     }
+    allPreviousMatches.sortMatchesDescending();
     return allPreviousMatches;
   }
 
@@ -578,7 +580,7 @@ public class ModelManager
 
   /**
    * Removes a match from the list
-   *
+   * @param startDate the start date of the match to remove
    * @param opponentTeam the opponent team of the match to remove
    */
   public void removeMatch(String opponentTeam, Date startDate)
@@ -714,7 +716,7 @@ public class ModelManager
    * Searches the match by matchDate and opponent team in a matchlist
    * @param opponentTeam the opponent team of the match to search
    * @param matchDate the date of the match to search
-   * @return the Match object with the given opponent team and match date if any, else null
+   * @return "Match Found" if there is any, else ""
    */
   public String searchMatch(String opponentTeam, Date matchDate)
   {
@@ -729,6 +731,13 @@ public class ModelManager
     }
     return "";
   }
+
+  /**
+   * Searches the player by first name and last name
+   * @param firstName the first name of the player to search
+   * @param lastName the last name of the player to search
+   * @return "Player found" if there is any, else ""
+   */
   public String searchPlayer(String firstName, String lastName)
   {
    PlayerList allPlayers = getAllPlayers();
@@ -742,6 +751,12 @@ public class ModelManager
     }
     return "";
   }
+
+  /**
+   * Checks if the shirt number is occupied
+   * @param shirtNumber the shirt number to check
+   * @return true if the shirt number is occupied, else false
+   */
   public boolean isShirtNumberOccupied(int shirtNumber)
   {
     PlayerList allPlayers = getAllPlayers();

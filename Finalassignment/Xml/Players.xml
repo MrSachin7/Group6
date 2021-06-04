@@ -5,7 +5,7 @@
    <name>Bartosz Zielenski</name>
    <shirtNumber>0</shirtNumber>
    <birthDate>04/11/1998</birthDate>
-    <position>GoalKeeper</position>
+    <position>left winger</position>
 </player>
 <player>
    <name>Cristian-Marian Radu</name>
@@ -15,13 +15,13 @@
 </player>
 <player>
    <name>Emil Vassilev</name>
-   <shirtNumber>4</shirtNumber>
+   <shirtNumber>8</shirtNumber>
    <birthDate>06/12/1997</birthDate>
     <position>Left Winger</position>
 </player>
 <player>
    <name>Himal Sharma</name>
-   <shirtNumber>1</shirtNumber>
+   <shirtNumber>9</shirtNumber>
    <birthDate>02/05/1999</birthDate>
     <position>Defender</position>
 </player>

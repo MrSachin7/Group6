@@ -2,17 +2,10 @@
 <matchList>
 
 <match>
-   <opponentTeam>  Barcelona</opponentTeam>
-   <matchDate>  30/05/2021</matchDate>
-   <matchTime>  20:45:00</matchTime>
+   <opponentTeam>  sdgfsdf</opponentTeam>
+   <matchDate>  01/06/2021</matchDate>
+   <matchTime>  11:15:00</matchTime>
    <matchType>  Cup Match</matchType>
-   <result>  2-0</result>
-   <venue> Away</venue></match>
-<match>
-   <opponentTeam>  PSG</opponentTeam>
-   <matchDate>  12/05/2021</matchDate>
-   <matchTime>  08:45:00</matchTime>
-   <matchType>  League Match</matchType>
-   <result>  5-0</result>
-   <venue> Away</venue></match>
+   <result>  </result>
+   <venue> Home</venue></match>
 </matchList>
