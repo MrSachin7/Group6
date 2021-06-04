@@ -4,12 +4,13 @@
 -fx-font-weight:bold;
 }
 .button{
--fx-background-color:#D64933;
+-fx-background-color:#D64933EE;
 -fx-text-fill:#FFFFFF;
 -fx-background-radius :8;
 }
 .button:hover{
--fx-background-color:#BF3100;
+-fx-background-color: #ad0303;
+-fx-background-radius :1;
 }
 .AnchorPane{
 -fx-border-color:#8B263555;
@@ -21,7 +22,7 @@
 }
 .tab{
  -fx-background-color:   -fx-background;
-    -fx-background:  #D2D4C8;
+    -fx-background:  #D2D4CD;
     -fx-border-color : #8B263590;
 }
 .tab:selected{

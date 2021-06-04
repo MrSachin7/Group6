@@ -35,8 +35,8 @@ public class Suspension implements Serializable
   }
 
   /**
-   * Compares given object with the Match
-   * @param obj the object to compare with the match
+   * Compares given object with the Suspension
+   * @param obj the object to compare with the Suspension
    * @return boolean (true if the given object is a Suspension object with all equal attributes), else false
    */
   public boolean equals(Object obj)

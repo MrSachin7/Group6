@@ -413,6 +413,10 @@ public class ModelManager
     return startingPlayers;
   }
 
+  /**
+   * Gets all the players that are not starting in a match
+   * @return a PlayerList object with all the players that are not starting
+   */
   public PlayerList getAllNotStartingPlayers()
   {
     PlayerList allPlayers = getAllAvailablePlayers();
@@ -491,6 +495,25 @@ public class ModelManager
       }
     }
     return startingPlayers;
+  }
+
+  /**
+   * Gets all the players that are not substitute in a match
+   * @return a PlayerList object with all the players that are not substitute in a match
+   */
+  public PlayerList getAllNotSubstitutePlayers()
+  {
+    PlayerList allPlayers = getAllAvailablePlayers();
+    PlayerList notSubstitutePlayers = new PlayerList();
+
+    for (int i = 0; i < allPlayers.size(); i++)
+    {
+      if (!(allPlayers.get(i).getStartingOrNot().equals("Substitute")))
+      {
+        notSubstitutePlayers.add(allPlayers.get(i));
+      }
+    }
+    return notSubstitutePlayers;
   }
 
   /**

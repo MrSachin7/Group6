@@ -152,8 +152,8 @@ public class Date implements Serializable
     return new Date(currentDay, currentMonth, currentYear);
   }
   /**
-   * Compares given object with the Match
-   * @param obj the object to compare with the match
+   * Compares given object with the Date
+   * @param obj the object to compare with the Date
    * @return boolean (true if the given object is a Date object with all equal attributes), else false
    */
 

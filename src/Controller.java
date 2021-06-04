@@ -376,7 +376,7 @@ public class Controller
 
     addSubstituteComboBox.getItems().clear();
 
-    PlayerList players = modelManager.getAllAvailablePlayers();
+    PlayerList players = modelManager.getAllNotSubstitutePlayers();
     for (int i = 0; i < players.size(); i++)
     {
       addSubstituteComboBox.getItems().add(players.get(i));

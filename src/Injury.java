@@ -59,9 +59,9 @@ public class Injury implements Serializable
     return expectedReturnDate;
   }
   /**
-   * Compares a provided object to a Player object
-   * @param obj an object to be compared with the Player object
-   * @return return true if the given object is Player object that has all the attributes equal to the Player , else returns false
+   * Compares a provided object to an Injury object
+   * @param obj an object to be compared with the Injury object
+   * @return return true if the given object is Injury object that has all the attributes equal to the Injury , else returns false
    */
   public boolean equals(Object obj)
   {

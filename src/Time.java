@@ -48,8 +48,8 @@ public class Time implements Serializable
     second = totalTimeInSecond;
   }
   /**
-   * Compares given object with the Match
-   * @param obj the object to compare with the match
+   * Compares given object with the given time
+   * @param obj the object to compare with the given time
    * @return boolean (true if the given object is a Time  object with all equal attributes), else false
    */
 

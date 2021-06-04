@@ -33,7 +33,7 @@ public class FriendlyMatch extends Match implements Serializable
    * Compares given object with the Match
    *
    * @param obj the object to compare with the match
-   * @return boolean (true if the given object is a  League Match object with all equal attributes), else false
+   * @return boolean (true if the given object is a Friendly Match object with all equal attributes), else false
    */
   public boolean equals(Object obj)
   {
